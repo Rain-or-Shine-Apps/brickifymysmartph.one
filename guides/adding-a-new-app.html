@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify Guide — Adding a new app to your child's phone</title>
+  <meta name="description" content="A new app just got installed — how to unbrick, install it, decide which profiles should block it, and re-brick."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/guides/adding-a-new-app.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify Guide — Adding a new app to your child's phone"/>
+  <meta property="og:description" content="A new app just got installed — how to unbrick, install it, decide which profiles should block it, and re-brick."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/guides/adding-a-new-app.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify Guide — Adding a new app to your child's phone"/>
+  <meta name="twitter:description" content="A new app just got installed — how to unbrick, install it, decide which profiles should block it, and re-brick."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+    .step-body p + p { margin-top: 8px; }
+    .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+
+    .warn { background: rgba(245,158,11,0.09); border: 1px solid rgba(245,158,11,0.3); border-radius: 12px; padding: 16px 18px; margin: 18px 0; }
+    .warn p { margin: 0; color: #92400e; font-size: 14px; }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Guides</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../information.html">Information</a>
+      <a href="../help.html">Help</a>
+      <a href="../faq.html">FAQ</a>
+    </nav>
+    <a href="../index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <div class="eyebrow">Brickify Guide</div>
+  <h1>Adding a new app to your child's phone</h1>
+  <p>A new app needs installing on a phone that's already set up with Brickify. Here's the full loop — unbrick, install, decide where it's blocked, re-brick.</p>
+</div>
+
+<div class="container">
+  <a href="index.html" class="back">← All guides</a>
+
+  <p>This is the general version of the loop — for a specific worked example (block a new app on weekdays, free it up on weekends), see <a href="weekend-app.html">Add a new app and allow it only on weekends</a> once you've finished here.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>Unbrick the device</h3>
+        <p>Open Brickify and tap <code>Unbrick</code> (or <code>Stop Brickify →</code> if nothing's actively blocking right now), then enter the PIN and second factor if one's set up. This is needed because the App Store or Play Store is commonly one of the apps a profile blocks.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>Install the app</h3>
+        <p>Play Store (Android) or App Store (iOS) — search for it and install as normal.</p>
+        <p><strong>Android:</strong> the app needs to actually be installed before it shows up in Brickify's block-list picker. <strong>iOS:</strong> Family Controls' picker works from Apple's whole catalog rather than what's installed on the phone, so it can technically be pre-blocked before installing — but installing first keeps the steps the same on both platforms.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>Decide which profiles should block it</h3>
+        <p>Setup → Profiles. Block lists are set per-profile, not globally — open each profile where you want this app blocked and turn it on there; leave it off in any profile where it should be allowed (e.g. a Weekend profile).</p>
+        <p><strong>Android:</strong> find it in the searchable app list and toggle it on. <strong>iOS:</strong> tap <code>Choose apps to block →</code> (or <code>Change apps to block →</code>) and reselect via Apple's picker, including the new app alongside whatever's already chosen.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>Re-brick</h3>
+        <p>Tap <code>Start Brickify</code> on the Home tab if it isn't already running — one tap, no PIN needed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Remember:</strong> there's no single master block list. A new app has to be added separately to every profile you want it blocked on — a "School Day" profile and a "Weeknight" profile each need their own toggle flipped.</p>
+  </div>
+
+  <div class="warn">
+    <p><strong>On Android</strong>, you'll also get a notification and an email (if you've added your address in Setup) whenever a new app is installed — a useful safety net, but it doesn't add the app to any block list for you; step 3 above is still needed. <strong>iOS can't detect new installs at all</strong>, which is exactly why blocking the App Store itself is worth keeping on any profile you want to hold firm.</p>
+  </div>
+
+  <div class="next">
+    <a href="weekend-app.html">→ Add a new app and allow it only on weekends</a>
+    <a href="school-phone.html">→ Set up your 10-year-old's phone for school</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="../how-it-works.html">How it works</a>
+        <a href="../why-brickify.html">Why Brickify</a>
+        <a href="../compatibility.html">Which phones work?</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="../help.html">Help</a>
+        <a href="../troubleshooting.html">Troubleshooting</a>
+        <a href="../information.html">Information</a>
+        <a href="../faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

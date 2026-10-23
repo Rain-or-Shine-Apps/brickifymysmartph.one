@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — Android 設定指南（裝置擁有者）</title>
+  <meta name="description" content="逐步設定 Brickify 完整 Android 保護功能的指南，需要一次性恢復原廠設定並掃描 QR Code 進行佈建。"/>
+  <link rel="canonical" href="https://brickifymysmartph.one/android-device-owner-setup-zh-Hant.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify — Android 設定指南（裝置擁有者）"/>
+  <meta property="og:description" content="逐步設定 Brickify 完整 Android 保護功能的指南，需要一次性恢復原廠設定並掃描 QR Code 進行佈建。"/>
+  <meta property="og:url" content="https://brickifymysmartph.one/android-device-owner-setup-zh-Hant.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify — Android 設定指南（裝置擁有者）"/>
+  <meta name="twitter:description" content="逐步設定 Brickify 完整 Android 保護功能的指南，需要一次性恢復原廠設定並掃描 QR Code 進行佈建。"/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+    .lang-switch-wrap { margin-top: 14px; }
+    .lang-switch {
+      background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px; padding: 6px 10px; font-size: 13px; font-family: inherit; cursor: pointer;
+    }
+    .lang-switch option { color: #000; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+    .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
+
+    .warning { background: rgba(34,197,94,0.08); border-left: 3px solid #16a34a; border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 24px 0; }
+    .warning h3 { color: #166534; font-size: 15px; margin: 0 0 6px; }
+    .warning p { color: #166534; margin: 0; font-size: 14px; }
+    .warning p + p { margin-top: 8px; }
+
+    .qr-placeholder {
+      width: 240px; height: 240px; margin: 16px auto; border: 2px dashed #d8cec3; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;
+      color: var(--mid); font-size: 13px; background: var(--card);
+    }
+
+    .qr-code {
+      width: 100%; max-width: 400px; height: auto; aspect-ratio: 1; margin: 16px auto; display: block; border-radius: 16px;
+      border: 1px solid #e8e0db; background: #fff; padding: 12px;
+    }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">首頁</a>
+      <a href="guides/index.html">指南</a>
+      <a href="information.html">資訊</a>
+      <a href="help.html">說明</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <div class="eyebrow">Brickify 指南</div>
+  <h1>Android 設定 — 裝置擁有者模式</h1>
+  <p>Brickify 在 Android 上必須以「裝置擁有者」模式設定才能運作。這需要恢復原廠設定，並完成一段簡短的引導設定。本頁將帶你逐步完成整個流程。</p>
+  <div class="lang-switch-wrap">
+    <select class="lang-switch" onchange="if (this.value) location.href = this.value;" aria-label="Choose language">
+      <option value="android-device-owner-setup.html">English</option>
+      <option value="android-device-owner-setup-es.html">Español</option>
+      <option value="android-device-owner-setup-fr.html">Français</option>
+      <option value="android-device-owner-setup-de.html">Deutsch</option>
+      <option value="android-device-owner-setup-it.html">Italiano</option>
+      <option value="android-device-owner-setup-pt-BR.html">Português (Brasil)</option>
+      <option value="android-device-owner-setup-pt-PT.html">Português (Portugal)</option>
+      <option value="android-device-owner-setup-zh-Hant.html" selected>繁體中文</option>
+      <option value="android-device-owner-setup-ar.html">العربية</option>
+      <option value="android-device-owner-setup-ja.html">日本語</option>
+    </select>
+  </div>
+</div>
+
+<div class="container">
+  <a href="guides/index.html" class="back">← 返回指南</a>
+
+  <div class="warning">
+    <h3>👀 開始之前</h3>
+    <p>裝置擁有者模式無法與現有的機構管理設定檔並存。如果你的裝置已有工作設定檔，請改用一部未受管理的個人裝置來設定 Brickify。</p>
+  </div>
+
+  <h2>設定步驟</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>確認你已購買 Brickify</h3>
+        <p>如果你已經在 App 內點選過「購買 Brickify」，就完成這一步了 — 請記住你當時使用的 Google 帳戶，稍後需要用同一個帳戶登入。如果你還沒購買，請先在手機上開啟 Brickify，依照畫面提示完成購買後再繼續。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>用第二部裝置開啟本頁</h3>
+        <p>你即將清除這部手機的資料，一旦恢復原廠設定開始，手機畫面就無法使用了。請用另一部裝置開啟本頁，以便照著步驟操作。建議你現在先在這裡把整篇指南讀完一遍。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>將手機恢復原廠設定</h3>
+        <p>設定 → 系統 → 重設選項 → 清除所有資料（恢復原廠設定）— 確切用詞依手機品牌而異。這會清除手機上目前所有的資料。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>在「歡迎」畫面停下來</h3>
+        <p>恢復原廠設定完成後，手機會開機進入空白的「歡迎」（有時顯示為「Hello」）畫面 — <strong>請勿點選「繼續」。</strong>改為在畫面同一個位置<strong>連續輕觸 6 次</strong>，即可開啟 QR Code 掃描器。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">5</div>
+      <div class="step-body">
+        <h3>掃描此 QR Code</h3>
+        <img src="provisioning-qr.png" alt="用於將 Brickify 設定為裝置擁有者的 QR Code" class="qr-code">
+        <p>請將手機拿穩，若畫面反光可稍微傾斜手機 — 掃描器需要清楚讀取整個 QR Code。掃描成功後，若系統提示連接 Wi-Fi，請完成連線 — 手機需要網路連線才能下載 Brickify。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">6</div>
+      <div class="step-body">
+        <h3>依提示點選「下一步」「接受」及「繼續」</h3>
+        <p>從這一步開始，Brickify 會自動安裝並將自己設定為裝置擁有者 — 你只需要依序點選幾個設定畫面即可。<strong>部分畫面會提到「您的機構」或「設定工作裝置」等字樣 — 這是正常現象。</strong>這是 Android 系統針對此類設定所使用的通用說法，無論實際是企業 IT 部門，還是像現在這樣是你本人在操作，畫面用語都一樣。這裡並沒有任何雇主、學校或第三方參與 — 這只是 Brickify 自己的管理員設定。安裝完成後，「設定」中顯示的名稱會是「Brickify」，而不是「您的機構」，並會清楚說明它能看到什麼、不能看到什麼。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">7</div>
+      <div class="step-body">
+        <h3>開啟 Brickify</h3>
+        <p>大多數裝置在完成裝置擁有者設定後會自動開啟 Brickify。如果你的裝置沒有自動開啟，請到應用程式清單中手動開啟 Brickify。</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Brickify 設定精靈的流程</h2>
+  <p>完成以上裝置層級的步驟後，Brickify 會引導你完成它自己的設定流程 — 依照以下順序，畫面上顯示的名稱也與此相同：</p>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>裝置 PIN 碼</h3><p>手機本身的鎖定螢幕 PIN 碼 — 這是你孩子會知道的密碼，用於日常解鎖並使用手機。</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>安裝孩子的應用程式</h3><p>清除資料後手機幾乎是空的 — 請先從 Play 商店安裝你真正希望孩子擁有的應用程式，再決定哪些允許使用、哪些要封鎖。</p></div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>新增你的 Google 帳戶</h3><p>在系統層級新增你的 Google 帳戶 — 使用你購買 Brickify 時的同一個帳戶，這樣「恢復購買項目」才能找到它。若系統詢問，請選擇「我將使用這部裝置」，而不是子帳戶設定檔。若 Android 提示要用你的 SIM 卡自動尋找帳戶，請略過該選項，改為手動輸入電子郵件地址 — 系統自動建議的帳戶可能不是你購買 Brickify 時使用的帳戶。</p></div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>選擇並確認你的 4 位數密碼</h3><p>這是 Brickify 專屬的密碼 — 與上方的裝置 PIN 碼不同，這組密碼是給你（家長）使用的，不是給孩子的。</p></div></div>
+    <div class="step"><div class="step-n">5</div><div class="step-body"><h3>選擇你的第二重驗證方式</h3><p>家長 PIN、驗證器應用程式，或電子郵件驗證碼 — 這是手動解除鎖定或變更 Brickify 設定前，所需的第二層安全防護。</p></div></div>
+    <div class="step"><div class="step-n">6</div><div class="step-body"><h3>儲存你的復原代碼</h3><p>三組一次性備用代碼。請務必抄下來 — 之後不會再次顯示。</p></div></div>
+    <div class="step"><div class="step-n">7</div><div class="step-body"><h3>設定你的模式</h3><p>為這部手機設定模式 — 為第一個模式命名，並選擇它要封鎖哪些應用程式。至少需要一個預設模式；這是手機在沒有其他排程生效時會回復使用的模式。你可以視需要另外加入多個排程模式，讓手機自動在其間切換。別擔心 — 這些設定之後也可以再調整。</p></div></div>
+    <div class="step"><div class="step-n">8</div><div class="step-body"><h3>家長提醒通知</h3><p>當有需要注意的狀況時，Brickify 會寄送電子郵件通知你 — 例如裝置失聯、保護功能被移除，或（儘管已封鎖）出現新安裝的應用程式。請在這裡使用你自己的電子郵件地址，而不是孩子的。</p></div></div>
+    <div class="step"><div class="step-n">9</div><div class="step-body"><h3>Android 權限設定</h3><p>啟用無障礙服務 — 這是實際負責封鎖應用程式的功能。裝置管理員權限則會自動啟用。此功能只會在裝置本機檢查目前在前景執行的應用程式 — 不會記錄、儲存或傳送任何資料到任何地方。由於這部裝置是透過掃描 QR Code 設定，而非從 Play 商店安裝，Android 第一次可能會將此開關顯示為「受限設定」— 此畫面中的應用程式內說明會引導你完成一次性的「允許受限設定」步驟，以解除限制。</p></div></div>
+    <div class="step"><div class="step-n">10</div><div class="step-body"><h3>解鎖 Brickify</h3><p>付款，或如果你已經購買過，點選<strong>恢復先前的購買項目</strong> — 如果系統沒有立即找到購買紀錄，請先開啟一次 Play 商店應用程式，讓它完成帳戶註冊。你的付款是透過 Play Billing 綁定在你的 Google 帳戶上，而非綁定在這部手機安裝的特定應用程式副本上，因此恢復購買會找到同一筆購買紀錄並再次解鎖 Brickify — 不會被重複收費。</p></div></div>
+  </div>
+
+  <div class="next">
+    <a href="risks.html#android">→ 了解 Brickify 在 Android 上已強化及尚未涵蓋的防護範圍</a>
+    <a href="troubleshooting.html">→ 疑難排解</a>
+    <a href="help.html">→ 支援與聯絡我們</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="why-brickify.html">Why Brickify</a>
+        <a href="compatibility.html">Which phones work?</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="help.html">Help</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="information.html">Information</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

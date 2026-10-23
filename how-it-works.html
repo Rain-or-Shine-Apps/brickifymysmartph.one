@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — How it works</title>
+  <meta name="description" content="The five steps to setting up Brickify: passcode, second factor, recovery codes, choosing apps, and bricking."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/how-it-works.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify — How it works"/>
+  <meta property="og:description" content="The five steps to setting up Brickify: passcode, second factor, recovery codes, choosing apps, and bricking."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/how-it-works.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify — How it works"/>
+  <meta name="twitter:description" content="The five steps to setting up Brickify: passcode, second factor, recovery codes, choosing apps, and bricking."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header h1 { color: #fff; font-size: 28px; font-weight: 800; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 8px; font-size: 15px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+    .header-links a.active { color: #fff; }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 16px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; color: var(--mid); }
+
+    .next { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+
+    /* ---------- Layer diagram (swipeable, starts at layer 1) ---------- */
+    .section-h { font-size: 24px; font-weight: 900; color: var(--brand-dark); letter-spacing: -0.3px; margin: 0 0 8px; }
+    .section-h.steps-h { margin-bottom: 16px; }
+    .section-h.layers-h { margin-top: 56px; }
+    .layers-intro { color: var(--muted); font-size: 16px; margin: 0 0 14px; }
+    .layers-key { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 16px; font-size: 13px; font-weight: 800; color: var(--muted); }
+    .layers-key span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; border: 2px solid var(--line); background: var(--surface); }
+    .layers-key .k-brickify::before { background: var(--brand); border-color: var(--brand-dark); }
+    .layers-key .k-os::before { background: var(--brand-tint); border-color: var(--brand); }
+
+    .layers-track { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 2px 14px; margin: 0 -2px; scrollbar-width: thin; }
+    .layers-track:focus-visible { outline: 3px solid var(--brand); outline-offset: 4px; border-radius: 18px; }
+    @media (prefers-reduced-motion: reduce) { .layers-track { scroll-behavior: auto; } }
+    .layer { flex: 0 0 min(440px, 86%); scroll-snap-align: start; position: relative; border-radius: 20px; padding: 18px 18px 20px; border: 2px solid var(--line); border-bottom-width: 5px; background: var(--surface); display: flex; flex-direction: column; }
+    .layer-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .layer-n { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .8px; color: var(--brand); }
+    .layer h3 { font-size: 20px; font-weight: 900; color: var(--ink); line-height: 1.25; }
+    .layer .layer-sub { font-size: 15px; color: var(--muted); margin-top: 6px; }
+    .layer-split { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+    .layer-split > div { border-radius: 12px; padding: 10px 12px; background: var(--bg); border: 1.5px solid var(--line); font-size: 14px; color: var(--muted); }
+    .layer-split strong { display: block; color: var(--ink); font-size: 14px; }
+    .layer-split .full { grid-column: 1 / -1; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .chip { display: inline-block; padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 800; background: var(--bg); border: 1.5px solid var(--line); color: var(--ink); }
+    .layer-note { margin-top: 12px; font-size: 14px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 10px; }
+
+    /* Mini stack: five bars, bottom bar is layer 1, the current layer is highlighted */
+    .mini-stack { display: flex; flex-direction: column-reverse; gap: 3px; width: 44px; flex-shrink: 0; margin-left: auto; }
+    .mini-stack i { display: block; height: 6px; border-radius: 3px; background: var(--line); }
+    .mini-stack i.on { background: var(--brand); }
+
+    /* Brickify's own layers */
+    .layer.is-brickify { background: var(--brand); border-color: var(--brand-dark); }
+    .layer.is-brickify h3, .layer.is-brickify .layer-n { color: #fff; }
+    .layer.is-brickify .layer-sub { color: rgba(255,255,255,.9); }
+    .layer.is-brickify .chip, .layer.is-brickify .layer-split > div { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.35); color: #fff; }
+    .layer.is-brickify .layer-split strong { color: #fff; }
+    .layer.is-brickify .mini-stack i { background: rgba(255,255,255,.3); }
+    .layer.is-brickify .mini-stack i.on { background: #fff; }
+    /* Built with the phone's OS: cream fill, Brickify brick edges because Brickify sets it up */
+    .layer.is-os { background: var(--brand-tint); border-color: var(--brand); }
+    .layer.is-os .layer-split > div { background: var(--surface); }
+
+    .layers-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 4px; }
+    .layers-nav .count { font-size: 14px; font-weight: 800; color: var(--muted); }
+    .layers-nav .btns { display: flex; gap: 8px; }
+    .layers-nav button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--line); border-bottom-width: 4px; background: var(--surface); color: var(--brand); font: 900 20px/1 var(--font); cursor: pointer; }
+    .layers-nav button:disabled { opacity: .4; cursor: default; }
+    .layers-nav button:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+    @media (max-width: 520px) { .layer-split { grid-template-columns: 1fr; } }
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="information.html" class="active">Information</a>
+      <a href="help.html">Help</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <h1>How it works</h1>
+  <p>The five steps to set Brickify up on iPhone or Android, and how it's built.</p>
+</div>
+
+<div class="container">
+  <a href="information.html" class="back">← Back to Information</a>
+
+  <h2 class="section-h steps-h">Setting it up</h2>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Choose a passcode</h3><p>Set a 4-digit PIN you'll remember but won't enter on impulse.</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Set a second factor</h3><p>Parent PIN, authenticator app, or email code. Both factors are required to unbrick — losing one doesn't lock you out forever.</p></div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Save your recovery codes</h3><p>Three one-time backup codes are generated. Write them down. If you ever lose your PIN and second factor, one of these codes will get you back in.</p></div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Choose which apps to block, and set up the blocking schedules too</h3><p>Pick exactly which apps are disabled when bricked. Everything else stays accessible.</p></div></div>
+    <div class="step"><div class="step-n">5</div><div class="step-body"><h3>Tap BRICK</h3><p>Your chosen apps are blocked at the OS level. To unblock them, you need both your PIN and your second factor.</p></div></div>
+  </div>
+
+  <h2 class="section-h layers-h" id="layers">How Brickify is built</h2>
+  <p class="layers-intro">Five layers, starting with the phone itself. Swipe or use the arrows to go up through them.</p>
+  <div class="layers-key">
+    <span class="k-brickify">Added by Brickify</span>
+    <span class="k-os">Built with your phone's OS</span>
+    <span>Your phone and connection</span>
+  </div>
+
+  <div class="layers-track" id="layers-track" tabindex="0" role="region" aria-label="Brickify's five layers, from the device up">
+    <div class="layer" id="layer-1">
+      <div class="layer-top"><span class="layer-n">Layer 1 of 5</span><span class="mini-stack" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+      <h3>The device</h3>
+      <p class="layer-sub">A phone you already own.</p>
+      <div class="layer-split">
+        <div><strong>Android</strong>Android 8.0 or newer</div>
+        <div><strong>iPhone</strong>iPhone 8 / X or newer (iOS 16+)</div>
+      </div>
+    </div>
+
+    <div class="layer" id="layer-2">
+      <div class="layer-top"><span class="layer-n">Layer 2 of 5</span><span class="mini-stack" aria-hidden="true"><i></i><i class="on"></i><i></i><i></i><i></i></span></div>
+      <h3>Connection</h3>
+      <p class="layer-sub">Calls, texts and data come through the SIM and internet as usual. You can brick the internet browser.</p>
+      <div class="chips">
+        <span class="chip">SIM</span>
+        <span class="chip">Internet</span>
+      </div>
+      <p class="layer-note">You can choose not to use a SIM or eSIM, to have a Wi-Fi only device like a landline.</p>
+    </div>
+
+    <div class="layer is-os" id="layer-3">
+      <div class="layer-top"><span class="layer-n">Layer 3 of 5</span><span class="mini-stack" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i></span></div>
+      <h3>OS protection</h3>
+      <p class="layer-sub">The phone's own system-level controls do the blocking, which is what makes Brickify hard to get round. Brickify makes them simple to set up.</p>
+      <div class="layer-split">
+        <div><strong>Android</strong>Android's accessibility service</div>
+        <div><strong>iPhone</strong>Apple's Screen Time framework (Family Controls)</div>
+        <div class="full"><strong>Both platforms</strong>Alerts for parents if OS-level controls are circumvented</div>
+      </div>
+    </div>
+
+    <div class="layer is-brickify" id="layer-4">
+      <div class="layer-top"><span class="layer-n">Layer 4 of 5</span><span class="mini-stack" aria-hidden="true"><i></i><i></i><i></i><i class="on"></i><i></i></span></div>
+      <h3>Extra hardening</h3>
+      <p class="layer-sub">Brickify makes the extra protection easy to set up, and emails parents about certain risky actions, like a new app being installed or protection being removed.</p>
+      <div class="layer-split">
+        <div><strong>Both platforms</strong>Guided setup and parent alerts</div>
+        <div><strong>Android</strong>Can be set up as Device Owner for maximum protection</div>
+      </div>
+    </div>
+
+    <div class="layer is-brickify" id="layer-5">
+      <div class="layer-top"><span class="layer-n">Layer 5 of 5</span><span class="mini-stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="on"></i></span></div>
+      <h3>Brickify's features</h3>
+      <p class="layer-sub">What you set up and change over time.</p>
+      <div class="chips">
+        <span class="chip">Scheduled profiles</span>
+        <span class="chip">Granular controls that change as they grow up</span>
+        <span class="chip">Parent alerts</span>
+      </div>
+    </div>
+  </div>
+  <div class="layers-nav">
+    <span class="count" id="layers-count" aria-live="polite">Layer 1 of 5</span>
+    <div class="btns">
+      <button type="button" id="layers-prev" aria-label="Previous layer" disabled>&larr;</button>
+      <button type="button" id="layers-next" aria-label="Next layer">&rarr;</button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var track = document.getElementById('layers-track');
+      var cards = track.querySelectorAll('.layer');
+      var prev = document.getElementById('layers-prev'), next = document.getElementById('layers-next');
+      var count = document.getElementById('layers-count');
+      function current() {
+        var left = track.scrollLeft, best = 0;
+        cards.forEach(function (c, i) { if (Math.abs(c.offsetLeft - track.offsetLeft - left) < Math.abs(cards[best].offsetLeft - track.offsetLeft - left)) best = i; });
+        // At the far right the last cards may never reach the start edge
+        if (left + track.clientWidth >= track.scrollWidth - 2) best = cards.length - 1;
+        return best;
+      }
+      function go(i) { track.scrollTo({ left: cards[i].offsetLeft - track.offsetLeft }); }
+      function update() {
+        var i = current();
+        count.textContent = 'Layer ' + (i + 1) + ' of ' + cards.length;
+        prev.disabled = i === 0; next.disabled = i === cards.length - 1;
+      }
+      prev.addEventListener('click', function () { go(Math.max(0, current() - 1)); });
+      next.addEventListener('click', function () { go(Math.min(cards.length - 1, current() + 1)); });
+      track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+      });
+    })();
+  </script>
+
+  <div class="next">
+    <a href="android-device-owner-setup.html">→ Android's extra device-level setup (Device Owner mode)</a>
+    <a href="ios-device-setup.html">→ iOS's extra device-level setup (Family Controls)</a>
+    <a href="risks.html">→ Known limitations &amp; accepted risks</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="why-brickify.html">Why Brickify</a>
+        <a href="compatibility.html">Which phones work?</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="help.html">Help</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="information.html">Information</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

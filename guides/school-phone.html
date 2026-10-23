@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify Guide — Set up your 10-year-old's phone for school</title>
+  <meta name="description" content="Block distracting apps automatically during school hours and leave the phone open the rest of the time — a one-time Brickify setup."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/guides/school-phone.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify Guide — Set up your 10-year-old's phone for school"/>
+  <meta property="og:description" content="Block distracting apps automatically during school hours and leave the phone open the rest of the time — a one-time Brickify setup."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/guides/school-phone.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify Guide — Set up your 10-year-old's phone for school"/>
+  <meta name="twitter:description" content="Block distracting apps automatically during school hours and leave the phone open the rest of the time — a one-time Brickify setup."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+    .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8e0db; color: var(--mid); vertical-align: top; }
+    td:first-child { color: var(--dark); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Guides</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../information.html">Information</a>
+      <a href="../help.html">Help</a>
+      <a href="../faq.html">FAQ</a>
+    </nav>
+    <a href="../index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <div class="eyebrow">Brickify Guide</div>
+  <h1>Set up your 10-year-old's phone for school</h1>
+  <p>One-time setup: apps get blocked automatically during school hours, and the phone is normal the rest of the day. No daily faffing.</p>
+</div>
+
+<div class="container">
+  <a href="index.html" class="back">← All guides</a>
+
+  <p>The goal here isn't "the phone is locked all the time" — it's "the phone behaves itself during school hours, on its own, without you having to remember to do anything." Brickify does this with two profiles: one for normal life, one for school hours, switching between them automatically.</p>
+
+  <h2>Setup</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>Finish first-time setup if you haven't</h3>
+        <p>Choose a PIN, add a second factor (an authenticator app or email code — this is what stops a determined 10-year-old undoing everything alone), and save your recovery codes somewhere safe.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>Set up your default profile as the safe baseline</h3>
+        <p>Your first profile is automatically the default — it's what's active whenever nothing else is scheduled, so it's what the phone looks like evenings, weekends, and holidays. For a 10-year-old's first phone, we'd suggest this one isn't wide open either: block the Play Store/App Store (blocked by default when you create a profile), block the high-risk categories below, and only leave in apps you've actually vetted yourself — a few examples: Pokémon GO, ScratchJr, Times Tables Rock Stars. What counts as fine is your call, not a fixed list.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Apps worth blocking on a 10-year-old's default profile:</strong> Discord, WhatsApp (unless it's family-monitored), Snapchat, other social media (TikTok, Instagram, Twitter/X), OnlyFans, Roblox, secure/disappearing picture-sharing apps, encrypted messaging (Telegram, Signal, and similar), web browsers, random/anonymous chat apps (Kik and similar), VPN apps (these can bypass blocking entirely), and any "vault" or app-locker apps (used to hide content from parents). Not an exhaustive list — use your own judgement for your own child.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>Go to Setup → Manage profiles → + Create a new profile</h3>
+        <p>Name it something like <code>School Day</code>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>Choose what "School Day" blocks</h3>
+        <p>Pick the games, social apps, and anything else you don't want open during lessons. On Android, tap the "Play Store" chip too, so nothing new can be installed during the school window either — it's blocked by default when you create a profile. On iPhone, include the App Store in the picker for the same reason.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">5</div>
+      <div class="step-body">
+        <h3>Set the schedule</h3>
+        <p>Leave "Set profile to default" off. Toggle on the school weekdays (Mon–Fri), turn off "All day," and set a start and end time — e.g. <code>08:30</code> to <code>15:30</code>. Save.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">6</div>
+      <div class="step-body">
+        <h3>Brick the phone once</h3>
+        <p>Go to Home and tap <code>BRICK</code> once. This is the only manual step — it arms the schedule. From here on, "School Day" switches in automatically at 08:30 and switches back to normal at 15:30, every weekday, without you touching the phone.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>How this actually works:</strong> Brickify doesn't need a schedule on your "normal" profile — it's just defined as "whatever's active when nothing else is scheduled." Only the School Day profile needs a time window. Outside school hours, Brickify automatically falls back to normal.</p>
+    <p>If you ever unbrick manually — say, an early pickup — that's treated as temporary. Brickify picks the schedule back up on its own at the next real boundary (the next 08:30 or 15:30), not the next time you remember to press the button.</p>
+  </div>
+
+  <h2>Worth doing too</h2>
+  <ul>
+    <li><strong>Screen Time / Device Admin</strong> — in Setup, confirm the Screen Time Guide (iPhone) or Device Admin (Android) card is done. This stops the app itself being deleted to escape the schedule.</li>
+    <li><strong>Parent email</strong> — add yours in Setup so you're notified if a new app gets installed on Android (iOS can't detect this at all, which is exactly why blocking the App Store during school hours matters).</li>
+    <li><strong>Recovery codes</strong> — keep them somewhere you'll actually find again. They're the way back in if you ever forget your PIN and lose your second factor.</li>
+  </ul>
+
+  <h2>Your profiles at a glance</h2>
+  <table>
+    <thead><tr><th>Profile</th><th>Default?</th><th>Blocks</th><th>Schedule</th></tr></thead>
+    <tbody>
+      <tr><td>Safe Apps (your first profile)</td><td>Yes</td><td>Play Store/App Store, plus the high-risk categories above — only vetted apps left in</td><td>Always active — no schedule needed</td></tr>
+      <tr><td>School Day</td><td>No</td><td>Everything the default profile blocks, plus games and any other apps not needed for school</td><td>Weekdays, e.g. 08:30–15:30</td></tr>
+    </tbody>
+  </table>
+
+  <div class="next">
+    <a href="weekend-app.html">→ Add a new app and allow it only on weekends</a>
+    <a href="revision-mode.html">→ Set up a revision-friendly phone</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="../how-it-works.html">How it works</a>
+        <a href="../why-brickify.html">Why Brickify</a>
+        <a href="../compatibility.html">Which phones work?</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="../help.html">Help</a>
+        <a href="../troubleshooting.html">Troubleshooting</a>
+        <a href="../information.html">Information</a>
+        <a href="../faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

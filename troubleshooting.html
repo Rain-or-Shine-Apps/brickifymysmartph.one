@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — Troubleshooting</title>
+  <meta name="description" content="Fixes for the handful of things that occasionally trip people up during Android or iOS setup."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/troubleshooting.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify — Troubleshooting"/>
+  <meta property="og:description" content="Fixes for the handful of things that occasionally trip people up during Android or iOS setup."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/troubleshooting.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify — Troubleshooting"/>
+  <meta name="twitter:description" content="Fixes for the handful of things that occasionally trip people up during Android or iOS setup."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header h1 { color: #fff; font-size: 28px; font-weight: 800; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 8px; font-size: 15px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+    .header-links a.active { color: #fff; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 19px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 8px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="information.html">Information</a>
+      <a href="help.html" class="active">Help</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <h1>Troubleshooting</h1>
+  <p>Fixes for the handful of things that occasionally come up during setup — most people won't hit any of these.</p>
+</div>
+
+<div class="container">
+  <a href="help.html" class="back">← Back to Help</a>
+
+  <h2>Android</h2>
+  <ul>
+    <li><strong>Restore Purchases doesn't find anything</strong> — double check you're signed into the same Google
+    account used to buy Brickify. Still stuck? Email <a href="mailto:brickify@rainorshineapps.com">brickify@rainorshineapps.com</a>
+    with your device ID (shown in Setup) and we'll sort it out.</li>
+    <li><strong>QR scanner won't open</strong> — you need a genuinely blank, freshly-reset phone; it only appears on
+    the very first "Welcome" screen, before any account is added.</li>
+    <li><strong>Scan succeeds but nothing installs</strong> — the phone needs internet access to download Brickify.
+    Connect to Wifi during the setup wizard if you weren't prompted automatically.</li>
+    <li><strong>Settings shows a "Work profile" and this didn't work</strong> — Device Owner mode can't coexist with
+    organisation-managed device settings. See the warning on the <a href="android-device-owner-setup.html">Android
+    setup guide</a>.</li>
+  </ul>
+
+  <h2>iOS</h2>
+  <ul>
+    <li><strong>Restore Purchases doesn't find anything</strong> — double check you're signed into the same Apple ID
+    used to buy Brickify. Still stuck? Email <a href="mailto:brickify@rainorshineapps.com">brickify@rainorshineapps.com</a>
+    with your device ID (shown in Setup) and we'll sort it out.</li>
+    <li><strong>Family Controls permission wasn't offered</strong> — it's asked for during the Profile step of setup;
+    if you skipped it, go to Setup → Manage profiles and it'll be prompted again next time a profile needs saving.</li>
+    <li><strong>Screen Time passcode not stopping app deletion</strong> — check Settings → Screen Time → Content &amp;
+    Privacy Restrictions is turned on, and "Deleting Apps" is set to Don't Allow underneath it.</li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="why-brickify.html">Why Brickify</a>
+        <a href="compatibility.html">Which phones work?</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="help.html">Help</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="information.html">Information</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

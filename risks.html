@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — Known limitations &amp; accepted risks</title>
+  <meta name="description" content="An honest, platform-by-platform account of what Brickify is and isn't hardened against on Android and iOS."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/risks.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify — Known limitations &amp; accepted risks"/>
+  <meta property="og:description" content="An honest, platform-by-platform account of what Brickify is and isn't hardened against on Android and iOS."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/risks.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify — Known limitations &amp; accepted risks"/>
+  <meta name="twitter:description" content="An honest, platform-by-platform account of what Brickify is and isn't hardened against on Android and iOS."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header h1 { color: #fff; font-size: 28px; font-weight: 800; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 8px; font-size: 15px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+    .header-links a.active { color: #fff; }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    .jump { display: flex; gap: 12px; margin-bottom: 8px; }
+    .jump a {
+      background: var(--card); border: 1px solid #e8e0db; border-radius: 10px;
+      padding: 8px 16px; font-size: 14px; font-weight: 700; color: var(--dark);
+    }
+    .jump a:hover { border-color: var(--brick); text-decoration: none; color: var(--brick); }
+
+    h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin: 40px 0 14px; letter-spacing: -0.3px; }
+    h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin: 18px 0 6px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+
+    .warn { background: rgba(182,90,61,0.07); border: 1px solid rgba(182,90,61,0.22); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+    .warn h3 { color: #83412C; margin: 0 0 6px; }
+    .warn p { color: #83412C; margin: 0; font-size: 14px; line-height: 1.7; }
+    .good { background: rgba(34,197,94,0.07); border-color: rgba(34,197,94,0.25); }
+    .good h3 { color: #166534; }
+    .good p { color: #166534; }
+    .amber { background: rgba(245,158,11,0.09); border-color: rgba(245,158,11,0.3); }
+    .amber h3 { color: #92400e; }
+    .amber p { color: #92400e; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="information.html" class="active">Information</a>
+      <a href="help.html">Help</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <h1>Known limitations &amp; accepted risks</h1>
+  <p>Brickify is designed to make bypassing meaningfully hard — not impossible. Here's an honest, platform-by-platform account of what is and isn't protected against.</p>
+</div>
+
+<div class="container">
+  <a href="information.html" class="back">← Back to Information</a>
+
+  <div class="jump">
+    <a href="#android">Jump to Android →</a>
+    <a href="#ios">Jump to iOS →</a>
+  </div>
+
+  <h2 id="android">Android</h2>
+  <p>Brickify on Android can be set up in two ways. Both block apps in exactly the same way. The difference is how hard Brickify is to remove:</p>
+  <ul>
+    <li><a href="#android-max"><strong>Maximum protection</strong></a> — a one-time factory reset and guided QR setup make Brickify this phone's <a href="android-device-owner-setup.html">Device Owner</a>, so it can't be switched off or uninstalled. Recommended for a child's phone.</li>
+    <li><a href="#android-standard"><strong>Standard mode</strong></a> — no factory reset. Quicker to set up, but anyone holding the phone can switch Brickify off in Settings and uninstall it.</li>
+  </ul>
+
+  <h3 id="android-max" style="font-size:20px; margin-top:32px;">Maximum protection (Device Owner)</h3>
+  <p>The lighter Device Admin permission on its own can always be switched off via Settings by anyone with physical access, with no password needed. Device Owner closes that gap, which is why this setup needs the extra step.</p>
+  <div class="warn">
+    <h3>Accepted risks</h3>
+    <p><strong>Safe mode</strong> — Android's safe mode disables third-party services. Blocks will not be enforced while in safe mode. Parent email is warned.<br/><br/>
+    <strong>ADB over USB</strong> — If USB debugging is enabled, someone with a PC could remove the app or disable services.</p>
+  </div>
+  <div class="warn amber">
+    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
+    <p><strong>Uninstalling the Play Store</strong> — Device Owner mode adds a barrier against Brickify itself being uninstalled, but not other apps like the Play Store. If it goes missing, treat that as a sign to check in — new installs would need to be sideloaded instead of using the Store.<br/><br/>
+    <strong>New apps</strong> — Apps installed after setup are not automatically blocked. You will receive a notification and email when a new app is installed — add it to the block list if needed.<br/><br/>
+    <strong>Factory reset</strong> — Still removes all restrictions, same as before Device Owner setup — a reset wipes the phone regardless of what's installed on it. Android's Factory Reset Protection (FRP) mitigates this; we recommend enabling FRP by adding a Google account and screen lock.<br/><br/>
+    <strong>Web browsing isn't filtered</strong> — Brickify blocks the individual apps you choose, not websites or web content. Chrome, Firefox, Edge, and other browsers each need to be blocked separately — one browser left off the list is a way around the rest.</p>
+  </div>
+  <div class="warn good">
+    <h3>Hardened against</h3>
+    <p><strong>Uninstalling or force-stopping Brickify</strong> — installed as this phone's Device Owner, which has no Settings toggle at all. The only ways off it are a full factory reset, or Brickify's own in-app deactivation (PIN+second-factor gated, for legitimately retiring the app from a device). See the <a href="android-device-owner-setup.html">setup guide</a> for what Device Owner mode involves.<br/><br/>
+    <strong>Revoking the Accessibility permission</strong> — A background watchdog runs every 15 minutes. If the service is disabled while bricked, the screen is locked immediately.<br/><br/>
+    <strong>Deleting the app</strong> — Not possible without a factory reset or Brickify's own gated deactivation (see above) — there's no "uninstall" to fall back on the way there is on iOS.</p>
+  </div>
+
+  <h3 id="android-standard" style="font-size:20px; margin-top:40px;">Standard mode (no factory reset)</h3>
+  <p>Chosen on Brickify's first screen by tapping <em>Continue without factory reset</em>. Brickify still asks for Device Admin, but without Device Owner, Android lets anyone switch Device Admin off in Settings.</p>
+  <div class="warn">
+    <h3>Accepted risks</h3>
+    <p><strong>Uninstalling Brickify</strong> — Anyone holding the phone can switch off Device Admin in Settings (no password needed) and then uninstall Brickify.<br/><br/>
+    <strong>Switching off the Accessibility Service</strong> — While Device Admin is on, a background watchdog locks the screen within 15 minutes if the service is switched off while apps are being blocked. Once Device Admin has been switched off, nothing stops this.<br/><br/>
+    <strong>Lock screen PIN isn't enforced</strong> — Brickify asks for a screen lock during setup, but only Device Owner can make Android require one.<br/><br/>
+    <strong>Safe mode and ADB over USB</strong> — Same as maximum protection, above.</p>
+  </div>
+  <div class="warn amber">
+    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
+    <p><strong>Know when it's removed</strong> — Add an alert email during setup. You'll be emailed if Brickify stops checking in or Device Admin is switched off, which is what you'd see if someone removed it.<br/><br/>
+    <strong>New apps and web browsing</strong> — Same as maximum protection, above.<br/><br/>
+    <strong>Moving to maximum protection later</strong> — Needs a factory reset and the <a href="android-device-owner-setup.html">QR setup</a>. There's no way to upgrade in place.</p>
+  </div>
+  <div class="warn good">
+    <h3>Still protected</h3>
+    <p><strong>Blocking and schedules</strong> — Work exactly the same as with maximum protection.<br/><br/>
+    <strong>Stopping Brickify or changing what's blocked</strong> — Still needs your Brickify PIN and second factor inside the app.</p>
+  </div>
+
+  <h2 id="ios">iOS</h2>
+  <div class="warn">
+    <h3>Accepted risks</h3>
+    <p><strong>Restoring from iCloud backup</strong> — Restoring a pre-Brickify backup removes the app. See "Deleting the app" below for what this means in practice.</p>
+  </div>
+  <div class="warn amber">
+    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
+    <p><strong>Child knows your Screen Time passcode, Brickify PIN, or has access to your two-factor codes</strong> — Brickify's device hardening depends on these staying private. Don't share them with your child, or the protections below can be bypassed directly.<br/><br/>
+    <strong>Child disables Brickify's Screen Time access</strong> — Settings → Screen Time → Apps with Screen Time Access can turn off Brickify's permission entirely. This is a low risk in practice since the toggle is buried several menus deep, but it's a known gap in Apple's own API (only partially fixed, opt-in, from iOS 26.4) — no passcode is required to use it. Brickify emails you within the hour if this happens while a block is supposed to be active.<br/><br/>
+    <strong>Factory reset</strong> — Removes all restrictions. A Screen Time passcode (set up during Brickify's setup flow) prevents a reset being initiated through Settings.<br/><br/>
+    <strong>New app installs</strong> — iOS doesn't let any app detect newly installed apps. Block the App Store itself in Brickify (selected by default) to stop new installs at the source.<br/><br/>
+    <strong>Web browsing isn't filtered</strong> — Brickify blocks the individual apps you choose, not websites or web content. Blocking Safari doesn't block Chrome, Firefox, or any other installed browser — each needs to be blocked separately, and in-app browsers inside other unblocked apps aren't affected at all.</p>
+  </div>
+  <div class="warn good">
+    <h3>Hardened against</h3>
+    <p><strong>Deleting the app</strong> — The setup guide walks you through enabling a Screen Time passcode with app deletion blocked. But even if it does happen: blocks <strong>remain in place</strong> either way — iOS enforces Family Controls restrictions at the OS level, independently of whether Brickify is still installed. Deleting Brickify also removes your ability to unbrick, though, which is worse for the child, not better. The only way out at that point is a factory reset.</p>
+  </div>
+  <div class="warn">
+    <h3>If your child is under 13</h3>
+    <p>Apple's own free Family Sharing — a managed Child Account, with Screen Time controlled remotely from your own device — already closes the Screen Time access gap above: the toggle a child could otherwise flip lives on your phone, not theirs. Brickify exists mainly for the harder case: teens, who are far less likely to still be on a fully parent-managed account, and who need Brickify's dedicated brick/unbrick flow and cross-platform support most.</p>
+  </div>
+
+  <div class="warn" style="margin-top:32px;">
+    <h3>Locked out?</h3>
+    <p>Recovery codes, contacting support, and factory reset as a last resort — see <a href="help.html">Help</a> for the full walkthrough.</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="why-brickify.html">Why Brickify</a>
+        <a href="compatibility.html">Which phones work?</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="help.html">Help</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="information.html">Information</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

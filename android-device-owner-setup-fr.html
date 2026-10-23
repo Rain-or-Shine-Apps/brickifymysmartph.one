@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — Guide de configuration Android (Propriétaire de l'appareil)</title>
+  <meta name="description" content="Guide étape par étape pour configurer la protection complète de Brickify sur Android, qui nécessite une réinitialisation d'usine et un provisionnement par code QR."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/android-device-owner-setup-fr.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify — Guide de configuration Android (Propriétaire de l'appareil)"/>
+  <meta property="og:description" content="Guide étape par étape pour configurer la protection complète de Brickify sur Android, qui nécessite une réinitialisation d'usine et un provisionnement par code QR."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/android-device-owner-setup-fr.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify — Guide de configuration Android (Propriétaire de l'appareil)"/>
+  <meta name="twitter:description" content="Guide étape par étape pour configurer la protection complète de Brickify sur Android, qui nécessite une réinitialisation d'usine et un provisionnement par code QR."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+    .lang-switch-wrap { margin-top: 14px; }
+    .lang-switch {
+      background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px; padding: 6px 10px; font-size: 13px; font-family: inherit; cursor: pointer;
+    }
+    .lang-switch option { color: #000; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+    .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
+
+    .warning { background: rgba(34,197,94,0.08); border-left: 3px solid #16a34a; border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 24px 0; }
+    .warning h3 { color: #166534; font-size: 15px; margin: 0 0 6px; }
+    .warning p { color: #166534; margin: 0; font-size: 14px; }
+    .warning p + p { margin-top: 8px; }
+
+    .qr-placeholder {
+      width: 240px; height: 240px; margin: 16px auto; border: 2px dashed #d8cec3; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;
+      color: var(--mid); font-size: 13px; background: var(--card);
+    }
+
+    .qr-code {
+      width: 100%; max-width: 400px; height: auto; aspect-ratio: 1; margin: 16px auto; display: block; border-radius: 16px;
+      border: 1px solid #e8e0db; background: #fff; padding: 12px;
+    }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="information.html">Informations</a>
+      <a href="help.html">Aide</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <div class="eyebrow">Guide Brickify</div>
+  <h1>Configuration Android — Mode Propriétaire de l'appareil</h1>
+  <p>Sur Android, Brickify doit être configuré en mode Propriétaire de l'appareil pour fonctionner. Cela implique une réinitialisation d'usine et une courte configuration guidée. Cette page vous accompagne à chaque étape.</p>
+  <div class="lang-switch-wrap">
+    <select class="lang-switch" onchange="if (this.value) location.href = this.value;" aria-label="Choose language">
+      <option value="android-device-owner-setup.html">English</option>
+      <option value="android-device-owner-setup-es.html">Español</option>
+      <option value="android-device-owner-setup-fr.html" selected>Français</option>
+      <option value="android-device-owner-setup-de.html">Deutsch</option>
+      <option value="android-device-owner-setup-it.html">Italiano</option>
+      <option value="android-device-owner-setup-pt-BR.html">Português (Brasil)</option>
+      <option value="android-device-owner-setup-pt-PT.html">Português (Portugal)</option>
+      <option value="android-device-owner-setup-zh-Hant.html">繁體中文</option>
+      <option value="android-device-owner-setup-ar.html">العربية</option>
+      <option value="android-device-owner-setup-ja.html">日本語</option>
+    </select>
+  </div>
+</div>
+
+<div class="container">
+  <a href="guides/index.html" class="back">← Retour aux guides</a>
+
+  <div class="warning">
+    <h3>👀 Avant de commencer</h3>
+    <p>Le mode Propriétaire de l'appareil ne peut pas fonctionner s'il existe déjà un profil de gestion d'organisation. Si votre appareil possède un profil professionnel, utilisez plutôt un appareil personnel non géré pour Brickify.</p>
+  </div>
+
+  <h2>Configuration</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>Confirmez que vous avez acheté Brickify</h3>
+        <p>Si vous avez déjà appuyé sur « Acheter Brickify » depuis l'application, c'est bon — notez quel compte Google vous avez utilisé, vous devrez vous reconnecter avec ce même compte plus tard. Si vous ne l'avez pas encore acheté, ouvrez d'abord Brickify sur le téléphone et suivez les instructions avant de continuer.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>Ouvrez cette page sur un second appareil</h3>
+        <p>Vous êtes sur le point d'effacer ce téléphone, vous n'aurez donc plus accès à son écran une fois la réinitialisation lancée. Ouvrez cette page sur un second appareil pour pouvoir suivre les instructions. Il est conseillé de la lire en entier ici dès maintenant.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>Réinitialisez le téléphone aux paramètres d'usine</h3>
+        <p>Paramètres → Système → Options de réinitialisation → Effacer toutes les données (réinitialisation d'usine) — le libellé exact varie selon le fabricant du téléphone. Cela efface tout ce qui s'y trouve actuellement.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>Arrêtez-vous à l'écran « Bienvenue »</h3>
+        <p>Une fois la réinitialisation terminée, le téléphone démarre sur un écran « Bienvenue » vierge (parfois « Bonjour ») —
+        <strong>n'appuyez pas sur Continuer.</strong> Appuyez plutôt sur l'écran au même endroit <strong>6 fois de suite</strong>. Un lecteur de code QR s'ouvre.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">5</div>
+      <div class="step-body">
+        <h3>Scannez ce code</h3>
+        <img src="provisioning-qr.png" alt="Code QR pour configurer Brickify en tant que Propriétaire de l'appareil" class="qr-code">
+        <p>Tenez le téléphone stable et inclinez-le légèrement s'il y a des reflets sur l'écran — le lecteur a besoin d'une lecture nette de l'ensemble du code. Une fois le scan effectué, connectez-vous au Wifi si demandé — le téléphone a besoin d'un accès internet pour télécharger Brickify.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">6</div>
+      <div class="step-body">
+        <h3>Appuyez sur Suivant, Accepter et Continuer selon les invites</h3>
+        <p>À partir de là, Brickify s'installe et se configure automatiquement en tant que Propriétaire de l'appareil — il vous suffira de passer par quelques écrans de configuration en chemin. <strong>Certains mentionnent « votre organisation » ou « configuration d'un appareil professionnel » — c'est normal.</strong> Il s'agit du langage générique utilisé par Android pour toute cette catégorie de configuration, que ce soit pour un service informatique d'entreprise ou, dans ce cas, pour vous. Aucun employeur, établissement scolaire ou tiers n'est impliqué — il s'agit simplement de la configuration administrative propre à Brickify. Une fois installé, ses informations dans les Paramètres sont libellées « Brickify », et non « votre organisation », et expliquent précisément ce qu'il peut et ne peut pas voir.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">7</div>
+      <div class="step-body">
+        <h3>Ouvrez Brickify</h3>
+        <p>La plupart des appareils ouvrent Brickify automatiquement dès la fin de son installation en tant que propriétaire de l'appareil. Si ce n'est pas le cas pour le vôtre, accédez au tiroir d'applications et ouvrez Brickify depuis là.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Ce qui se passe dans l'assistant de configuration de Brickify</h2>
+  <p>Une fois les étapes ci-dessus terminées au niveau de l'appareil, Brickify vous guide à travers sa propre configuration — dans cet ordre, en utilisant les mêmes noms que ceux affichés à l'écran :</p>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Code PIN de l'appareil</h3><p>Un code PIN de verrouillage d'écran pour le téléphone lui-même — celui que votre enfant connaîtra pour déverrouiller et utiliser le téléphone au quotidien.</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Installer leurs applications</h3><p>Le téléphone est presque vide après la réinitialisation — installez depuis le Play Store tout ce que vous souhaitez réellement que votre enfant ait, avant de choisir ce qui est autorisé ou bloqué.</p></div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Ajoutez votre compte Google</h3><p>Ajoutez votre compte Google au niveau système — le même que celui utilisé pour acheter Brickify, afin que « Restaurer les achats » puisse le retrouver. Choisissez « Je vais utiliser cet appareil » si la question est posée, et non un profil enfant. Si Android propose de trouver automatiquement un compte via votre carte SIM, ignorez cette option et saisissez plutôt l'e-mail manuellement — le compte suggéré automatiquement n'est peut-être pas celui utilisé pour acheter Brickify.</p></div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Choisissez votre code à 4 chiffres et confirmez-le</h3><p>Le propre code de Brickify — distinct du code PIN de l'appareil ci-dessus, et celui-ci est pour vous, pas pour votre enfant.</p></div></div>
+    <div class="step"><div class="step-n">5</div><div class="step-body"><h3>Choisissez votre second facteur</h3><p>Code PIN parent, application d'authentification ou code par e-mail — une seconde couche de sécurité nécessaire avant de déverrouiller manuellement ou de modifier vos paramètres Brickify.</p></div></div>
+    <div class="step"><div class="step-n">6</div><div class="step-body"><h3>Enregistrez vos codes de récupération</h3><p>Trois codes de secours à usage unique. Notez-les — ils ne seront plus jamais affichés.</p></div></div>
+    <div class="step"><div class="step-n">7</div><div class="step-body"><h3>Configurez votre profil</h3><p>Configurez les profils du téléphone — nommez le premier et choisissez les applications qu'il bloque. Un profil par défaut est requis ; c'est celui vers lequel le téléphone revient par défaut. Autant d'autres profils que vous le souhaitez peuvent être programmés en plus de celui-ci, pour que le téléphone bascule automatiquement entre eux. Pas d'inquiétude — vous pouvez aussi configurer tout cela plus tard.</p></div></div>
+    <div class="step"><div class="step-n">8</div><div class="step-body"><h3>Alertes parent</h3><p>Brickify vous envoie un e-mail si quelque chose nécessite votre attention — l'appareil ne répond plus, sa protection est retirée, ou (malgré le blocage) une nouvelle application apparaît. Utilisez ici votre propre adresse e-mail, pas celle de votre enfant.</p></div></div>
+    <div class="step"><div class="step-n">9</div><div class="step-body"><h3>Autorisations Android</h3><p>Activez le Service d'accessibilité — c'est ce qui bloque réellement les applications. L'Administrateur de l'appareil est déjà actif automatiquement. Il vérifie uniquement quelle application est au premier plan, sur l'appareil lui-même — rien n'est enregistré, stocké ni envoyé où que ce soit. Comme cet appareil a été configuré en scannant un code QR plutôt qu'en installant depuis le Play Store, Android peut afficher l'interrupteur comme un « paramètre restreint » la première fois — les instructions affichées dans l'application sur cet écran vous guident à travers l'étape unique « Autoriser les paramètres restreints » pour le déverrouiller.</p></div></div>
+    <div class="step"><div class="step-n">10</div><div class="step-body"><h3>Déverrouillez Brickify</h3><p>Payez, ou appuyez sur <strong>Restaurer un achat précédent</strong> si vous l'avez déjà acheté — ouvrez d'abord l'application Play Store une fois si elle ne retrouve pas l'achat immédiatement, pour lui permettre d'enregistrer le compte. Votre paiement est lié à votre compte Google via Play Billing, et non à cette copie précise de l'application installée sur ce téléphone en particulier — la restauration retrouve donc ce même achat et déverrouille de nouveau Brickify, sans nouveau prélèvement.</p></div></div>
+  </div>
+
+  <div class="next">
+    <a href="risks.html#android">→ Découvrez contre quoi Brickify sur Android est et n'est pas protégé</a>
+    <a href="troubleshooting.html">→ Dépannage</a>
+    <a href="help.html">→ Assistance et contact</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="why-brickify.html">Why Brickify</a>
+        <a href="compatibility.html">Which phones work?</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="help.html">Help</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="information.html">Information</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

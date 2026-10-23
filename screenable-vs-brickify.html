@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — Screenable vs Brickify</title>
+  <meta name="description" content="Screenable vs Brickify: a free iPhone-only kids&#x27; phone app run from the parent&#x27;s phone, or a one-off app for iPhone and Android with profiles that switch on a schedule."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/screenable-vs-brickify.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify — Screenable vs Brickify"/>
+  <meta property="og:description" content="Screenable vs Brickify: a free iPhone-only kids&#x27; phone app run from the parent&#x27;s phone, or a one-off app for iPhone and Android with profiles that switch on a schedule."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/screenable-vs-brickify.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify — Screenable vs Brickify"/>
+  <meta name="twitter:description" content="Screenable vs Brickify: a free iPhone-only kids&#x27; phone app run from the parent&#x27;s phone, or a one-off app for iPhone and Android with profiles that switch on a schedule."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header h1 { color: #fff; font-size: 28px; font-weight: 800; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 8px; font-size: 15px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+    .header-links a.active { color: #fff; }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    .jump { display: flex; gap: 12px; margin-bottom: 8px; }
+    .jump a {
+      background: var(--card); border: 1px solid #e8e0db; border-radius: 10px;
+      padding: 8px 16px; font-size: 14px; font-weight: 700; color: var(--dark);
+    }
+    .jump a:hover { border-color: var(--brick); text-decoration: none; color: var(--brick); }
+
+    h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin: 40px 0 6px; letter-spacing: -0.3px; }
+    .vs { color: var(--mid); font-size: 14px; margin-bottom: 14px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+
+    .compare { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card); border: 1px solid #e8e0db; border-radius: 16px; overflow: hidden; font-size: 14px; margin-top: 8px; }
+    .compare th, .compare td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid #e8e0db; }
+    .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; }
+    .compare thead th { background: var(--dark); color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: .5px; }
+    .compare tbody th { color: var(--dark); width: 30%; }
+    .compare td { color: var(--mid); }
+    .compare td.us { color: var(--dark); font-weight: 700; }
+    .compare tr.other-wins th, .compare tr.other-wins td { background: #f6efe6; }
+    .note { font-size: 13px; margin-top: 14px; }
+    @media (max-width: 640px) {
+      .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: 100%; }
+      .compare { background: none; border: 0; overflow: visible; }
+      .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      .compare tr { background: var(--card); border: 1px solid #e8e0db; border-radius: 14px; margin-bottom: 10px; overflow: hidden; }
+      .compare tbody th { width: 100%; background: var(--cream); }
+      .compare th, .compare td, .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; padding: 8px 14px; }
+      .compare td::before { content: attr(data-label); display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; color: var(--brick); }
+    }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="information.html" class="active">Information</a>
+      <a href="help.html">Help</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <h1>Screenable vs Brickify</h1>
+  <p>Both make a phone simpler for a child. Here's where they differ.</p>
+</div>
+
+<div class="container">
+  <a href="information.html" class="back">← Back to Information</a>
+
+  <h2>The short version</h2>
+  <p>Screenable is a free app for iPhone and iPad that you run from your own phone. Its Dumb Phone mode strips a child's iPhone back to the basics, with a bedtime lock and screen-time limits on top.</p>
+  <p>Brickify works on iPhone and Android, and runs on the phone itself. You build profiles, from calls and texts only up to nearly everything, and they switch themselves on a weekly schedule you set once.</p>
+
+  <h2>Side by side</h2>
+  <table class="compare">
+    <thead><tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Screenable</th><th scope="col">Brickify</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Changes by itself through the week</th><td data-label="Screenable">A bedtime lock you set in a few taps</td><td class="us" data-label="Brickify">Several profiles that switch themselves through the week: school, after school, bedtime, weekends</td></tr>
+      <tr><th scope="row">Phones</th><td data-label="Screenable">iPhone and iPad only (iOS 15+)</td><td class="us" data-label="Brickify">iPhone (iOS 16+) and Android 8+</td></tr>
+      <tr><th scope="row">Brick-phone mode</th><td data-label="Screenable">Yes, Dumb Phone mode</td><td class="us" data-label="Brickify">Yes, a Brick profile with calls and texts only</td></tr>
+      <tr><th scope="row">Open one app at a time</th><td data-label="Screenable">Choose which apps stay on the phone</td><td class="us" data-label="Brickify">Choose the apps for each profile, and add one at a time as trust grows</td></tr>
+      <tr><th scope="row">Where you control it</th><td data-label="Screenable">From the parent's own phone</td><td class="us" data-label="Brickify">On the phone itself, behind your PIN plus a second factor</td></tr>
+      <tr><th scope="row">Families on both iPhone and Android</th><td data-label="Screenable">iPhone only</td><td class="us" data-label="Brickify">The same app on both</td></tr>
+      <tr><th scope="row">Use it on your own phone</th><td data-label="Screenable">Built for children's devices</td><td class="us" data-label="Brickify">Yes, for your own digital detox too</td></tr>
+      <tr class="other-wins"><th scope="row">What it costs</th><td data-label="Screenable">Free</td><td data-label="Brickify">$4.99 / £4.99 once</td></tr>
+      <tr class="other-wins"><th scope="row">Screen-time limits and reports</th><td data-label="Screenable">Daily and per-app limits, with weekly reports</td><td data-label="Brickify">No minute limits: apps are on or off by schedule</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Screenable details are from its <a href="https://apps.apple.com/us/app/screenable-better-screen-time/id6477620270" target="_blank" rel="noopener">App Store listing</a> and <a href="https://getscreenable.com/features" target="_blank" rel="noopener">website</a>, checked on 21 October 2026. Apps change, so check their listing for the latest.</p>
+
+  <h2>Which one fits?</h2>
+  <p>If your family is all on iPhone and a Dumb Phone mode with a bedtime lock is enough, Screenable is free and well reviewed. Try it.</p>
+  <p>Brickify is for families with an Android phone in the mix, who want the phone to change through the week by itself, or who want to use the same rules on their own phone. Every family is different, so <a href="guides/index.html#families">see how other families set up their week</a>.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="why-brickify.html">Why Brickify</a>
+        <a href="compatibility.html">Which phones work?</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="help.html">Help</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="information.html">Information</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

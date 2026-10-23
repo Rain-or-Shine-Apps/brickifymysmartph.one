@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dismiss-alert.html
+
+Sitemap: https://brickifymysmartph.one/sitemap.xml

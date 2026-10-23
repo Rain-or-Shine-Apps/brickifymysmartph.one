@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify Guide — Set up your own phone for a digital detox</title>
+  <meta name="description" content="Use Brickify on yourself — a real circuit breaker between you and the apps you can't put down, with someone else holding the key."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/guides/digital-detox.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify Guide — Set up your own phone for a digital detox"/>
+  <meta property="og:description" content="Use Brickify on yourself — a real circuit breaker between you and the apps you can't put down, with someone else holding the key."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/guides/digital-detox.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify Guide — Set up your own phone for a digital detox"/>
+  <meta name="twitter:description" content="Use Brickify on yourself — a real circuit breaker between you and the apps you can't put down, with someone else holding the key."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+    .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 16px 0; }
+    .card { background: var(--card); border-radius: 14px; padding: 18px; border: 1px solid #e8e0db; }
+    .card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--dark); }
+    .card p { font-size: 13px; margin: 0; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e8e0db; color: var(--mid); vertical-align: top; }
+    td:first-child { color: var(--dark); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Guides</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../information.html">Information</a>
+      <a href="../help.html">Help</a>
+      <a href="../faq.html">FAQ</a>
+    </nav>
+    <a href="../index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <div class="eyebrow">Brickify Guide</div>
+  <h1>Set up your own phone for a digital detox</h1>
+  <p>The problem with "I'll just not open the app" is that it doesn't work. Brickify puts a real second person between you and the apps you can't self-regulate around.</p>
+</div>
+
+<div class="container">
+  <a href="index.html" class="back">← All guides</a>
+
+  <p>Unlike a parent locking a child's phone, this is you locking your own — on purpose, with a friend or partner holding the piece you don't have. That's the whole mechanism: willpower doesn't have to hold at 11pm if unlocking genuinely isn't up to you alone.</p>
+
+  <h2>Setup</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>Choose a PIN — then hand off the second factor</h3>
+        <p>During setup, pick an authenticator app or email code as your second factor. Then give that piece to someone you trust: install the authenticator on <em>their</em> phone, or use an email address only they can access. Knowing your own PIN isn't enough to get back in without them.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>Block the apps that actually get you</h3>
+        <p>Be specific rather than blocking everything — a phone with no apps at all just gets deleted or ignored. Target the two or three you genuinely lose hours to.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>Decide: always-on, or scheduled?</h3>
+        <p>Two ways to run this — pick whichever matches the problem:</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Always blocked</h3>
+      <p>Leave your profile as the default with no schedule. Tap BRICK when you're ready to commit. Only your second-factor holder can undo it — there's no "just for five minutes."</p>
+    </div>
+    <div class="card">
+      <h3>Blocked at the times you actually struggle</h3>
+      <p>e.g. midnight–7am for late-night scrolling. Create a second profile scheduled for that window with the block list on it; keep your default profile open the rest of the day.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>For the scheduled version:</strong> set the profile up like an overnight window — start time <code>00:00</code>, end time <code>07:00</code>, every day (or just the nights that are actually a problem). Brickify treats an overnight window as normal; it doesn't need to be "all day" to wrap past midnight.</p>
+    <p>Tap BRICK once to arm it, and it repeats every night on its own from then on — no re-arming required.</p>
+  </div>
+
+  <h2>Worth doing too</h2>
+  <ul>
+    <li><strong>Screen Time / Device Admin</strong> — set this up so you can't just delete the app at 1am to get around it. That defeats the entire point.</li>
+    <li><strong>Recovery codes</strong> — write them down and store them somewhere your future, tempted self won't think to look, but you'll find in a genuine emergency.</li>
+    <li><strong>Be honest about scope</strong> — block what you actually struggle with. A profile that blocks everything tends to get abandoned within a week; one that blocks the two apps that matter tends to stick.</li>
+  </ul>
+
+  <h2>Your profile at a glance</h2>
+  <p>Pick one approach — you don't need both.</p>
+  <table>
+    <thead><tr><th>Profile</th><th>Default?</th><th>Blocks</th><th>Schedule</th></tr></thead>
+    <tbody>
+      <tr><td>Default (always blocked)</td><td>Yes</td><td>The 2–3 apps you actually struggle with</td><td>Always active — no schedule needed</td></tr>
+      <tr><td>Overnight (scheduled instead)</td><td>No</td><td>Same apps, on a dedicated second profile</td><td>e.g. 00:00–07:00, every night</td></tr>
+    </tbody>
+  </table>
+
+  <div class="next">
+    <a href="revision-mode.html">→ Set up a revision-friendly phone</a>
+    <a href="school-phone.html">→ Set up your 10-year-old's phone for school</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="../how-it-works.html">How it works</a>
+        <a href="../why-brickify.html">Why Brickify</a>
+        <a href="../compatibility.html">Which phones work?</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="../help.html">Help</a>
+        <a href="../troubleshooting.html">Troubleshooting</a>
+        <a href="../information.html">Information</a>
+        <a href="../faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

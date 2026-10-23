@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brickify — iOS setup guide</title>
+  <meta name="description" content="Step-by-step guide to setting up Brickify's full iOS protection using Apple's Family Controls and a Screen Time passcode."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/ios-device-setup.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Brickify — iOS setup guide"/>
+  <meta property="og:description" content="Step-by-step guide to setting up Brickify's full iOS protection using Apple's Family Controls and a Screen Time passcode."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/ios-device-setup.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Brickify — iOS setup guide"/>
+  <meta name="twitter:description" content="Step-by-step guide to setting up Brickify's full iOS protection using Apple's Family Controls and a Screen Time passcode."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --mid: #9b8a7c; --cream: #F6E9D2; --card: #ffffff; --red: #b91c1c; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--dark); padding: 40px 24px; text-align: center; }
+    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
+    .header .eyebrow { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .header h1 { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-top: 8px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .header p { color: rgba(255,255,255,0.55); margin-top: 10px; font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
+    .header-links a:hover { color: #fff; text-decoration: none; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
+
+    h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin: 36px 0 12px; letter-spacing: -0.3px; }
+    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    ul, ol { color: var(--mid); padding-left: 20px; margin-bottom: 10px; font-size: 15px; }
+    li { margin-bottom: 6px; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; }
+
+    .highlight { background: rgba(182,90,61,0.07); border-left: 3px solid var(--brick); border-radius: 0 10px 10px 0; padding: 16px 18px; margin: 18px 0; }
+    .highlight p { margin: 0; color: #83412C; font-size: 14px; }
+    .highlight p + p { margin-top: 8px; }
+
+    .warning { background: rgba(239,68,68,0.08); border-left: 3px solid var(--red); border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 24px 0; }
+    .warning h3 { color: var(--red); font-size: 15px; margin: 0 0 6px; }
+    .warning p { color: var(--red); margin: 0; font-size: 14px; }
+
+    .next { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e0db; }
+    .next a { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
+    .footer a { color: var(--brick); }
+  </style>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+    
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="information.html">Information</a>
+      <a href="help.html">Help</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a href="index.html#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="header">
+  <div class="eyebrow">Brickify Guide</div>
+  <h1>iOS setup</h1>
+  <p>No factory reset needed on iPhone — Brickify's protection comes from Apple's own Family Controls framework, set up entirely within the app.</p>
+</div>
+
+<div class="container">
+  <a href="guides/index.html" class="back">← Back to Guides</a>
+
+  <p>Brickify on iOS uses the Family Controls and Screen Time native controls Apple already provides, then adds
+  extra features on top — automatically switching between schedules, and warning you if actions you don't want
+  are taken.</p>
+
+  <h2>Setup</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>Install and buy Brickify</h3>
+        <p>Download Brickify from the App Store on the phone that's about to become your child's. Tap "Buy Brickify" and complete the one-time purchase.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>PIN</h3>
+        <p>Brickify's own 4-digit passcode — one you'll remember but won't enter on impulse.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>2nd factor</h3>
+        <p>Parent PIN, authenticator app, or email code — backs up your passcode so losing one doesn't lock you out for good.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>Recovery codes</h3>
+        <p>Three one-time backup codes. Write them down — they won't be shown again.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">5</div>
+      <div class="step-body">
+        <h3>Profile</h3>
+        <p>Name it and choose which apps it blocks. This is where iOS asks you to grant <strong>Family Controls
+        permission</strong> — it's what lets Brickify actually block apps at the system level, independently of the
+        app itself.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">6</div>
+      <div class="step-body">
+        <h3>Notify email</h3>
+        <p>Where Brickify emails you if something needs attention — the device goes silent, its protection gets
+        removed, or (despite blocking) a new app appears.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">7</div>
+      <div class="step-body">
+        <h3>Screen Time</h3>
+        <p>The last onboarding step walks you to Settings → Screen Time. Turn on "Use Screen Time Passcode" (a
+        4-digit code the child doesn't know — you can reuse the same digits as your Brickify passcode from step 2,
+        one PIN to remember instead of two), then enable Content &amp; Privacy Restrictions and set "Deleting Apps"
+        to <strong>Don't Allow</strong>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">8</div>
+      <div class="step-body">
+        <h3>Unlock Brickify</h3>
+        <p>Pay, or Restore Purchases if you already bought it on this Apple ID.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Why the Screen Time passcode matters:</strong> without it, a child can delete Brickify from the phone. The app's blocks stay in place either way (iOS enforces Family Controls independently of whether Brickify is still installed) — but you lose the ability to unbrick or run any schedule until it's reinstalled. Blocking app deletion in Screen Time stops that scenario before it starts.</p>
+  </div>
+
+  <div class="warning">
+    <h3>⚠️ The parent's Apple ID matters</h3>
+    <p>Family Controls is tied to whichever Apple ID set it up. If your child knows your Apple ID password, they can remove the restriction directly via Settings → Screen Time on their own, bypassing Brickify entirely. Use a strong, unique password your child doesn't know.</p>
+  </div>
+
+  <div class="next">
+    <a href="risks.html#ios">→ See what Brickify on iOS is and isn't hardened against</a>
+    <a href="troubleshooting.html">→ Troubleshooting</a>
+    <a href="help.html">→ Support &amp; accessibility</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="why-brickify.html">Why Brickify</a>
+        <a href="compatibility.html">Which phones work?</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="help.html">Help</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="information.html">Information</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

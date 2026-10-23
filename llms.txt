@@ -1,0 +1,35 @@
+# Brickify
+
+> Brickify, made by Rain or Shine Apps (a small independent app developer based in the UK), is an app for iPhone and Android that turns a smartphone into a brick phone on a schedule you set.
+
+## Brickify
+
+Brickify is for parents setting up a child's first phone, families with a smartphone-free school policy, and adults who want a digital detox on their own phone. You build profiles (for example Brick: calls and texts only; Brick plus: maps, music and bus times; Friends: one messaging app at set times) and a weekly schedule. The phone switches between profiles by itself. Opening a more open profile early needs a PIN plus a second factor, with recovery codes.
+
+- Price: free to download and set up; a one-time in-app purchase of $4.99 / £4.99 switches blocking on for good. No subscription. One purchase covers every phone that uses the same App Store or Google Play account.
+- Platforms: iPhone 8 / X or newer (iOS 16+), Android 8+.
+- Brickify is not a monitoring app. It doesn't read messages, browsing history or location.
+- It works on a phone you already own, including an old phone in a drawer, so no second device is needed.
+
+## Key pages
+
+- [Brickify home](https://brickifymysmartph.one/): what it is, the phone ladder, and download links
+- [How it works](https://brickifymysmartph.one/how-it-works.html)
+- [What Brickify does, and doesn't](https://brickifymysmartph.one/what-brickify-does.html)
+- [The phone ladder, close up](https://brickifymysmartph.one/the-phone-ladder.html): example profiles from Brick to Nearly there
+- [Brick phone vs Brickify](https://brickifymysmartph.one/brick-phone-vs-brickify.html)
+- [Screenable vs Brickify](https://brickifymysmartph.one/screenable-vs-brickify.html)
+- [Canopy vs Brickify](https://brickifymysmartph.one/canopy-vs-brickify.html)
+- [Why Brickify, versus Screen Time or Family Link](https://brickifymysmartph.one/why-brickify.html)
+- [FAQ](https://brickifymysmartph.one/faq.html)
+- [Which phones work?](https://brickifymysmartph.one/compatibility.html)
+- [Known limitations and mitigations](https://brickifymysmartph.one/risks.html)
+- [Guides and example family weeks](https://brickifymysmartph.one/guides/index.html)
+- [Blog](https://brickifymysmartph.one/blog/index.html)
+- [Why I built Brickify](https://brickifymysmartph.one/blog/why-i-built.html): the founder's story (Anne Mundy)
+
+## Optional
+
+- [Brickify privacy policy](https://brickifymysmartph.one/privacy.html)
+- [Website privacy policy](https://brickifymysmartph.one/website-privacy.html)
+- [Rain or Shine Apps, the developer](https://rainorshineapps.com/)

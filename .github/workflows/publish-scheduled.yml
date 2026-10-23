@@ -1,0 +1,32 @@
+name: Publish scheduled blog posts
+
+on:
+  schedule:
+    # 07:00 UTC = 7am UK in winter (8am in summer). GitHub can start runs late at busy times.
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-scheduled
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Publish posts due today
+        run: node .github/scripts/publish-scheduled.mjs
+
+      - name: Commit and push
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Nothing to commit."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish scheduled blog posts ($(TZ=Europe/London date +%F))"
+          git push

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inside Brickify: how the PIN + second factor actually works - Brickify Blog</title>
+  <meta name="description" content="Why it takes two keys to unbrick a phone, when you'd need to, and what happens if you lose both: recovery codes, support and a last resort."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/blog/inside-brickify.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Inside Brickify: how the PIN + second factor actually works"/>
+  <meta property="og:description" content="Why it takes two keys to unbrick a phone, when you'd need to, and what happens if you lose both: recovery codes, support and a last resort."/>
+  <meta property="og:url" content="https://brickifymysmartph.one/blog/inside-brickify.html"/>
+  <meta property="og:image" content="https://brickifymysmartph.one/blog/images/inside-brickify-share.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Inside Brickify: how the PIN + second factor actually works"/>
+  <meta name="twitter:description" content="Why it takes two keys to unbrick a phone, when you'd need to, and what happens if you lose both: recovery codes, support and a last resort."/>
+  <meta name="twitter:image" content="https://brickifymysmartph.one/blog/images/inside-brickify-share.jpg"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Inside Brickify: how the PIN + second factor actually works",
+    "description": "Why it takes two keys to unbrick a phone, when you'd need to, and what happens if you lose both: recovery codes, support and a last resort.",
+    "image": "https://brickifymysmartph.one/blog/images/inside-brickify-share.jpg",
+    "datePublished": "2026-10-13",
+    "author": { "@type": "Organization", "name": "Rain or Shine Apps" },
+    "publisher": { "@type": "Organization", "name": "Rain or Shine Apps" },
+    "mainEntityOfPage": "https://brickifymysmartph.one/blog/inside-brickify.html"
+  }
+  </script>
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+  <link rel="stylesheet" href="blog.css"/>
+  <style>
+    :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
+  </style>
+  <script type="module" src="/assets/heycatch.js"></script>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
+</head>
+<body data-app="brickify">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../guides/index.html">Guides</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../information.html">Information</a>
+      <a href="../help.html">Help</a>
+      <a href="../faq.html">FAQ</a>
+    </nav>
+    <a href="#download" class="btn btn-sm">Get the app</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- 1. HEADER + 2. SUBHEADER -->
+  <section class="post-hero">
+    <div class="wrap">
+      <div class="eyebrow">Brickify Blog</div>
+      <h1>Inside Brickify: how the PIN + second factor actually works</h1>
+      <p class="subheader">Why it takes two keys to unbrick a phone, and what happens if you lose both.</p>
+      <p class="meta"><time datetime="2026-10-13">13 October 2026</time></p>
+    </div>
+  </section>
+
+  <article class="post">
+    <a href="index.html" class="back">&larr; Back to Blog</a>
+
+    <figure class="post-figure square">
+      <img src="images/inside-brickify.webp" alt="Two keys on a key ring, one tagged PIN and one tagged 2nd factor, beside Brickify's welcome screen and its authenticator code screen. Text: Two keys to unbrick. Your PIN and a second factor. Neither one works alone." width="1200" height="1200">
+      <figcaption>See <a href="../risks.html">Known limitations &amp; accepted risks</a>.</figcaption>
+    </figure>
+
+    <div class="post-body">
+      <h2>Why would you need to unbrick?</h2>
+      <p class="intro">Usually, once you've set up your blocking profiles and started Brickify, it cycles through them on its own, switching at the times you've chosen.</p>
+      <p>You only need to unbrick if you want to open an app while it's blocked, or change anything in your Brickify setup. If you've allowed the Google Play Store or Apple App Store, you might install a new app that needs adding to a profile. I'd recommend blocking the app stores in your Bricked profiles so this doesn't happen.</p>
+      <p>More likely, you'll want to change the times of a profile. Maybe it's revision season and everything needs to be Bricked all the time. Maybe it's the holidays and every day should be on "weekend mode".</p>
+
+      <h2>How do you unbrick?</h2>
+      <p>There's a clear Unbrick button in the app. Tap it and it asks for your PIN and your second factor. You set both up during onboarding.</p>
+      <ul>
+        <li><strong>PIN:</strong> a 4-digit code, one you'll remember but won't enter on impulse. If you're using Brickify on your child's phone, don't tell them the PIN, and don't reuse one they might already know, like your own phone's passcode.</li>
+        <li><strong>Second factor:</strong> an authenticator app or an email code. It's an optional step in setup, but I'd strongly recommend it: without it, the PIN alone unlocks Brickify. Put the authenticator app on your own phone, or use your own email address, so the code never appears on your child's phone.</li>
+      </ul>
+      <figure class="post-figure portrait screenshot">
+        <img src="../images/screen-1.webp" alt="Brickify's Phone Bricked screen, with an Unbrick button, an Emergency Call button and a link: Locked out? Use a recovery code." width="600" height="1300" loading="lazy">
+        <figcaption>The bricked screen. Unbrick needs both keys; "Locked out?" takes a recovery code.</figcaption>
+      </figure>
+    </div>
+
+    <aside class="post-aside">
+      <img src="images/old-phone-first-phone-thinking.webp" alt="" width="1200" height="1200" loading="lazy">
+      <div>
+        <h2>Critical thinking check</h2>
+        <p class="question">"Four digits? A child can shoulder-surf that in a day."</p>
+        <p>That's why there's a second factor. Seeing the PIN isn't enough without the code from your phone or inbox, and repeated wrong guesses lock the screen for a while.</p>
+      </div>
+    </aside>
+
+    <div class="post-body">
+      <h2>What happens if you lose both?</h2>
+      <p>Oops. Now you need your recovery codes: three one-time codes shown during onboarding. You'll have been prompted to write them down or screenshot them, because they won't be shown again. Keep them somewhere safe, and not on the Bricked phone.</p>
+      <p>To use one, tap "Locked out? Use a recovery code" on the bricked screen and type it in. Each code works once.</p>
+      <p>If you've lost those too, <a href="../support.html#locked-out">contact support</a> with the device ID shown on the recovery screen, and we can provide a recovery code as a last resort. If even that isn't possible, a factory reset removes all restrictions, but it erases everything on the phone.</p>
+    </div>
+
+    <div class="post-body">
+      <h2>More on this</h2>
+      <ul class="useful-links">
+        <li><a href="../how-it-works.html">How Brickify works: the five setup steps</a></li>
+        <li><a href="../guides/index.html">Guides with example profiles: school phone, weekend apps, revision, digital detox</a></li>
+        <li><a href="../android-device-owner-setup.html">Android setup guide</a> and <a href="../ios-device-setup.html">iPhone setup guide</a></li>
+      </ul>
+    </div>
+
+    <section class="post-download" id="download" data-location="blog-post">
+      <h2>Ready to Brickify it?</h2>
+      <p>On your schedule. One-time purchase, no tracking.</p>
+      <div class="badges">
+        <a class="badge-link" data-store="ios" href="https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="180" height="60" loading="lazy"></a>
+        <a class="badge-link" data-store="android" href="https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify" target="_blank" rel="noopener"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="202" height="60" loading="lazy"></a>
+      </div>
+    </section>
+
+    <nav class="post-next" aria-label="More from Brickify">
+      <h4>Keep reading</h4>
+      <a href="willpower-not-strategy.html">&rarr; Screen Time vs Brickify: Why willpower isn't a strategy</a>
+      <a href="why-i-built.html">&rarr; Why I built Brickify</a>
+      <a href="index.html">&rarr; More from the Brickify blog</a>
+      <a href="../how-it-works.html">&rarr; How Brickify works</a>
+      <a href="../why-brickify.html">&rarr; Why Brickify, versus Screen Time or Family Controls</a>
+    </nav>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h4>Brickify</h4>
+        <a href="../how-it-works.html">How it works</a>
+        <a href="../why-brickify.html">Why Brickify</a>
+        <a href="../compatibility.html">Which phones work?</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../blog/index.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="../help.html">Help</a>
+        <a href="../troubleshooting.html">Troubleshooting</a>
+        <a href="../information.html">Information</a>
+        <a href="../faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="/website-privacy.html">Website privacy</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
+      <div>
+        <h4>Rain or Shine Apps</h4>
+        <a href="https://rainorshineapps.com/">All our apps</a>
+      </div>
+    </div>
+    <img class="footer-logo" src="/images/logo.png" alt="Brickify" width="84" height="84" loading="lazy">
+    <p class="footer-base">© 2026 Rain or Shine Apps. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
