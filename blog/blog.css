@@ -37,7 +37,7 @@
 .post-download .badge-link.is-suggested { box-shadow: 0 0 0 4px rgba(255,255,255,.55); }
 
 .post-next { margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--line); }
-.post-next h4 { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: 10px; }
+.post-next h2 { font-size: 13px; line-height: 1.6; font-weight: 900; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: 10px; }
 .post-next a { display: block; font-weight: 800; margin-bottom: 6px; text-decoration: none; }
 .post-next a:hover { text-decoration: underline; }
 
@@ -70,13 +70,13 @@
 .slide { flex: 0 0 100%; scroll-snap-align: start; display: grid; grid-template-columns: minmax(0, 46%) 1fr; gap: 24px; align-items: center; background: var(--surface); border: 2px solid var(--line); border-bottom-width: 5px; border-radius: 24px; padding: 20px; }
 .slide img { width: 100%; border-radius: 16px; aspect-ratio: 4 / 5; object-fit: cover; }
 .slide-n { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .8px; color: var(--brand); }
-.slide h3 { font-size: 22px; font-weight: 900; color: var(--brand-dark); line-height: 1.25; margin: 6px 0 10px; }
+.slide h3, .slide h2 { font-size: 22px; font-weight: 900; color: var(--brand-dark); line-height: 1.25; margin: 6px 0 10px; }
 .slide p { font-size: 16px; line-height: 1.65; color: var(--ink); }
 .slide p + p { margin-top: 10px; }
 @media (max-width: 600px) {
   .slide { grid-template-columns: 1fr; gap: 14px; padding: 14px; align-items: start; }
   .slide img { max-width: 320px; margin: 0 auto; }
-  .slide h3 { font-size: 20px; }
+  .slide h3, .slide h2 { font-size: 20px; }
 }
 .slider-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; }
 .slider-nav .arrow { width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; border: 2px solid var(--line); border-bottom-width: 4px; background: var(--surface); color: var(--brand); font: 900 20px/1 var(--font); cursor: pointer; }
@@ -182,7 +182,9 @@
 .post-download p { color: #fff; opacity: 1; }
 
 .post-next { border-top: 0; padding: 22px 24px; border-radius: 20px; background: var(--bk-cream); }
-.post-next h4 { color: var(--bk-teal-deep); }
+.post-next h2 { color: var(--bk-teal-deep); }
+.post .post-next h2 { margin-top: 0; padding-left: 0; }
+.post .post-next h2::before { display: none; }
 .post-next a { color: var(--bk-pink-deep); }
 
 /* News round-up items (five-things post): numbered cards in alternating colours */
@@ -203,6 +205,8 @@
 .blog-hero .back:hover { color: #fff; text-decoration: underline; }
 .blog-hero h1 { margin-top: 14px; color: var(--bk-cream); font-size: clamp(40px, 7vw, 72px); font-weight: 900; letter-spacing: -.02em; line-height: 1.02; text-shadow: 0 2px 0 rgba(0,0,0,.12); }
 .blog-hero p { max-width: 30em; margin-top: 12px; color: #fff; font-size: clamp(19px, 2.4vw, 22px); font-weight: 700; line-height: 1.4; }
+.blog-hero p a { color: inherit; }
+.blog-hero .meta { font-size: 13px; font-weight: 800; color: rgba(255,255,255,.88); margin-top: 10px; }
 
 .blog-home { padding-bottom: 72px; }
 /* search + pillar filter (blog-filter.js shows it; hidden without JS) */
@@ -325,3 +329,5 @@
 .rung-links a { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border-radius: 18px; background: var(--bk-cream-2); text-decoration: none; box-shadow: 0 4px 0 rgba(0,0,0,.13); }
 .rung-links b { color: var(--bk-brick); font-size: 16px; font-weight: 900; line-height: 1.25; }
 .rung-links small { color: var(--muted); font-size: 14px; }
+.post-body .slide h2 { padding-left: 0; letter-spacing: 0; }
+.post-body .slide h2::before { display: none; }

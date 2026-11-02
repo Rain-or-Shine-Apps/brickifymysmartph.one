@@ -14,7 +14,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{TITLE}} - Brickify Blog</title>
+  <title>{{TITLE}}</title>
   <meta name="description" content="{{SUMMARY}}"/>
   <link rel="canonical" href="https://brickifymysmartph.one/blog/{{SLUG}}.html"/>
   <meta property="og:type" content="article"/>
@@ -34,8 +34,9 @@
     "description": "{{SUMMARY}}",
     "image": "https://brickifymysmartph.one/blog/images/{{IMAGE_FILE}}",
     "datePublished": "{{DATE_ISO}}",
-    "author": { "@type": "Organization", "name": "Rain or Shine Apps" },
-    "publisher": { "@type": "Organization", "name": "Rain or Shine Apps" },
+    "dateModified": "{{DATE_ISO}}",
+    "author": { "@type": "Person", "@id": "https://brickifymysmartph.one/#anne", "name": "Anne Mundy", "jobTitle": "Founder", "url": "https://brickifymysmartph.one/why-brickify.html#story", "sameAs": ["https://www.linkedin.com/in/anne-mundy-8680b5191"] },
+    "publisher": { "@type": "Organization", "@id": "https://brickifymysmartph.one/#org", "name": "Rain or Shine Apps" },
     "mainEntityOfPage": "https://brickifymysmartph.one/blog/{{SLUG}}.html"
   }
   </script>
@@ -78,7 +79,7 @@
       <div class="eyebrow">Family story</div>
       <h1>{{TITLE}}</h1>
       <p class="subheader">{{SUBHEADER}}</p>
-      <p class="meta"><time datetime="{{DATE_ISO}}">{{DATE_LONG}}</time></p>
+      <p class="meta"><time datetime="{{DATE_ISO}}">{{DATE_LONG}}</time> &middot; By <a href="../why-brickify.html#story">Anne Mundy</a></p>
     </div>
   </section>
 
@@ -135,7 +136,7 @@
     </section>
 
     <nav class="post-next" aria-label="More from Brickify">
-      <h4>Keep reading</h4>
+      <h2>Keep reading</h2>
       <a href="index.html">&rarr; More from Parenting &amp; phones</a>
       <a href="../how-it-works.html">&rarr; How Brickify works</a>
       <a href="../how-it-works.html#native">&rarr; Brickify vs Screen Time and Family Link</a>
@@ -147,7 +148,7 @@
   <div class="wrap">
     <div class="footer-cols">
       <div>
-        <h4>Brickify</h4>
+        <h2>Brickify</h2>
         <a href="../how-it-works.html">How it works</a>
         <a href="../blog/index.html">Parenting &amp; phones</a>
         <a href="../why-brickify.html">Why Brickify</a>
@@ -155,20 +156,20 @@
         <a href="../compatibility.html">Which phones work?</a>
       </div>
       <div>
-        <h4>Support</h4>
+        <h2>Support</h2>
         <a href="../help.html">Help</a>
         <a href="../faq.html">FAQ</a>
         <a href="../troubleshooting.html">Troubleshooting</a>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h2>Legal</h2>
         <a href="../privacy.html">Privacy</a>
         <a href="../terms.html">Terms</a>
         <a href="/website-privacy.html">Website privacy</a>
         <button type="button" data-cookie-settings>Cookie settings</button>
       </div>
       <div>
-        <h4>Rain or Shine Apps</h4>
+        <h2>Rain or Shine Apps</h2>
         <a href="https://rainorshineapps.com/">All our apps</a>
       </div>
     </div>

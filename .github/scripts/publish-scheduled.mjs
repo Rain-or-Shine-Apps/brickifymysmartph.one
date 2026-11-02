@@ -53,9 +53,9 @@ for (const p of due) {
     const sm = path.join(ROOT, 'sitemap.xml');
     const xml = read(sm);
     if (!xml.includes(`<loc>${p.sitemap}</loc>`)) {
-      const anchor = '<loc>https://brickifymysmartph.one/blog/index.html</loc>\n    <priority>0.6</priority>\n  </url>\n';
-      if (!xml.includes(anchor)) throw new Error('blog index entry not found in sitemap.xml');
-      write(sm, xml.replace(anchor, anchor + `  <url>\n    <loc>${p.sitemap}</loc>\n    <priority>0.5</priority>\n  </url>\n`));
+      const anchor = /(<loc>https:\/\/brickifymysmartph\.one\/blog\/index\.html<\/loc>\n\s*<lastmod>)[^<]*(<\/lastmod>[\s\S]*?<\/url>\n)/;
+      if (!anchor.test(xml)) throw new Error('blog index entry not found in sitemap.xml');
+      write(sm, xml.replace(anchor, (_, a, b) => `${a}${p.publish}${b}  <url>\n    <loc>${p.sitemap}</loc>\n    <lastmod>${p.publish}</lastmod>\n    <priority>0.5</priority>\n  </url>\n`));
     }
   }
 

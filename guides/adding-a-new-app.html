@@ -40,7 +40,7 @@
     .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
     .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
     .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
+    .step-body h2 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
     .step-body p { margin: 0; font-size: 14px; }
     .step-body p + p { margin-top: 8px; }
     .step-body code { background: rgba(182,90,61,0.08); color: var(--brick); padding: 1px 6px; border-radius: 5px; font-size: 13px; font-weight: 600; }
@@ -57,6 +57,55 @@
     .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
     .footer a { color: var(--brick); }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Adding a new app to your child's phone",
+    "description": "A new app just got installed — how to unbrick, install it, decide which profiles should block it, and re-brick.",
+    "dateModified": "2026-11-02",
+    "author": {
+      "@type": "Person",
+      "@id": "https://brickifymysmartph.one/#anne",
+      "name": "Anne Mundy",
+      "jobTitle": "Founder",
+      "url": "https://brickifymysmartph.one/why-brickify.html#story",
+      "sameAs": ["https://www.linkedin.com/in/anne-mundy-8680b5191"]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://brickifymysmartph.one/#org",
+      "name": "Rain or Shine Apps"
+    },
+    "mainEntityOfPage": "https://brickifymysmartph.one/guides/adding-a-new-app.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://brickifymysmartph.one/#org",
+    "name": "Rain or Shine Apps",
+    "url": "https://brickifymysmartph.one/",
+    "logo": "https://brickifymysmartph.one/images/favicon-192.png",
+    "email": "hello@rainorshineapps.com",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://brickifymysmartph.one/#anne",
+      "name": "Anne Mundy",
+      "jobTitle": "Founder",
+      "url": "https://brickifymysmartph.one/why-brickify.html#story",
+      "sameAs": ["https://www.linkedin.com/in/anne-mundy-8680b5191"]
+    },
+    "sameAs": [
+      "https://apps.apple.com/us/app/brickify-your-smart-device/id6770530069",
+      "https://play.google.com/store/apps/details?id=com.rainorshineapps.brickify",
+      "https://www.instagram.com/brickify.my.smart.phone/",
+      "https://www.pinterest.com/brickify0174/",
+      "https://www.facebook.com/share/1DuF73uA9K"
+    ]
+  }
+  </script>
   <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
@@ -104,14 +153,14 @@
     <div class="step">
       <div class="step-n">1</div>
       <div class="step-body">
-        <h3>Unbrick the device</h3>
+        <h2>Unbrick the device</h2>
         <p>Open Brickify and tap <code>Unbrick</code> (or <code>Stop Brickify →</code> if nothing's actively blocking right now), then enter the PIN and second factor if one's set up. This is needed because the App Store or Play Store is commonly one of the apps a profile blocks.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">2</div>
       <div class="step-body">
-        <h3>Install the app</h3>
+        <h2>Install the app</h2>
         <p>Play Store (Android) or App Store (iOS) — search for it and install as normal.</p>
         <p><strong>Android:</strong> the app needs to actually be installed before it shows up in Brickify's block-list picker. <strong>iOS:</strong> Family Controls' picker works from Apple's whole catalog rather than what's installed on the phone, so it can technically be pre-blocked before installing — but installing first keeps the steps the same on both platforms.</p>
       </div>
@@ -119,7 +168,7 @@
     <div class="step">
       <div class="step-n">3</div>
       <div class="step-body">
-        <h3>Decide which profiles should block it</h3>
+        <h2>Decide which profiles should block it</h2>
         <p>Setup → Profiles. Block lists are set per-profile, not globally — open each profile where you want this app blocked and turn it on there; leave it off in any profile where it should be allowed (e.g. a Weekend profile).</p>
         <p><strong>Android:</strong> find it in the searchable app list and toggle it on. <strong>iOS:</strong> tap <code>Choose apps to block →</code> (or <code>Change apps to block →</code>) and reselect via Apple's picker, including the new app alongside whatever's already chosen.</p>
       </div>
@@ -127,7 +176,7 @@
     <div class="step">
       <div class="step-n">4</div>
       <div class="step-body">
-        <h3>Re-brick</h3>
+        <h2>Re-brick</h2>
         <p>Tap <code>Start Brickify</code> on the Home tab if it isn't already running — one tap, no PIN needed.</p>
       </div>
     </div>
@@ -151,7 +200,7 @@
   <div class="wrap">
     <div class="footer-cols">
       <div>
-        <h4>Brickify</h4>
+        <h2>Brickify</h2>
         <a href="../how-it-works.html">How it works</a>
         <a href="../blog/index.html">Parenting &amp; phones</a>
         <a href="../why-brickify.html">Why Brickify</a>
@@ -159,20 +208,20 @@
         <a href="../compatibility.html">Which phones work?</a>
       </div>
       <div>
-        <h4>Support</h4>
+        <h2>Support</h2>
         <a href="../help.html">Help</a>
         <a href="../faq.html">FAQ</a>
         <a href="../troubleshooting.html">Troubleshooting</a>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h2>Legal</h2>
         <a href="../privacy.html">Privacy</a>
         <a href="../terms.html">Terms</a>
         <a href="/website-privacy.html">Website privacy</a>
         <button type="button" data-cookie-settings>Cookie settings</button>
       </div>
       <div>
-        <h4>Rain or Shine Apps</h4>
+        <h2>Rain or Shine Apps</h2>
         <a href="https://rainorshineapps.com/">All our apps</a>
       </div>
     </div>

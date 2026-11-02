@@ -41,10 +41,10 @@ You can pick the slug yourself to know the URL in advance (e.g. for social posts
 
 ## Steps Claude follows
 
-1. Copy `_template.html` to `<slug>.html` and fill every `{{PLACEHOLDER}}` (title appears in several places, including the JSON-LD block).
+1. Copy `_template.html` to `<slug>.html` and fill every `{{PLACEHOLDER}}` (title appears in several places, including the JSON-LD block). Keep the `<title>` to 30–60 characters (shorten it there if the headline is longer; no " - Brickify Blog" suffix) and the meta description to 110–160. The byline and author markup are already in the template. Use `<h2>` for every section heading, with no `<h3>` before the first `<h2>`.
 2. Save the picture (and any MP4) to `blog/images/`, converted to `.webp` and resized to ~1200px wide.
 3. Remove the unused video option, or the whole video block if there's no video.
-4. Add a `.post-card` to the top of the list in `blog/index.html` (newest first), copying an existing card. Put the post's main picture in `.post-thumb` with `alt=""` (the card title already describes it) and its real `width`/`height`; any shape works, it's shown whole on a coloured panel. The newest card becomes the wide featured one automatically, and card colours cycle pink, teal, brick by position, so nothing else needs changing. No picture? Use `<span class="post-thumb post-thumb-art" aria-hidden="true"><span>…</span></span>` with a short word or number.
+4. Add a `.post-card` to the top of the list in `blog/index.html` (newest first), copying an existing card. Put the post's main picture in `.post-thumb` with the same `alt` text the post gives it (describe a video poster frame if there's no image alt) and its real `width`/`height`; any shape works, it's shown whole on a coloured panel. The newest card becomes the wide featured one automatically, and card colours cycle pink, teal, brick by position, so nothing else needs changing. No picture? Use `<span class="post-thumb post-thumb-art" aria-hidden="true"><span>…</span></span>` with a short word or number.
    Set the card's pillar: `data-pillar="product|parenting|family|story|christmas"` on the `<a class="post-card">` (space-separate for more than one), and the matching label in `<span class="post-pillar">` next to the date:
 
    | Key | Label | Pillar |
@@ -56,7 +56,7 @@ You can pick the slug yourself to know the URL in advance (e.g. for social posts
    | `christmas` | Christmas | seasonal |
 
    The keys match the `utm_campaign` values in the marketing tracker (`brickify-product` etc.), so don't rename them. A pillar's filter button only appears once it has a post.
-5. Add the URL to `/sitemap.xml` next to the other blog entries.
+5. Add the URL to `/sitemap.xml` next to the other blog entries, then run `node .github/scripts/sitemap-lastmod.mjs` to refresh the `<lastmod>` dates.
 6. Check no `{{` is left: `grep -n "{{" blog/<slug>.html`.
 7. Preview locally, then commit and push.
 

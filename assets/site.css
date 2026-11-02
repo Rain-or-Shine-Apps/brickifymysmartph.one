@@ -166,7 +166,7 @@ a { color: var(--brand); }
 /* ---------- Footer ---------- */
 .site-footer { background: var(--surface); border-top: 2px solid var(--line); padding: 56px 0 32px; font-size: 15px; }
 .footer-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 32px; margin-bottom: 40px; }
-.footer-cols h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .8px; color: var(--ink); font-weight: 900; margin-bottom: 12px; }
+.footer-cols h2 { font-size: 13px; line-height: 1.6; text-transform: uppercase; letter-spacing: .8px; color: var(--ink); font-weight: 900; margin-bottom: 12px; }
 .footer-cols a, .footer-cols button { display: block; color: var(--muted); text-decoration: none; font: 700 15px/1.4 var(--font); margin-bottom: 8px; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
 .footer-cols a:hover, .footer-cols button:hover { color: var(--brand); }
 .footer-base { color: var(--muted); font-size: 13px; text-align: center; border-top: 2px solid var(--line); padding-top: 24px; }
