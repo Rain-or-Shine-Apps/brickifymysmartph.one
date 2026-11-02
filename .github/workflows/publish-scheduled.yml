@@ -18,9 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0  # build-sitemap reads each page's last commit date
 
       - name: Publish posts due today
         run: node .github/scripts/publish-scheduled.mjs
+
+      - name: Rebuild sitemap
+        run: node .github/scripts/build-sitemap.mjs
 
       - name: Commit and push
         run: |

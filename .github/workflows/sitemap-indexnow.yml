@@ -1,0 +1,50 @@
+name: Sitemap and IndexNow
+
+# After every change to main: rebuild sitemap.xml from the pages, commit it if
+# it changed, then ping IndexNow with the pages that changed once they're live.
+# Pushes made by the publish workflow don't trigger "push", hence workflow_run.
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["Publish scheduled blog posts"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      base:
+        description: Ping pages changed since this commit (blank = rebuild sitemap only)
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap-indexnow
+  cancel-in-progress: false
+
+jobs:
+  sitemap:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0  # build-sitemap reads each page's last commit date
+
+      - name: Rebuild sitemap
+        run: node .github/scripts/build-sitemap.mjs
+
+      - name: Commit sitemap if it changed
+        run: |
+          if [ -z "$(git status --porcelain sitemap.xml)" ]; then echo "Sitemap up to date."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "Update sitemap"
+          git push
+
+      - name: Ping IndexNow
+        env:
+          BASE: ${{ github.event_name == 'push' && github.event.before || github.event.workflow_run.head_sha || inputs.base || '' }}
+        run: node .github/scripts/indexnow.mjs "$BASE"

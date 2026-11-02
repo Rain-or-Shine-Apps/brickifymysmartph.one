@@ -2,12 +2,14 @@
 //
 // Each scheduled post is a pair of files in _scheduled/:
 //   <YYYY-MM-DD>-<file>.html          the finished post
-//   <YYYY-MM-DD>-<anything>.json      { publish, file, sitemap, card, replace }
+//   <YYYY-MM-DD>-<anything>.json      { publish, file, card, replace }
 //     publish  date it goes live (UK time)
 //     file     published name inside blog/
-//     sitemap  URL to add to /sitemap.xml (optional)
 //     card     .post-card HTML for the top of blog/index.html (optional)
 //     replace  [{ file, find, with }] text swaps in already-live files (optional)
+//
+// The workflow rebuilds sitemap.xml afterwards (build-sitemap.mjs), so posts
+// don't need a sitemap entry. An old "sitemap" field in the JSON is ignored.
 //
 // Run: node .github/scripts/publish-scheduled.mjs [--today YYYY-MM-DD]
 import fs from 'node:fs';
@@ -47,16 +49,6 @@ for (const p of due) {
     const html = read(index);
     if (!html.includes(marker)) throw new Error('post-list not found in blog/index.html');
     if (!html.includes(`href="${p.file}" class="post-card"`)) write(index, html.replace(marker, marker + p.card));
-  }
-
-  if (p.sitemap) {
-    const sm = path.join(ROOT, 'sitemap.xml');
-    const xml = read(sm);
-    if (!xml.includes(`<loc>${p.sitemap}</loc>`)) {
-      const anchor = /(<loc>https:\/\/brickifymysmartph\.one\/blog\/index\.html<\/loc>\n\s*<lastmod>)[^<]*(<\/lastmod>[\s\S]*?<\/url>\n)/;
-      if (!anchor.test(xml)) throw new Error('blog index entry not found in sitemap.xml');
-      write(sm, xml.replace(anchor, (_, a, b) => `${a}${p.publish}${b}  <url>\n    <loc>${p.sitemap}</loc>\n    <lastmod>${p.publish}</lastmod>\n    <priority>0.5</priority>\n  </url>\n`));
-    }
   }
 
   for (const r of p.replace || []) {

@@ -56,7 +56,7 @@ You can pick the slug yourself to know the URL in advance (e.g. for social posts
    | `christmas` | Christmas | seasonal |
 
    The keys match the `utm_campaign` values in the marketing tracker (`brickify-product` etc.), so don't rename them. A pillar's filter button only appears once it has a post.
-5. Add the URL to `/sitemap.xml` next to the other blog entries, then run `node .github/scripts/sitemap-lastmod.mjs` to refresh the `<lastmod>` dates.
+5. Nothing to do for the sitemap: the "Sitemap and IndexNow" GitHub Action rebuilds `sitemap.xml` from the pages after every push (and after scheduled posts go out), then tells IndexNow which pages changed. To preview locally: `node .github/scripts/build-sitemap.mjs`. Pull after pushing, as the Action may commit an updated sitemap.
 6. Check no `{{` is left: `grep -n "{{" blog/<slug>.html`.
 7. Preview locally, then commit and push.
 
@@ -73,9 +73,9 @@ Give a `Date` in the future and Claude puts the post in `blog/_scheduled/` inste
 
 Each scheduled post is two files:
 - `_scheduled/<YYYY-MM-DD>-<slug>.html`, the finished post
-- `_scheduled/<YYYY-MM-DD>-<slug>.json`, which holds `publish` (the date), `file` (`<slug>.html`), `sitemap` (the URL), `card` (the `.post-card` HTML for `blog/index.html`, or `null` for no card) and `replace` (optional `{file, find, with}` swaps in posts that are already live, e.g. turning a "Next: opens tomorrow" line into a link)
+- `_scheduled/<YYYY-MM-DD>-<slug>.json`, which holds `publish` (the date), `file` (`<slug>.html`), `card` (the `.post-card` HTML for `blog/index.html`, or `null` for no card) and `replace` (optional `{file, find, with}` swaps in posts that are already live, e.g. turning a "Next: opens tomorrow" line into a link)
 
-The GitHub Action `.github/workflows/publish-scheduled.yml` runs at 07:00 UTC every day (7am UK in winter, 8am in summer). It moves anything due into `blog/`, adds the card and sitemap entry, applies the swaps, then commits and pushes. To publish early or re-run a missed day: GitHub → Actions → "Publish scheduled blog posts" → Run workflow. To test locally with a fake date: `node .github/scripts/publish-scheduled.mjs --today 2026-12-13` (then `git checkout .` to undo).
+The GitHub Action `.github/workflows/publish-scheduled.yml` runs at 07:00 UTC every day (7am UK in winter, 8am in summer). It moves anything due into `blog/`, adds the card, applies the swaps, rebuilds the sitemap, then commits and pushes. To publish early or re-run a missed day: GitHub → Actions → "Publish scheduled blog posts" → Run workflow. To test locally with a fake date: `node .github/scripts/publish-scheduled.mjs --today 2026-12-13` (then `git checkout .` to undo).
 
 Images go straight into `blog/images/`. They're unlinked until the post goes live.
 
