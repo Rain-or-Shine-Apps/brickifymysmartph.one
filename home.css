@@ -410,3 +410,7 @@ body{background:var(--brick)}
 .bk-quote figcaption img{width:44px;height:44px;flex:none;border-radius:50%;object-fit:cover}
 .bk-quote figcaption b{display:block;color:var(--ink)}
 .bk-people-sec .bk-link-sub{color:var(--muted)}
+
+/* In-app purchase graphic above "Ready to Brickify it?" */
+.cta-band .cta-art{display:block;width:160px;height:auto;margin:0 auto 18px}
+@media (max-width:560px){.cta-band .cta-art{width:120px}}

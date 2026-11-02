@@ -60,6 +60,10 @@
     /* ---------- Layer diagram (swipeable, starts at layer 1) ---------- */
     .section-h { font-size: 24px; font-weight: 900; color: var(--brand-dark); letter-spacing: -0.3px; margin: 0 0 8px; }
     .section-h.steps-h { margin-bottom: 16px; }
+    .steps-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+    .steps-head .steps-h { margin-bottom: 0; }
+    .steps-art { flex: none; width: 128px; height: auto; }
+    @media (max-width: 600px) { .steps-art { width: 88px; } }
     .section-h.layers-h { margin-top: 56px; }
     .layers-intro { color: var(--muted); font-size: 16px; margin: 0 0 14px; }
     .layers-key { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 16px; font-size: 13px; font-weight: 800; color: var(--muted); }
@@ -167,7 +171,10 @@
 
 <section class="band-section band-pink" id="steps">
 <div class="container">
-  <h2 class="section-h steps-h">How it works: five steps</h2>
+  <div class="steps-head">
+    <h2 class="section-h steps-h">How it works: five steps</h2>
+    <img class="steps-art" src="images/purchase-clock.webp" srcset="images/purchase-clock-240.webp 240w, images/purchase-clock.webp 480w" sizes="(max-width: 600px) 88px, 128px" alt="" width="480" height="501" loading="lazy">
+  </div>
   <div class="steps">
     <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Choose a passcode</h3><p>Set a 4-digit PIN you'll remember but won't enter on impulse.</p></div></div>
     <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Set a second factor</h3><p>Parent PIN, authenticator app, or email code. Both factors are required to unbrick — losing one doesn't lock you out forever.</p></div></div>
