@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       base:
-        description: Ping pages changed since this commit (blank = rebuild sitemap only)
+        description: Ping pages changed since this commit (blank = ping every page in the sitemap)
         required: false
 
 permissions:
@@ -46,5 +46,7 @@ jobs:
 
       - name: Ping IndexNow
         env:
-          BASE: ${{ github.event_name == 'push' && github.event.before || github.event.workflow_run.head_sha || inputs.base || '' }}
-        run: node .github/scripts/indexnow.mjs "$BASE"
+          BASE: ${{ github.event_name == 'push' && github.event.before || github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.event.inputs.base || '--all' }}
+        run: |
+          echo "Base: $BASE"
+          node .github/scripts/indexnow.mjs "$BASE"

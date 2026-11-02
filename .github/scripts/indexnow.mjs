@@ -4,7 +4,8 @@
 // changed or deleted since then, waits until GitHub Pages is serving the new
 // version, then sends them in a single POST.
 //
-// Run: node .github/scripts/indexnow.mjs <base-sha> [--dry-run]
+// Run: node .github/scripts/indexnow.mjs <base-sha | --all> [--dry-run]
+//   --all sends every sitemap page (used by a manual run with no base).
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -20,7 +21,9 @@ const dryRun = process.argv.includes('--dry-run');
 if (!base || /^0+$/.test(base)) { console.log('No base commit; nothing to send.'); process.exit(0); }
 
 const listed = new Map(listedPages().map(p => [p.file, p.url]));
-const changed = git('diff', '--name-status', '--no-renames', base, 'HEAD', '--', '*.html')
+const changed = base === '--all'
+  ? [...listed].map(([file, url]) => ({ file, deleted: false, url }))
+  : git('diff', '--name-status', '--no-renames', base, 'HEAD', '--', '*.html')
   .split('\n').filter(Boolean).map(l => l.split('\t'))
   // Deleted pages go too, so search engines learn they're gone.
   .filter(([status, f]) => listed.has(f) || (status === 'D' && !path.basename(f).startsWith('_')))
