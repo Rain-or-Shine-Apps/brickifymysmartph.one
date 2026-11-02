@@ -4,16 +4,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brickify — Why Brickify</title>
-  <meta name="description" content="Why parents choose Brickify over Apple Screen Time and Google Family Link, platform by platform."/>
+  <meta name="description" content="Why Brickify exists: the founder's story, why the phone ladder needed a middle rung, what came before it, and why families choose it."/>
   <link rel="canonical" href="https://brickifymysmartph.one/why-brickify.html"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Brickify — Why it beats native controls"/>
-  <meta property="og:description" content="Why parents choose Brickify over Apple Screen Time and Google Family Link, platform by platform."/>
+  <meta property="og:title" content="Brickify — Why Brickify"/>
+  <meta property="og:description" content="Why Brickify exists: the founder's story, why the phone ladder needed a middle rung, what came before it, and why families choose it."/>
   <meta property="og:url" content="https://brickifymysmartph.one/why-brickify.html"/>
   <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Brickify — Why it beats native controls"/>
-  <meta name="twitter:description" content="Why parents choose Brickify over Apple Screen Time and Google Family Link, platform by platform."/>
+  <meta name="twitter:title" content="Brickify — Why Brickify"/>
+  <meta name="twitter:description" content="Why Brickify exists: the founder's story, why the phone ladder needed a middle rung, what came before it, and why families choose it."/>
   <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,39 +23,48 @@
     a:hover { text-decoration: underline; }
 
     .header { background: var(--dark); padding: 40px 24px; text-align: center; }
-    .header .logo { width: 64px; height: 64px; display: block; margin: 0 auto 14px; }
     .header h1 { color: #fff; font-size: 28px; font-weight: 800; }
     .header p { color: rgba(255,255,255,0.55); margin-top: 8px; font-size: 15px; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .header-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
-    .header-links a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; }
-    .header-links a:hover { color: #fff; text-decoration: none; }
-    .header-links a.active { color: #fff; }
 
     .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
-    .back { display: inline-block; margin-bottom: 28px; color: var(--mid); font-size: 14px; font-weight: 600; }
 
-    .jump { display: flex; gap: 12px; margin-bottom: 8px; }
-    .jump a {
-      background: var(--card); border: 1px solid #e8e0db; border-radius: 10px;
-      padding: 8px 16px; font-size: 14px; font-weight: 700; color: var(--dark);
-    }
-    .jump a:hover { border-color: var(--brick); text-decoration: none; color: var(--brick); }
-
-    h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin: 40px 0 6px; letter-spacing: -0.3px; }
-    .vs { color: var(--mid); font-size: 14px; margin-bottom: 14px; }
-    p { color: var(--mid); margin-bottom: 10px; font-size: 15px; }
+    .section-h { font-size: 24px; font-weight: 900; color: var(--dark); letter-spacing: -0.3px; margin: 0 0 8px; }
+    .band-intro { color: var(--mid); font-size: 16px; margin-bottom: 16px; }
+    .band-text { color: var(--mid); font-size: 15px; margin-bottom: 12px; }
 
     .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
     .step { display: flex; gap: 16px; background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid #e8e0db; }
     .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--brick); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .step-body h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--dark); }
-    .step-body p { margin: 0; font-size: 14px; }
-
-    .facts { font-weight: 700; color: var(--dark); }
+    .step-body p { margin: 0; font-size: 14px; color: var(--mid); }
+    .facts { font-weight: 800; }
     .soon { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: var(--brick); color: #fff; font-size: 11px; font-weight: 800; vertical-align: 2px; }
 
-    .footer { text-align: center; padding: 32px 24px; color: #94a3b8; font-size: 13px; border-top: 1px solid #e8e0db; }
-    .footer a { color: var(--brick); }
+    /* Founder */
+    .founder { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: start; }
+    .founder img { width: 100%; height: auto; border-radius: 18px; border: 4px solid #fff; box-shadow: 0 18px 36px -20px rgba(0,0,0,.5); }
+    .founder blockquote { color: #fff; font-size: 20px; font-weight: 800; line-height: 1.35; margin-bottom: 12px; }
+    .founder cite { display: block; color: #fff; font-style: normal; font-size: 14px; font-weight: 700; margin-bottom: 14px; opacity: .9; }
+    .btn-light { display: inline-block; background: #fff; color: var(--pink-deep); font-weight: 800; font-size: 15px; padding: 10px 18px; border-radius: 999px; }
+    .btn-light:hover { text-decoration: none; opacity: .92; }
+    @media (max-width: 600px) { .founder { grid-template-columns: 1fr; } .founder img { max-width: 220px; } }
+
+    /* The ladder itself is in /ladder.css */
+    #middle-rung .bk-ladder { margin: 28px auto 36px; }
+    .options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 8px 0 16px; }
+    .option { background: var(--card); border: 1px solid #e8e0db; border-radius: 14px; padding: 14px 16px; }
+    .option h3 { font-size: 15px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+    .option p { font-size: 14px; color: var(--mid); margin: 0; }
+
+    /* People: experts, partners and real families. Each card stays hidden until it's filled in. */
+    .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .person { background: var(--card); border-radius: 18px; padding: 20px; border: 1px solid #e8e0db; text-align: center; }
+    .person img { width: 96px; height: 96px; object-fit: cover; border-radius: 50%; margin: 0 auto 12px; display: block; }
+    .person img.logo { border-radius: 12px; object-fit: contain; }
+    .person h3 { font-size: 17px; font-weight: 800; color: var(--dark); }
+    .person .role { font-size: 13px; font-weight: 700; color: var(--brick); margin-bottom: 10px; }
+    .person blockquote { font-size: 14px; color: var(--mid); font-style: italic; }
+    .person-tag { display: inline-block; margin-bottom: 10px; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; background: var(--brand-tint); color: var(--brand-dark); }
   </style>
   <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
@@ -64,9 +73,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
   <link rel="stylesheet" href="/assets/site.css"/>
+  <link rel="stylesheet" href="/bands.css"/>
+  <link rel="stylesheet" href="/ladder.css"/>
   <style>
     :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
-    
   </style>
   <script type="module" src="/assets/heycatch.js"></script>
   <script src="/assets/site.js" defer></script>
@@ -78,12 +88,9 @@
   <div class="wrap">
     <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
     <nav class="site-nav" id="site-nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="guides/index.html">Guides</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="information.html" class="active">Information</a>
-      <a href="help.html">Help</a>
-      <a href="faq.html">FAQ</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="blog/index.html">Parenting &amp; phones</a>
+      <a href="why-brickify.html" class="active">Why Brickify</a>
     </nav>
     <a href="index.html#download" class="btn btn-sm">Get the app</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
@@ -92,100 +99,159 @@
   </div>
 </header>
 
-<div class="header">
+<div class="header header-bright" id="top">
   <h1>Why Brickify</h1>
-  <p>Why families choose it, and what it adds on top of the controls your phone already has.</p>
+  <p>Who built it, why the phone ladder needed a middle rung, and why families choose it.</p>
 </div>
 
-<div class="container">
-  <a href="information.html" class="back">← Back to Information</a>
+<div class="container jump-wrap">
+  <nav class="jump" aria-label="On this page">
+    <a href="#story">Why I built it</a>
+    <a href="#middle-rung">The middle rung</a>
+    <a href="#choose">Why families choose it</a>
+    <a href="#big-sister">Before Brickify</a>
+  </nav>
+</div>
 
-  <h2 id="choose" style="margin-top:0">Why people choose Brickify</h2>
-  <p>Schools are phone-free by default. Brickify turns the phone you already own into a brick phone on your schedule, and you can make it smarter as they grow.</p>
-  <p>Since September, schools in England are expected to be mobile phone-free by default, and Ofsted now checks phone policies at every inspection. Most parents welcome it. But school rules stop at the gate. The walk in, the bus home, the evening and bedtime are still ours to sort out, and a lot of families are reaching for a brick phone.</p>
-  <p class="facts">£4.99 once · You choose the apps · No subscription · iPhone &amp; Android</p>
+<section class="band-section band-pink" id="story">
+<div class="container">
+  <h2 class="section-h">Why I built Brickify</h2>
+  <div class="founder">
+    <img src="blog/images/why-i-built.webp" alt="Anne Mundy, founder of Brickify" width="896" height="1194" loading="lazy">
+    <div>
+      <blockquote>"My sons' school went smartphone-free, there was an old phone in a drawer, and they were ready for something. So I built Brickify."</blockquote>
+      <cite>Anne Mundy, founder, engineer (Cambridge MEng) and mum</cite>
+      <p class="band-text">I'd promised my boys a safe phone for a few apps at weekends. Nothing on the market did what I wanted, so I built it: a phone that's a brick on school days, opens up when the family decides, and changes as they grow.</p>
+      <a href="blog/why-i-built.html" class="btn-light">Read the full story →</a>
+    </div>
+  </div>
+  <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
+
+<section class="band-section band-cream" id="middle-rung">
+<div class="container">
+  <h2 class="section-h">Why build the middle rung?</h2>
+  <p class="band-intro">Every child climbs the phone ladder at their own pace. When it was my turn to choose, the step between a brick phone and a smartphone was missing.</p>
+  <div class="bk-ladder">
+    <svg class="bk-ladder-art" viewBox="0 0 100 368" preserveAspectRatio="none" aria-hidden="true">
+      <g class="rungs">
+        <line x1="44" y1="4"   x2="89" y2="4"/>
+        <line x1="35" y1="70"  x2="80" y2="70"/>
+        <line x1="26" y1="146" x2="71" y2="146"/>
+        <line x1="17" y1="222" x2="62" y2="222"/>
+        <line x1="8"  y1="298" x2="53" y2="298"/>
+      </g>
+      <g class="rails">
+        <line x1="46" y1="-10" x2="1"  y2="372"/>
+        <line x1="91" y1="-10" x2="46" y2="372"/>
+      </g>
+    </svg>
+    <ol class="bk-rungs">
+      <li class="rung" style="--w:74%"><span class="rung-n">4</span><span class="rung-t">Smartphone<small>everything, all the time</small></span>
+        <svg class="rung-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 5h3"/></svg></li>
+      <li class="rung rung-us" style="--w:70%"><span class="rung-n">3</span><span class="rung-t">Brickify<small>smartphone when you need it, brick phone when you don't</small></span>
+        <img class="rung-logo" src="images/logo.png" alt="" width="44" height="44"></li>
+      <li class="rung" style="--w:66%"><span class="rung-n">2</span><span class="rung-t">Brick phone<small>calls and texts only</small></span>
+        <svg class="rung-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><rect x="8.5" y="4.5" width="7" height="5" rx="1"/><path d="M9 13h.01M12 13h.01M15 13h.01M9 16h.01M12 16h.01M15 16h.01M9 19h.01M12 19h.01M15 19h.01"/></svg></li>
+      <li class="rung" style="--w:62%"><span class="rung-n">1</span><span class="rung-t">Watch<small>calls home and location</small></span>
+        <svg class="rung-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 9v3l2 1.5M9 6.5 9.5 2h5l.5 4.5M9 17.5l.5 4.5h5l.5-4.5"/></svg></li>
+      <li class="rung rung-wait" style="--w:58%"><span class="rung-t">Wait until they're ready</span></li>
+    </ol>
+  </div>
+  <p class="band-text">These were the options I looked at:</p>
+  <div class="options">
+    <div class="option"><h3>A basic phone</h3><p>Cheap, but no maps or music, and they'd have outgrown it by spring.</p></div>
+    <div class="option"><h3>A kids' smartphone</h3><p>Around £200, plus a subscription.</p></div>
+    <div class="option"><h3>Screen Time</h3><p>Good, but every change in the week meant re-editing settings, and not every family is on one platform.</p></div>
+  </div>
+  <p class="band-text"><a href="the-phone-ladder.html">See the ladder close up →</a> · <a href="how-it-works.html#where-it-fits">How Brickify compares →</a></p>
+  <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
+
+<section class="band-section band-teal" id="choose">
+<div class="container">
+  <h2 class="section-h">Why families choose Brickify</h2>
+  <p class="band-text">Schools are phone-free by default. Brickify turns the phone already in the drawer into a brick phone on the family's schedule, and it can get smarter as they grow.</p>
+  <p class="band-text">Since September, schools in England are expected to be mobile phone-free by default, and Ofsted now checks phone policies at every inspection. Most parents welcome it. But school rules stop at the gate. The walk in, the bus home, the evening and bedtime are still ours to sort out, and a lot of families are reaching for a brick phone.</p>
+  <p class="band-text facts">£4.99 once · You choose the apps · No subscription · iPhone &amp; Android</p>
   <div class="steps">
     <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Harder to get round than a closed app</h3><p>Uses the phone's own system-level controls, and tells you if protection is removed.</p></div></div>
-    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>A real digital detox</h3><p>Not just for kids — use it on yourself for a genuine break from the apps you can't put down.</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h3>A real digital detox</h3><p>Not just for kids. Use it on yourself for a genuine break from the apps you can't put down.</p></div></div>
     <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Cheaper than a new phone</h3><p>If you already have a spare smartphone, there's no second device or contract to buy.</p></div></div>
     <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Brickify for Schools <span class="soon">Coming soon</span></h3><p>Your school administrator can check your phone is compliant before it goes on site.</p></div></div>
   </div>
-  <p style="margin-top:14px">Thinking about a brick phone instead? <a href="brick-phone-vs-brickify.html">Brick phone vs Brickify →</a></p>
-
-  <h2 id="native">Compared to native controls</h2>
-  <p>Both platforms already have a built-in way to restrict a phone. Here's what Brickify adds on top, platform by platform.</p>
-
-  <div class="jump">
-    <a href="#ios">Jump to iOS →</a>
-    <a href="#android">Jump to Android →</a>
-  </div>
-
-  <h2 id="ios">iOS</h2>
-  <p class="vs">Compared to: Apple Screen Time &amp; Family Sharing</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-n">1</div>
-      <div class="step-body">
-        <h3>Profiles that switch themselves</h3>
-        <p>Set up profiles like "School Day" or "Weeknight," each with its own blocked-app list, and Brickify swaps between them automatically on schedule — no manually reconfiguring Screen Time's Downtime or App Limits every time the situation changes.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">2</div>
-      <div class="step-body">
-        <h3>An email if something's wrong</h3>
-        <p>If the phone misses a scheduled check-in, you'll hear about it — rather than assuming everything's still fine.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">3</div>
-      <div class="step-body">
-        <h3>Hardened against removal</h3>
-        <p>Family Controls restrictions stay enforced at the OS level even if Brickify itself is deleted, and an optional Screen Time passcode set up in Brickify's own wizard can block deletion entirely. See <a href="risks.html#ios">known limitations &amp; accepted risks →</a></p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">4</div>
-      <div class="step-body">
-        <h3>Clearer to set up</h3>
-        <p>One guided wizard, start to finish — versus juggling Screen Time, Family Sharing, and getting restrictions to actually stick to a child's own device rather than yours.</p>
-      </div>
-    </div>
-  </div>
-
-  <h2 id="android">Android</h2>
-  <p class="vs">Compared to: Google Family Link &amp; Digital Wellbeing</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-n">1</div>
-      <div class="step-body">
-        <h3>Profiles that switch themselves</h3>
-        <p>Set up profiles like "School Day" or "Weeknight," each with its own blocked-app list, and Brickify swaps between them automatically on schedule — no manual reconfiguring needed as the day goes on.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">2</div>
-      <div class="step-body">
-        <h3>Richer alerts</h3>
-        <p>Email or notification if the phone stops checking in, if Device Owner protection gets removed, if it boots into Safe Mode, or if a new app appears despite blocking — none of which Family Link surfaces.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">3</div>
-      <div class="step-body">
-        <h3>Hardened against removal</h3>
-        <p>Device Owner mode has no Settings toggle at all — the only ways off are a full factory reset, or Brickify's own PIN+second-factor-gated deactivation. See <a href="risks.html#android">known limitations &amp; accepted risks →</a></p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">4</div>
-      <div class="step-body">
-        <h3>Clearer to set up</h3>
-        <p>Instead of using a new, separate, supervised Google account and Family Link's own settings, there is one wizard covering everything — schedules and block lists — in one place. A factory reset is required — however you would likely do this before you hand a device to your kid anyway.</p>
-      </div>
-    </div>
-  </div>
+  <a href="#top" class="to-top">↑ Back to top</a>
 </div>
+</section>
+
+<section class="band-section band-pink" id="big-sister">
+<div class="container">
+  <h2 class="section-h">Before Brickify: Big Sister</h2>
+  <p class="band-text">My first idea was much more permissive. "Big Sister" left the phone open and flagged dangers as the kids used it.</p>
+  <p class="band-text">Testing it changed my mind. There were just too many dangers, and following up after something bad had already happened wasn't good enough for my own children. So Brickify works the other way round: the phone starts as a brick, and opens up on a schedule the family chooses.</p>
+  <p class="band-text">I've also written a public page listing exactly what Brickify can't stop, and how those risks are reduced. If a product for children can't tell you its limits, don't trust it.</p>
+  <p class="band-text"><a href="risks.html">Known limitations &amp; accepted risks →</a></p>
+  <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
+
+<!--
+  THE PEOPLE BEHIND BRICKIFY
+  Hidden until the first card is filled in. To publish:
+    1. Fill in a card below (photo in images/people/, name, role, quote) and delete `hidden` from that card.
+    2. Delete `hidden` from the <section> line, and add <a href="#people">The people behind it</a> to the jump links above.
+  Only publish a card once that person or organisation has agreed, in writing, to be named.
+  Copy a card to add more. The band colour is cream, to follow the pink section above.
+-->
+<section class="band-section band-cream" id="people" hidden>
+<div class="container">
+  <h2 class="section-h">The people behind it</h2>
+  <p class="band-intro">The experts, partners and families who back Brickify.</p>
+  <div class="people">
+
+    <!-- Expert card -->
+    <div class="person" hidden>
+      <span class="person-tag">Expert</span>
+      <img src="images/people/EXPERT-PHOTO.webp" alt="EXPERT NAME" width="96" height="96" loading="lazy">
+      <h3>EXPERT NAME</h3>
+      <p class="role">ROLE, ORGANISATION</p>
+      <blockquote>"QUOTE ABOUT BRICKIFY."</blockquote>
+    </div>
+
+    <!-- Expert card -->
+    <div class="person" hidden>
+      <span class="person-tag">Expert</span>
+      <img src="images/people/EXPERT-PHOTO.webp" alt="EXPERT NAME" width="96" height="96" loading="lazy">
+      <h3>EXPERT NAME</h3>
+      <p class="role">ROLE, ORGANISATION</p>
+      <blockquote>"QUOTE ABOUT BRICKIFY."</blockquote>
+    </div>
+
+    <!-- Partner card (for an organisation; use its logo) -->
+    <div class="person" hidden>
+      <span class="person-tag">Partner</span>
+      <img class="logo" src="images/people/PARTNER-LOGO.webp" alt="PARTNER NAME" width="96" height="96" loading="lazy">
+      <h3>PARTNER NAME</h3>
+      <p class="role">WHAT THEY DO, COUNTRY</p>
+      <blockquote>"ONE LINE ON HOW WE WORK TOGETHER."</blockquote>
+    </div>
+
+    <!-- Real family card: change the link to their case study post, e.g. blog/smith-family.html -->
+    <div class="person" hidden>
+      <span class="person-tag">Real family</span>
+      <img src="images/people/FAMILY-PHOTO.webp" alt="FAMILY NAME" width="96" height="96" loading="lazy">
+      <h3>FAMILY NAME</h3>
+      <p class="role">WHERE THEY LIVE · CHILD'S AGE</p>
+      <blockquote>"QUOTE FROM THE PARENT."</blockquote>
+      <p><a href="blog/index.html">Read their story →</a></p>
+    </div>
+
+  </div>
+  <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -193,17 +259,16 @@
       <div>
         <h4>Brickify</h4>
         <a href="how-it-works.html">How it works</a>
+        <a href="blog/index.html">Parenting &amp; phones</a>
         <a href="why-brickify.html">Why Brickify</a>
+        <a href="blog/why-i-built.html">Why I built it</a>
         <a href="compatibility.html">Which phones work?</a>
-        <a href="guides/index.html">Guides</a>
-        <a href="blog/index.html">Blog</a>
       </div>
       <div>
         <h4>Support</h4>
         <a href="help.html">Help</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
-        <a href="information.html">Information</a>
         <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
       </div>
       <div>
         <h4>Legal</h4>

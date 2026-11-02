@@ -4,16 +4,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brickify — How it works</title>
-  <meta name="description" content="The five steps to setting up Brickify: passcode, second factor, recovery codes, choosing apps, and bricking."/>
+  <meta name="description" content="How Brickify works, setup guides for iPhone and Android, suggested profiles, family stories, how it compares, and the details: phones, risks, privacy and terms."/>
   <link rel="canonical" href="https://brickifymysmartph.one/how-it-works.html"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Brickify — How it works"/>
-  <meta property="og:description" content="The five steps to setting up Brickify: passcode, second factor, recovery codes, choosing apps, and bricking."/>
+  <meta property="og:description" content="How Brickify works, setup guides for iPhone and Android, suggested profiles, family stories, how it compares, and the details: phones, risks, privacy and terms."/>
   <meta property="og:url" content="https://brickifymysmartph.one/how-it-works.html"/>
   <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Brickify — How it works"/>
-  <meta name="twitter:description" content="The five steps to setting up Brickify: passcode, second factor, recovery codes, choosing apps, and bricking."/>
+  <meta name="twitter:description" content="How Brickify works, setup guides for iPhone and Android, suggested profiles, family stories, how it compares, and the details: phones, risks, privacy and terms."/>
   <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,6 +53,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
   <link rel="stylesheet" href="/assets/site.css"/>
+  <link rel="stylesheet" href="/bands.css"/>
   <style>
     :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
 
@@ -106,6 +107,25 @@
     .layers-nav button:disabled { opacity: .4; cursor: default; }
     .layers-nav button:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
     @media (max-width: 520px) { .layer-split { grid-template-columns: 1fr; } }
+
+    .section-label { font-size: 12px; font-weight: 700; color: var(--mid); text-transform: uppercase; letter-spacing: 0.6px; margin: 28px 0 12px; }
+    .band-pink .layer.is-brickify, .band-teal .layer.is-brickify { border-color: #fff; }
+    .vs { color: var(--mid); font-size: 14px; margin-bottom: 14px; }
+    .native-h { font-size: 20px; font-weight: 900; color: var(--brand-dark); margin: 36px 0 4px; }
+    .native-intro { color: var(--muted); margin-bottom: 12px; }
+
+    /* ---------- Cards (from the old Guides and Information pages) ---------- */
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 8px; }
+    .guide-grid.langs { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+    .guide-card { background: var(--card); border-radius: 16px; padding: 22px; border: 1px solid #e8e0db; display: block; color: var(--dark); box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+    .langs .guide-card { padding: 12px 16px; font-weight: 700; }
+    .guide-card:hover { text-decoration: none; border-color: var(--brick); }
+    .guide-icon { font-size: 30px; display: block; margin-bottom: 10px; }
+    .guide-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 6px; color: var(--dark); }
+    .guide-card p { color: var(--mid); font-size: 14px; margin: 0; }
+    .guide-arrow { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--brick); }
+    .family-tag { display: inline-block; margin-bottom: 8px; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; background: var(--brand-tint); color: var(--brand-dark); }
+    .family-tag.real { background: var(--brand); color: #fff; }
   </style>
   <script type="module" src="/assets/heycatch.js"></script>
   <script src="/assets/site.js" defer></script>
@@ -117,12 +137,9 @@
   <div class="wrap">
     <a href="index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
     <nav class="site-nav" id="site-nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="guides/index.html">Guides</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="information.html" class="active">Information</a>
-      <a href="help.html">Help</a>
-      <a href="faq.html">FAQ</a>
+      <a href="how-it-works.html" class="active">How it works</a>
+      <a href="blog/index.html">Parenting &amp; phones</a>
+      <a href="why-brickify.html">Why Brickify</a>
     </nav>
     <a href="index.html#download" class="btn btn-sm">Get the app</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
@@ -131,15 +148,26 @@
   </div>
 </header>
 
-<div class="header">
+<div class="header header-bright" id="top">
   <h1>How it works</h1>
-  <p>The five steps to set Brickify up on iPhone or Android, and how it's built.</p>
+  <p>How Brickify works, how to set it up, and everything you need to know about it, in one place.</p>
 </div>
 
-<div class="container">
-  <a href="information.html" class="back">← Back to Information</a>
+<div class="container jump-wrap">
+  <nav class="jump" aria-label="On this page">
+    <a href="#steps">How it works</a>
+    <a href="#set-it-up">Set it up</a>
+    <a href="#guides">Guides &amp; profiles</a>
+    <a href="#families">Family stories</a>
+    <a href="#where-it-fits">Where Brickify fits</a>
+    <a href="#details">The details</a>
+    <a href="#from-the-blog">From the blog</a>
+  </nav>
+</div>
 
-  <h2 class="section-h steps-h">Setting it up</h2>
+<section class="band-section band-pink" id="steps">
+<div class="container">
+  <h2 class="section-h steps-h">How it works: five steps</h2>
   <div class="steps">
     <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Choose a passcode</h3><p>Set a 4-digit PIN you'll remember but won't enter on impulse.</p></div></div>
     <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Set a second factor</h3><p>Parent PIN, authenticator app, or email code. Both factors are required to unbrick — losing one doesn't lock you out forever.</p></div></div>
@@ -245,13 +273,287 @@
       });
     })();
   </script>
-
-  <div class="next">
-    <a href="android-device-owner-setup.html">→ Android's extra device-level setup (Device Owner mode)</a>
-    <a href="ios-device-setup.html">→ iOS's extra device-level setup (Family Controls)</a>
-    <a href="risks.html">→ Known limitations &amp; accepted risks</a>
-  </div>
 </div>
+</section>
+
+<section class="band-section band-cream" id="set-it-up">
+<div class="container">
+    <h2 class="section-h">Set it up</h2>
+    <p class="layers-intro">The one-off setup for each phone. Each guide walks through the exact screens, start to finish.</p>
+    <div class="guide-grid">
+      <a href="android-device-owner-setup.html" class="guide-card">
+        <span class="guide-icon">🤖</span>
+        <h3>Android setup: Device Owner mode</h3>
+        <p>The one-time factory reset and QR-code setup that gives Brickify real, un-bypassable protection on Android.</p>
+        <span class="guide-arrow">Read the guide →</span>
+      </a>
+      <a href="ios-device-setup.html" class="guide-card">
+        <span class="guide-icon">🍎</span>
+        <h3>iPhone setup: Family Controls</h3>
+        <p>No factory reset needed. Set up Apple's Family Controls and a Screen Time passcode entirely within the app.</p>
+        <span class="guide-arrow">Read the guide →</span>
+      </a>
+    </div>
+
+    <div class="section-label">Android setup in other languages</div>
+    <div class="guide-grid langs">
+      <a href="android-device-owner-setup-es.html" class="guide-card" lang="es">Español</a>
+      <a href="android-device-owner-setup-fr.html" class="guide-card" lang="fr">Français</a>
+      <a href="android-device-owner-setup-de.html" class="guide-card" lang="de">Deutsch</a>
+      <a href="android-device-owner-setup-it.html" class="guide-card" lang="it">Italiano</a>
+      <a href="android-device-owner-setup-pt-BR.html" class="guide-card" lang="pt-BR">Português (Brasil)</a>
+      <a href="android-device-owner-setup-pt-PT.html" class="guide-card" lang="pt-PT">Português (Portugal)</a>
+      <a href="android-device-owner-setup-zh-Hant.html" class="guide-card" lang="zh-Hant">繁體中文</a>
+      <a href="android-device-owner-setup-ar.html" class="guide-card" lang="ar" dir="rtl">العربية</a>
+      <a href="android-device-owner-setup-ja.html" class="guide-card" lang="ja">日本語</a>
+    </div>
+    <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
+
+<section class="band-section band-teal" id="guides">
+<div class="container">
+    <h2 class="section-h">Guides &amp; suggested profiles</h2>
+    <p class="layers-intro">Real setups for real situations, once Brickify is on the phone.</p>
+    <div class="section-label">Day-to-day</div>
+    <div class="guide-grid">
+      <a href="guides/adding-a-new-app.html" class="guide-card">
+        <span class="guide-icon">➕</span>
+        <h3>Adding a new app to your child's phone</h3>
+        <p>The full loop: unbrick, install it, decide which profiles should block it, and re-brick.</p>
+        <span class="guide-arrow">Read the guide →</span>
+      </a>
+    </div>
+    <div class="section-label">Suggested profiles</div>
+    <div class="guide-grid">
+      <a href="guides/school-phone.html" class="guide-card">
+        <span class="guide-icon">🎒</span>
+        <h3>Set up your 10-year-old's phone for school</h3>
+        <p>Block distracting apps automatically during school hours, and leave the phone open the rest of the time.</p>
+        <span class="guide-arrow">Read the guide →</span>
+      </a>
+      <a href="guides/weekend-app.html" class="guide-card">
+        <span class="guide-icon">🎮</span>
+        <h3>Add a new app and allow it only on weekends</h3>
+        <p>A new game got installed. Here's how to block it Monday to Friday and free it up Saturday and Sunday.</p>
+        <span class="guide-arrow">Read the guide →</span>
+      </a>
+      <a href="guides/digital-detox.html" class="guide-card">
+        <span class="guide-icon">🌿</span>
+        <h3>Set up your own phone for a digital detox</h3>
+        <p>Use Brickify on yourself: a real circuit breaker between you and the apps you can't put down.</p>
+        <span class="guide-arrow">Read the guide →</span>
+      </a>
+      <a href="guides/revision-mode.html" class="guide-card">
+        <span class="guide-icon">📚</span>
+        <h3>Set up a revision-friendly phone</h3>
+        <p>Kill distractions during study hours or exam season, without cutting off the phone entirely.</p>
+        <span class="guide-arrow">Read the guide →</span>
+      </a>
+    </div>
+    <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
+
+<section class="band-section band-pink" id="families">
+<div class="container">
+    <h2 class="section-h">Family stories</h2>
+    <p class="layers-intro">Every family's week is different. Here's how other families set Brickify up.</p>
+    <div class="guide-grid">
+      <a href="blog/sporty-pov.html" class="guide-card">
+        <span class="family-tag">Example family</span>
+        <span class="guide-icon">⚽</span>
+        <h3>The sporty kid</h3>
+        <p>Match day opens maps, music and texts. Bedtime is calls only.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="blog/theatre-pov.html" class="guide-card">
+        <span class="family-tag">Example family</span>
+        <span class="guide-icon">🎭</span>
+        <h3>The theatre kid</h3>
+        <p>Rehearsal opens voice memos and scripts. Show week is calls only.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="blog/london-mum-pov.html" class="guide-card">
+        <span class="family-tag">Example family</span>
+        <span class="guide-icon">🚌</span>
+        <h3>The commuter</h3>
+        <p>Maps, bus times and music on the journey. Calls and texts at school.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="blog/martial-arts-pov.html" class="guide-card">
+        <span class="family-tag">Example family</span>
+        <span class="guide-icon">🥋</span>
+        <h3>The martial artist</h3>
+        <p>Grading-week evenings: saved practice videos and a timer.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="blog/boarder-pov.html" class="guide-card">
+        <span class="family-tag">Example family</span>
+        <span class="guide-icon">🏫</span>
+        <h3>The boarder</h3>
+        <p>Weekday evenings match house rules. Exeat weekends open up.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="blog/doom-scroll-pov.html" class="guide-card">
+        <span class="family-tag">Example family</span>
+        <span class="guide-icon">☕</span>
+        <h3>The grown-ups</h3>
+        <p>A 10pm wind-down, with news and social off until 8am. Brickify works on your phone too.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+    </div>
+    <p class="band-text" style="margin-top:16px"><a href="blog/index.html#families">All family stories in Parenting &amp; phones →</a></p>
+    <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
+
+<section class="band-section band-cream" id="where-it-fits">
+<div class="container">
+    <h2 class="section-h">Where Brickify fits</h2>
+    <p class="layers-intro">Brickify is the middle rung between a brick phone and a smartphone. Here's how it compares with the other options.</p>
+    <div class="guide-grid">
+      <a href="the-phone-ladder.html" class="guide-card">
+        <span class="guide-icon">🪜</span>
+        <h3>The phone ladder, close up</h3>
+        <p>Brickify is the middle rung. Here's what each small step inside it looks like as your child grows.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="#native" class="guide-card">
+        <span class="guide-icon">🆚</span>
+        <h3>Brickify vs Screen Time and Family Link</h3>
+        <p>What Brickify adds on top of the controls already built into iPhone and Android.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="brick-phone-vs-brickify.html" class="guide-card">
+        <span class="guide-icon">📵</span>
+        <h3>Brick phone vs Brickify</h3>
+        <p>Cost, apps, schedules and growing up, side by side with a basic calls-and-texts phone.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="screenable-vs-brickify.html" class="guide-card">
+        <span class="guide-icon">📱</span>
+        <h3>Screenable vs Brickify</h3>
+        <p>A free iPhone-only kids' app, or profiles that switch on a schedule on iPhone and Android.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="canopy-vs-brickify.html" class="guide-card">
+        <span class="guide-icon">🔍</span>
+        <h3>Canopy vs Brickify</h3>
+        <p>A monitoring subscription that reads messages, or a one-off app that only decides which apps open.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="blog/brick-phone-smartphone-or-in-between.html" class="guide-card">
+        <span class="guide-icon">🧭</span>
+        <h3>Brick phone, smartphone, or something in between?</h3>
+        <p>Watches, brick phones, Brickify, Screen Time, monitoring and tracking apps: what each one actually does.</p>
+        <span class="guide-arrow">Read the post →</span>
+      </a>
+    </div>
+
+    <h3 class="native-h" id="native">Brickify vs Screen Time and Family Link</h3>
+    <p class="native-intro">Both platforms already have a built-in way to restrict a phone. Here's what Brickify adds on top, platform by platform.</p>
+
+    <h3 class="native-h" id="ios">iPhone</h3>
+    <p class="vs">Compared to: Apple Screen Time &amp; Family Sharing</p>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Profiles that switch themselves</h3><p>Set up profiles like "School Day" or "Weeknight," each with its own blocked-app list, and Brickify swaps between them automatically on schedule. No manually reconfiguring Screen Time's Downtime or App Limits every time the situation changes.</p></div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-body"><h3>An email if something's wrong</h3><p>If the phone misses a scheduled check-in, you'll hear about it, rather than assuming everything's still fine.</p></div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Hardened against removal</h3><p>Family Controls restrictions stay enforced at the OS level even if Brickify itself is deleted, and an optional Screen Time passcode set up in Brickify's own wizard can block deletion entirely. See <a href="risks.html#ios">known limitations &amp; accepted risks →</a></p></div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Clearer to set up</h3><p>One guided wizard, start to finish, versus juggling Screen Time, Family Sharing, and getting restrictions to actually stick to a child's own device rather than yours.</p></div></div>
+    </div>
+
+    <h3 class="native-h" id="android">Android</h3>
+    <p class="vs">Compared to: Google Family Link &amp; Digital Wellbeing</p>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><div class="step-body"><h3>Profiles that switch themselves</h3><p>Set up profiles like "School Day" or "Weeknight," each with its own blocked-app list, and Brickify swaps between them automatically on schedule. No manual reconfiguring needed as the day goes on.</p></div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-body"><h3>Richer alerts</h3><p>Email or notification if the phone stops checking in, if Device Owner protection gets removed, if it boots into Safe Mode, or if a new app appears despite blocking. Family Link surfaces none of these.</p></div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-body"><h3>Hardened against removal</h3><p>Device Owner mode has no Settings toggle at all. The only ways off are a full factory reset, or Brickify's own PIN and second-factor deactivation. See <a href="risks.html#android">known limitations &amp; accepted risks →</a></p></div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-body"><h3>Clearer to set up</h3><p>Instead of a new, separate, supervised Google account and Family Link's own settings, one wizard covers everything, schedules and block lists, in one place. A factory reset is required, but you'd likely do that before handing a phone to your child anyway.</p></div></div>
+    </div>
+    <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
+
+<section class="band-section band-teal" id="details">
+<div class="container">
+    <h2 class="section-h">The details</h2>
+    <p class="layers-intro">What Brickify does and doesn't do, which phones work, and the small print.</p>
+    <div class="guide-grid">
+      <a href="what-brickify-does.html" class="guide-card">
+        <span class="guide-icon">✅</span>
+        <h3>What Brickify does, and doesn't do</h3>
+        <p>It chooses which apps open, and when. It doesn't read messages or track location, so here's what to use for those.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="compatibility.html" class="guide-card">
+        <span class="guide-icon">📲</span>
+        <h3>Which phones work?</h3>
+        <p>Minimum OS versions and model-by-model notes for reusing an old iPhone or Android phone.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="risks.html" class="guide-card">
+        <span class="guide-icon">⚠️</span>
+        <h3>Known limitations &amp; accepted risks</h3>
+        <p>An honest, platform-by-platform account of what Brickify is and isn't hardened against.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="faq.html" class="guide-card">
+        <span class="guide-icon">❓</span>
+        <h3>FAQ</h3>
+        <p>The questions parents actually ask: getting round it, Screen Time, and being the only one.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="privacy.html" class="guide-card">
+        <span class="guide-icon">🔒</span>
+        <h3>Privacy Policy</h3>
+        <p>What Brickify collects, why, and who it's shared with (short answer: almost nothing, nobody).</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+      <a href="terms.html" class="guide-card">
+        <span class="guide-icon">📄</span>
+        <h3>Terms &amp; Conditions</h3>
+        <p>The standard legal terms for using Brickify.</p>
+        <span class="guide-arrow">Read more →</span>
+      </a>
+    </div>
+    <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
+
+<section class="band-section band-pink" id="from-the-blog">
+<div class="container">
+    <h2 class="section-h">From the blog</h2>
+    <p class="layers-intro">Longer reads on setting Brickify up and making it stick.</p>
+    <div class="guide-grid">
+      <a href="blog/12-steps-first-phone.html" class="guide-card">
+        <span class="guide-icon">🎄</span>
+        <h3>The 12 steps of Christmas</h3>
+        <p>Set up your child's first phone properly, one small job a day. Most steps take ten minutes or less.</p>
+        <span class="guide-arrow">Read the post →</span>
+      </a>
+      <a href="blog/inside-brickify.html" class="guide-card">
+        <span class="guide-icon">🔑</span>
+        <h3>Inside Brickify: the PIN and second factor</h3>
+        <p>Why it takes two keys to unbrick a phone, and what happens if you lose both.</p>
+        <span class="guide-arrow">Read the post →</span>
+      </a>
+      <a href="blog/enforce-screen-time.html" class="guide-card">
+        <span class="guide-icon">📅</span>
+        <h3>How to actually enforce a screen-time schedule</h3>
+        <p>Seven things that make a schedule stick, from agreeing it together to reviewing it regularly.</p>
+        <span class="guide-arrow">Read the post →</span>
+      </a>
+      <a href="blog/old-phone-first-phone.html" class="guide-card">
+        <span class="guide-icon">🗄️</span>
+        <h3>The old phone in your drawer is their first phone</h3>
+        <p>How to make your old smartphone a safe first phone.</p>
+        <span class="guide-arrow">Read the post →</span>
+      </a>
+    </div>
+    <a href="#top" class="to-top">↑ Back to top</a>
+</div>
+</section>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -259,17 +561,16 @@
       <div>
         <h4>Brickify</h4>
         <a href="how-it-works.html">How it works</a>
+        <a href="blog/index.html">Parenting &amp; phones</a>
         <a href="why-brickify.html">Why Brickify</a>
+        <a href="blog/why-i-built.html">Why I built it</a>
         <a href="compatibility.html">Which phones work?</a>
-        <a href="guides/index.html">Guides</a>
-        <a href="blog/index.html">Blog</a>
       </div>
       <div>
         <h4>Support</h4>
         <a href="help.html">Help</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
-        <a href="information.html">Information</a>
         <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
       </div>
       <div>
         <h4>Legal</h4>

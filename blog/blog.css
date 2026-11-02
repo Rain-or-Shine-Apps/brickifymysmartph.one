@@ -298,3 +298,30 @@
 /* Image slot: a dashed placeholder until a post's artwork is supplied */
 .post-figure.img-slot { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; padding: 24px; border: 3px dashed var(--line); border-radius: var(--radius); background: var(--bk-cream-2); color: var(--muted); font-size: 15px; font-weight: 700; line-height: 1.5; text-align: center; }
 .post-figure.img-slot span::before { content: "Image to come: "; color: var(--bk-brick); font-weight: 900; }
+
+/* ---------- Parenting & phones: family stories in the hero ---------- */
+.family-strip { position: relative; z-index: 1; margin-top: 30px; }
+.family-strip h2, .all-posts-h { color: var(--bk-cream); font-size: clamp(24px, 3vw, 30px); font-weight: 900; letter-spacing: -.01em; }
+.family-strip > p { margin-top: 4px; font-size: 17px; }
+.family-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 14px; max-width: 980px; }
+.family-card { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 14px; border-radius: 18px; background: var(--bk-cream-2); color: var(--ink); text-decoration: none; box-shadow: 0 4px 0 rgba(0,0,0,.13); transition: transform .15s; }
+.family-card[hidden] { display: none; }
+.family-card:hover { transform: translateY(-3px); }
+.family-card:focus-visible { outline: 3px solid var(--bk-cream); outline-offset: 3px; }
+.family-card b { color: var(--bk-brick); font-size: 16px; font-weight: 900; line-height: 1.2; }
+.family-card small { color: var(--muted); font-size: 13px; line-height: 1.4; }
+.family-card img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+.family-icon { font-size: 30px; line-height: 1.1; }
+.family-tag { display: inline-block; padding: 2px 9px; border-radius: 999px; background: var(--bk-cream); color: var(--bk-brick); font-size: 11px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; }
+.family-tag.real { background: var(--bk-teal-deep); color: #fff; }
+.all-posts-h { margin-top: 36px; }
+@media (prefers-reduced-motion: reduce) { .family-card { transition: none; } .family-card:hover { transform: none; } }
+
+/* ---------- Parenting & phones: "which rung" band (colours from /bands.css) ---------- */
+.band-section .container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+.band-section .section-h { font-size: clamp(24px, 3vw, 30px); font-weight: 900; letter-spacing: -.01em; margin-bottom: 8px; }
+.band-section .band-intro { max-width: 40em; font-size: 17px; margin-bottom: 18px; }
+.rung-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.rung-links a { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border-radius: 18px; background: var(--bk-cream-2); text-decoration: none; box-shadow: 0 4px 0 rgba(0,0,0,.13); }
+.rung-links b { color: var(--bk-brick); font-size: 16px; font-weight: 900; line-height: 1.25; }
+.rung-links small { color: var(--muted); font-size: 14px; }

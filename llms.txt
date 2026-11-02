@@ -14,18 +14,18 @@ Brickify is for parents setting up a child's first phone, families with a smartp
 ## Key pages
 
 - [Brickify home](https://brickifymysmartph.one/): what it is, the phone ladder, and download links
-- [How it works](https://brickifymysmartph.one/how-it-works.html)
+- [How it works](https://brickifymysmartph.one/how-it-works.html): setup guides, suggested profiles, family stories, comparisons and the details
 - [What Brickify does, and doesn't](https://brickifymysmartph.one/what-brickify-does.html)
 - [The phone ladder, close up](https://brickifymysmartph.one/the-phone-ladder.html): example profiles from Brick to Nearly there
 - [Brick phone vs Brickify](https://brickifymysmartph.one/brick-phone-vs-brickify.html)
 - [Screenable vs Brickify](https://brickifymysmartph.one/screenable-vs-brickify.html)
 - [Canopy vs Brickify](https://brickifymysmartph.one/canopy-vs-brickify.html)
-- [Why Brickify, versus Screen Time or Family Link](https://brickifymysmartph.one/why-brickify.html)
+- [Why Brickify](https://brickifymysmartph.one/why-brickify.html): the founder's story, the middle rung of the phone ladder, and why families choose it
+- [Brickify vs Screen Time and Family Link](https://brickifymysmartph.one/how-it-works.html#native)
 - [FAQ](https://brickifymysmartph.one/faq.html)
 - [Which phones work?](https://brickifymysmartph.one/compatibility.html)
 - [Known limitations and mitigations](https://brickifymysmartph.one/risks.html)
-- [Guides and example family weeks](https://brickifymysmartph.one/guides/index.html)
-- [Blog](https://brickifymysmartph.one/blog/index.html)
+- [Parenting & phones](https://brickifymysmartph.one/blog/index.html): the blog, with family stories, parenting with tech, and choosing a rung on the phone ladder
 - [Why I built Brickify](https://brickifymysmartph.one/blog/why-i-built.html): the founder's story (Anne Mundy)
 
 ## Optional

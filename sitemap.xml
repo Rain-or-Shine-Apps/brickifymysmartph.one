@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://brickifymysmartph.one/why-brickify.html</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://brickifymysmartph.one/brick-phone-vs-brickify.html</loc>
@@ -34,11 +34,7 @@
   </url>
   <url>
     <loc>https://brickifymysmartph.one/how-it-works.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://brickifymysmartph.one/information.html</loc>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://brickifymysmartph.one/risks.html</loc>
@@ -78,7 +74,7 @@
   </url>
   <url>
     <loc>https://brickifymysmartph.one/blog/index.html</loc>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://brickifymysmartph.one/blog/brickify-vs-smartphone-free-childhood.html</loc>
@@ -219,10 +215,6 @@
   <url>
     <loc>https://brickifymysmartph.one/blog/five-things-in-online-safety.html</loc>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://brickifymysmartph.one/guides/index.html</loc>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://brickifymysmartph.one/guides/school-phone.html</loc>

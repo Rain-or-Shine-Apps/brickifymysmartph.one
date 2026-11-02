@@ -42,6 +42,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
   <link rel="stylesheet" href="/assets/site.css"/>
+  <link rel="stylesheet" href="/ladder.css"/>
   <link rel="stylesheet" href="home.css"/>
   <script type="module" src="/assets/heycatch.js"></script>
   <script src="/assets/site.js" defer></script>
@@ -55,11 +56,8 @@
     <a href="index.html" class="brand-link"><img src="images/logo.png" alt="" width="38" height="38">Brickify</a>
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <a href="how-it-works.html">How it works</a>
-      <a href="guides/index.html">Guides</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="information.html">Information</a>
-      <a href="help.html">Help</a>
-      <a href="faq.html">FAQ</a>
+      <a href="blog/index.html">Parenting &amp; phones</a>
+      <a href="why-brickify.html">Why Brickify</a>
     </nav>
     <a href="#download" class="btn btn-sm nav-cta">Get the app</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
@@ -137,12 +135,36 @@
       </div>
 
       <p class="bk-link"><a href="the-phone-ladder.html">See the ladder close up &rarr;</a></p>
-      <a class="bk-founder" href="blog/why-i-built.html">
+      <p class="section-sub bk-scope">If you've signed the <a href="https://www.smartphonefreechildhood.org/parent-pact" target="_blank" rel="noopener">Smartphone Free Childhood Parent Pact</a> and can wait until 14, wait. That's a good choice. Brickify is for families who've decided a phone is needed now.</p>
+    </div>
+  </section>
+
+  <section class="section band band-cream bk-people-sec" id="people">
+    <div class="wrap">
+      <h2 class="section-title">Real people behind Brickify</h2>
+      <p class="section-sub">Brickify is made by a parent, for parents.</p>
+
+      <a class="bk-founder bk-founder-lg" href="why-brickify.html">
         <img src="blog/images/why-i-built.webp" alt="Anne Mundy, founder of Brickify" width="896" height="1194" loading="lazy">
         <span><b>"My sons' school went smartphone-free, there was an old phone in a drawer, and they were ready for something. So I built Brickify."</b>
-        <small>Anne Mundy, founder, engineer and mum &middot; Why I built Brickify &rarr;</small></span>
+        <small>Anne Mundy, founder, engineer (Cambridge MEng) and mum &middot; Why Brickify &rarr;</small></span>
       </a>
-      <p class="section-sub bk-scope">If you've signed the Pact and can wait until 14, wait. That's a good choice. Brickify is for families who've decided a phone is needed now.</p>
+
+      <!-- REAL FAMILY QUOTES (D3.2, D3.1): only with written consent. Copy a card, fill it in, delete `hidden`
+           from the card and from the .bk-quotes wrapper. First name, photo (images/people/, .webp),
+           context ("mum of a 10-year-old, phone-free school since September") and one line.
+           Link to their case study in Parenting & phones if they have one. Add an honest, dated activity line
+           beside it once there is one, e.g. "Families have set up Brickify on N phones since September". -->
+      <div class="bk-quotes" hidden>
+        <figure class="bk-quote" hidden>
+          <span class="bk-quote-tag">Real family</span>
+          <blockquote>"ONE LINE FROM THE PARENT."</blockquote>
+          <figcaption><img src="images/people/FIRSTNAME.webp" alt="" width="96" height="96" loading="lazy"><span><b>FIRST NAME</b> CONTEXT, e.g. mum of a 10-year-old</span></figcaption>
+        </figure>
+      </div>
+
+      <p class="bk-link"><a href="blog/index.html#families">Read the family stories in Parenting &amp; phones &rarr;</a></p>
+      <p class="bk-link-sub">Example families for now, real ones as they join.</p>
     </div>
   </section>
 
@@ -151,7 +173,7 @@
       <h2 class="section-title">The school day is covered. The rest is up to us.</h2>
       <div class="prose-narrow"><p>School rules stop at the gate. A phone needs different rules at different times, depending on your family. If you have to change them by hand, it won't last. Brickify switches between them by itself.</p></div>
       <figure class="bk-wheel bk-week"><img src="images/week-wheel.webp?v=2" srcset="images/week-wheel-560.webp?v=2 560w, images/week-wheel.webp?v=2 1000w" sizes="(max-width: 640px) 90vw, 560px" alt="One phone, your rules, switches automatically. An example week drawn as a wheel, one slice per day. Weekdays go Travel (Phone, Messages and Maps), School day (everything bricked), Travel, Evenings (calls, texts and the homework app), then Bedtime (sleep meditation only). Saturday and Sunday are Weekends (much more open) then Bedtime. Just an example: build your own." width="1000" height="1500" loading="lazy"></figure>
-      <p class="bk-link"><a href="guides/index.html#families">See how other families set it up &rarr;</a></p>
+      <p class="bk-link"><a href="how-it-works.html#families">See how other families set it up &rarr;</a></p>
     </div>
   </section>
 
@@ -182,9 +204,6 @@
     </div>
   </section>
 
-  <!-- FAMILY STORIES (D3.2, D3.1): add a three-quote wall here once real families agree to be quoted:
-       first name, photo, context ("mum of a 10-year-old, phone-free school since September") and one line.
-       Add an honest, dated activity line beside it, e.g. "Families have set up Brickify on N phones since September". -->
   <!-- STORE RATING (D3.5): show the App Store / Google Play rating in the download band once reviews exist. -->
   <section class="band band-teal cta-band" id="download">
     <div class="wrap" data-location="download">
@@ -211,18 +230,16 @@
       <div>
         <h4>Brickify</h4>
         <a href="how-it-works.html">How it works</a>
+        <a href="blog/index.html">Parenting &amp; phones</a>
         <a href="why-brickify.html">Why Brickify</a>
-        <a href="compatibility.html">Which phones work?</a>
-        <a href="guides/index.html">Guides</a>
-        <a href="blog/index.html">Blog</a>
         <a href="blog/why-i-built.html">Why I built it</a>
+        <a href="compatibility.html">Which phones work?</a>
       </div>
       <div>
         <h4>Support</h4>
         <a href="help.html">Help</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
-        <a href="information.html">Information</a>
         <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
       </div>
       <div>
         <h4>Legal</h4>

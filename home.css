@@ -138,43 +138,7 @@ body{background:var(--brick)}
   .bk-pink{clip-path:polygon(0 56%,100% 34%,100% 100%,0 100%)}
 }
 
-/* ---------- The phone ladder ---------- */
-.bk-ladder{position:relative;max-width:640px;margin:36px auto 0;--rh:64px;--gap:12px}
-.bk-ladder-art{position:absolute;top:0;right:0;width:44%;height:calc(5 * var(--rh) + 4 * var(--gap));overflow:visible}
-.bk-ladder-art line{vector-effect:non-scaling-stroke;stroke-linecap:round}
-.bk-ladder-art .rails line{stroke:#7a3a1f;stroke-width:13}
-.bk-ladder-art .rails line{filter:drop-shadow(0 4px 0 rgba(0,0,0,.18))}
-.bk-ladder-art .rungs line{stroke:#c9783c;stroke-width:9}
-.bk-rungs{position:relative;list-style:none;margin:0;padding:0;display:grid;gap:var(--gap)}
-.rung{position:relative;width:calc(var(--w) + 1.5%);height:var(--rh);display:flex;align-items:center;gap:12px;padding:0 30px 0 14px;
-  background:var(--cream-2);color:var(--ink);border:3px solid var(--mortar);border-right:0;border-radius:14px 0 0 14px;
-  clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);box-shadow:0 6px 0 rgba(0,0,0,.14)}
-.rung::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(var(--mortar),var(--mortar)) right 11px top 0/3px 0 no-repeat}
-.rung-n{flex:none;width:30px;font-weight:900;font-size:26px;line-height:1;color:var(--mortar);border-right:3px solid var(--mortar);padding-right:10px;text-align:center}
-.rung-t{flex:1;min-width:0;font-weight:900;font-size:17px;line-height:1.1;text-transform:uppercase;letter-spacing:.02em}
-.rung-t small{display:block;margin-top:3px;font-size:12px;font-weight:700;text-transform:none;letter-spacing:0;color:var(--muted);line-height:1.2}
-.rung-i{flex:none;width:30px;height:30px;fill:none;stroke:var(--mortar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.rung-wait{padding-left:18px}
-.rung-wait .rung-t{font-size:15px}
-.rung-us{background:var(--brick);color:var(--cream);transform:rotate(-1.2deg);box-shadow:0 10px 0 rgba(0,0,0,.2)}
-.rung-us .rung-n{color:var(--cream);border-color:var(--cream)}
-.rung-us .rung-t{font-size:22px}
-.rung-us .rung-t small{color:color-mix(in srgb,var(--cream) 85%,transparent)}
-.rung-logo{flex:none;width:40px;height:40px}
-@media (max-width:560px){
-  .bk-ladder{--rh:60px;--gap:10px}
-  .rung{padding:0 26px 0 10px;gap:9px}
-  .rung-n{width:24px;font-size:22px;padding-right:8px}
-  .rung-t{font-size:15px}
-  .rung-us .rung-t{font-size:18px}
-  .rung-t small{font-size:11px}
-  .rung-i{width:24px;height:24px}
-  .rung-logo{width:32px;height:32px}
-  .bk-ladder-art{width:30%}
-  .rung:nth-child(1){width:84%} .rung:nth-child(2){width:81%} .rung:nth-child(3){width:78%}
-  .rung:nth-child(4){width:75%} .rung:nth-child(5){width:73%}
-}
+/* The phone ladder lives in /ladder.css */
 
 /* ---------- Diagonal now falls left-to-right: more brick on the left, "brick phone" line sits beside the phone ---------- */
 .bk-pink{clip-path:polygon(0 38%,100% 60%,100% 100%,0 100%)}
@@ -432,3 +396,17 @@ body{background:var(--brick)}
 .bk-wheel.bk-week{max-width:560px}
 .bk-scope{margin:24px auto 0}
 .bk-nowrap{white-space:nowrap}
+
+/* Real people behind Brickify (homepage cream band) */
+.bk-people-sec .section-sub{color:var(--ink)}
+.bk-founder-lg{max-width:680px;padding:18px 22px;gap:20px}
+.bk-founder-lg img{width:104px;height:104px}
+.bk-founder-lg b{font-size:18px}
+.bk-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:900px;margin:28px auto 0}
+.bk-quote{margin:0;padding:16px 18px;border-radius:18px;background:var(--cream-2);color:var(--ink);border:3px solid var(--mortar);box-shadow:0 5px 0 rgba(0,0,0,.15)}
+.bk-quote-tag{display:inline-block;padding:2px 10px;border-radius:999px;background:var(--teal-deep);color:#fff;font-size:12px;font-weight:800}
+.bk-quote blockquote{margin:10px 0 12px;font-size:16px;font-weight:700;line-height:1.45}
+.bk-quote figcaption{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
+.bk-quote figcaption img{width:44px;height:44px;flex:none;border-radius:50%;object-fit:cover}
+.bk-quote figcaption b{display:block;color:var(--ink)}
+.bk-people-sec .bk-link-sub{color:var(--muted)}

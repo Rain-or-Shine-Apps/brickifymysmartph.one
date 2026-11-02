@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brickify Blog - Notes on kids, phones, and online safety</title>
-  <meta name="description" content="Commentary and roundups on online safety, screen time, and the policy news that shapes how families use phones."/>
+  <title>Parenting &amp; phones - the Brickify blog</title>
+  <meta name="description" content="Family stories, first phones, screen time and online safety: notes for parents working out how phones fit into family life."/>
   <link rel="canonical" href="https://brickifymysmartph.one/blog/index.html"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Brickify Blog - Notes on kids, phones, and online safety"/>
-  <meta property="og:description" content="Commentary and roundups on online safety, screen time, and the policy news that shapes how families use phones."/>
+  <meta property="og:title" content="Parenting &amp; phones - the Brickify blog"/>
+  <meta property="og:description" content="Family stories, first phones, screen time and online safety: notes for parents working out how phones fit into family life."/>
   <meta property="og:url" content="https://brickifymysmartph.one/blog/index.html"/>
   <meta property="og:image" content="https://brickifymysmartph.one/images/social-share.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Brickify Blog - Notes on kids, phones, and online safety"/>
-  <meta name="twitter:description" content="Commentary and roundups on online safety, screen time, and the policy news that shapes how families use phones."/>
+  <meta name="twitter:title" content="Parenting &amp; phones - the Brickify blog"/>
+  <meta name="twitter:description" content="Family stories, first phones, screen time and online safety: notes for parents working out how phones fit into family life."/>
   <meta name="twitter:image" content="https://brickifymysmartph.one/images/social-share.png"/>
   <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"/>
   <link rel="stylesheet" href="/assets/site.css"/>
   <link rel="stylesheet" href="blog.css"/>
+  <link rel="stylesheet" href="/bands.css"/>
   <style>
     :root { --brand: #B65A3D; --brand-dark: #83412C; --brand-tint: #F6E9D2; --bg: #FFFBF4; --ink: #3c2a22; --muted: #7a6a5e; --line: #EADCC8; }
   </style>
@@ -37,12 +38,9 @@
   <div class="wrap">
     <a href="../index.html" class="brand-link"><img src="/images/icons/brickify.webp" alt="" width="38" height="38">Brickify</a>
     <nav class="site-nav" id="site-nav" aria-label="Main">
-      <a href="../index.html">Home</a>
-      <a href="../guides/index.html">Guides</a>
-      <a href="index.html" class="active">Blog</a>
-      <a href="../information.html">Information</a>
-      <a href="../help.html">Help</a>
-      <a href="../faq.html">FAQ</a>
+      <a href="../how-it-works.html">How it works</a>
+      <a href="index.html" class="active">Parenting &amp; phones</a>
+      <a href="../why-brickify.html">Why Brickify</a>
     </nav>
     <a href="../index.html#download" class="btn btn-sm">Get the app</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
@@ -53,17 +51,40 @@
 
 <section class="blog-hero">
   <div class="wrap">
-    <a href="../index.html" class="back">&larr; Back to Brickify</a>
-    <h1>Brickify Blog</h1>
-    <p>Notes on kids, phones, and the online safety news actually worth your time.</p>
+    <h1>Parenting &amp; phones</h1>
+    <p>Real families, first phones, and the online safety news actually worth your time.</p>
+
+    <div class="family-strip" id="families">
+      <h2>Family stories</h2>
+      <p>How other families set Brickify up.</p>
+      <div class="family-row">
+        <!-- REAL FAMILY CARD: copy this for each real case study, put it first, link it to their post, and delete `hidden`.
+             Only publish once the family has agreed in writing. -->
+        <a href="index.html" class="family-card" hidden>
+          <span class="family-tag real">Real family</span>
+          <img src="images/FAMILY-PHOTO.webp" alt="" width="96" height="96" loading="lazy">
+          <b>FAMILY NAME</b>
+          <small>ONE LINE ON THEIR SETUP.</small>
+        </a>
+        <a href="sporty-pov.html" class="family-card"><span class="family-tag">Example family</span><span class="family-icon" aria-hidden="true">⚽</span><b>The sporty kid</b><small>Match day opens maps, music and texts. Bedtime is calls only.</small></a>
+        <a href="theatre-pov.html" class="family-card"><span class="family-tag">Example family</span><span class="family-icon" aria-hidden="true">🎭</span><b>The theatre kid</b><small>Rehearsal opens voice memos and scripts. Show week is calls only.</small></a>
+        <a href="london-mum-pov.html" class="family-card"><span class="family-tag">Example family</span><span class="family-icon" aria-hidden="true">🚌</span><b>The commuter</b><small>Maps, bus times and music on the journey. Calls and texts at school.</small></a>
+        <a href="martial-arts-pov.html" class="family-card"><span class="family-tag">Example family</span><span class="family-icon" aria-hidden="true">🥋</span><b>The martial artist</b><small>Grading-week evenings: saved practice videos and a timer.</small></a>
+        <a href="boarder-pov.html" class="family-card"><span class="family-tag">Example family</span><span class="family-icon" aria-hidden="true">🏫</span><b>The boarder</b><small>Weekday evenings match house rules. Exeat weekends open up.</small></a>
+        <a href="doom-scroll-pov.html" class="family-card"><span class="family-tag">Example family</span><span class="family-icon" aria-hidden="true">☕</span><b>The grown-ups</b><small>A 10pm wind-down, with news and social off until 8am.</small></a>
+      </div>
+    </div>
+
+    <h2 class="all-posts-h" id="posts">All posts</h2>
     <div class="blog-filter" role="search" hidden>
       <label class="sr-only" for="post-search">Search the blog</label>
       <input type="search" id="post-search" placeholder="Search posts" autocomplete="off">
       <div class="filter-chips" role="group" aria-label="Filter by topic">
         <button type="button" data-topic="all" aria-pressed="true">All posts</button>
-        <button type="button" data-topic="product" aria-pressed="false">Brickify</button>
-        <button type="button" data-topic="parenting" aria-pressed="false">Parenting with tech</button>
-        <button type="button" data-topic="story" aria-pressed="false">Personal story</button>
+        <button type="button" data-topic="family" aria-pressed="false">Family stories</button>
+        <button type="button" data-topic="parenting" aria-pressed="false">Parenting &amp; phones</button>
+        <button type="button" data-topic="product" aria-pressed="false">How it works</button>
+        <button type="button" data-topic="story" aria-pressed="false">Why Brickify</button>
         <button type="button" data-topic="christmas" aria-pressed="false">Christmas</button>
       </div>
       <p class="filter-count" aria-live="polite"></p>
@@ -77,7 +98,7 @@
       <a href="brickify-vs-smartphone-free-childhood.html" class="post-card" data-pillar="parenting">
         <span class="post-thumb"><img src="images/brickify-vs-smartphone-free-childhood-poster.webp" alt="" width="720" height="1280"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">19 October 2026</span><span class="post-pillar">Parenting with tech</span></span>
+          <span class="post-meta"><span class="post-date">19 October 2026</span><span class="post-pillar">Parenting &amp; phones</span></span>
           <h2>Brickify vs Smartphone Free Childhood</h2>
           <p>It isn't really a versus. I built a phone app, and I'm totally for the smartphone-free childhood.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -86,7 +107,7 @@
       <a href="brick-phone-smartphone-or-in-between.html" class="post-card" data-pillar="parenting">
         <span class="post-thumb"><img src="images/brick-phone-smartphone-or-in-between.webp" alt="" width="1200" height="675" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">18 October 2026</span><span class="post-pillar">Parenting with tech</span></span>
+          <span class="post-meta"><span class="post-date">18 October 2026</span><span class="post-pillar">Parenting &amp; phones</span></span>
           <h2>Brick phone, smartphone, or something in between? What each tool actually does</h2>
           <p>Most "parental controls" do one of three quite different jobs. Here's which is which, and which one you need.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -95,7 +116,7 @@
       <a href="smartphone-free-but-reachable.html" class="post-card" data-pillar="parenting">
         <span class="post-thumb"><img src="images/smartphone-free-but-reachable.webp" alt="" width="1200" height="675" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">18 October 2026</span><span class="post-pillar">Parenting with tech</span></span>
+          <span class="post-meta"><span class="post-date">18 October 2026</span><span class="post-pillar">Parenting &amp; phones</span></span>
           <h2>Smartphone-free until 14, but his friends have to text his mum</h2>
           <p>Waiting is a good choice. Here's how to keep them reachable, and in on the plans, without the whole internet.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -113,7 +134,7 @@
       <a href="new-year-phone-rules-reset.html" class="post-card" data-pillar="parenting">
         <span class="post-thumb"><img src="images/new-year-phone-rules-reset.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">15 October 2026</span><span class="post-pillar">Parenting with tech</span></span>
+          <span class="post-meta"><span class="post-date">15 October 2026</span><span class="post-pillar">Parenting &amp; phones</span></span>
           <h2>New Year, new phone rules: resetting screen time after the holidays</h2>
           <p>Two weeks of 'it's the holidays'. Here's how to get back to normal without a row.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -146,55 +167,55 @@
           <span class="post-arrow">Read the post &rarr;</span>
         </div>
       </a>
-      <a href="sporty-pov.html" class="post-card" data-pillar="product">
+      <a href="sporty-pov.html" class="post-card" data-pillar="family product">
         <span class="post-thumb"><img src="images/sporty-pov.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Family story</span></span>
           <h2>I&#x27;m a sporty kid, this is how I use Brickify</h2>
           <p>Training Tuesday, match Saturday, phone stays out of my kit bag&#x27;s way.</p>
           <span class="post-arrow">Read the post &rarr;</span>
         </div>
       </a>
-      <a href="theatre-pov.html" class="post-card" data-pillar="product">
+      <a href="theatre-pov.html" class="post-card" data-pillar="family product">
         <span class="post-thumb"><img src="images/theatre-pov.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Family story</span></span>
           <h2>I&#x27;m a theatre kid, this is how I use Brickify</h2>
           <p>Show week is chaos. My phone isn&#x27;t.</p>
           <span class="post-arrow">Read the post &rarr;</span>
         </div>
       </a>
-      <a href="london-mum-pov.html" class="post-card" data-pillar="product">
+      <a href="london-mum-pov.html" class="post-card" data-pillar="family product">
         <span class="post-thumb"><img src="images/london-mum-pov.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Family story</span></span>
           <h2>I&#x27;m a London mum, this is how we use Brickify</h2>
           <p>Two buses, one Zip Oyster, and a phone that&#x27;s only a phone until she gets home.</p>
           <span class="post-arrow">Read the post &rarr;</span>
         </div>
       </a>
-      <a href="martial-arts-pov.html" class="post-card" data-pillar="product">
+      <a href="martial-arts-pov.html" class="post-card" data-pillar="family product">
         <span class="post-thumb"><img src="images/martial-arts-pov.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Family story</span></span>
           <h2>I do martial arts, this is how I use Brickify</h2>
           <p>Discipline in the dojo. Discipline on the phone. Same idea.</p>
           <span class="post-arrow">Read the post &rarr;</span>
         </div>
       </a>
-      <a href="doom-scroll-pov.html" class="post-card" data-pillar="product">
+      <a href="doom-scroll-pov.html" class="post-card" data-pillar="family product">
         <span class="post-thumb"><img src="images/doom-scroll-pov.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Family story</span></span>
           <h2>I&#x27;m a chronic doom scroller, this is how I use Brickify</h2>
           <p>Bed at 11. Still scrolling at 1. Every night. Until the phone stopped letting me.</p>
           <span class="post-arrow">Read the post &rarr;</span>
         </div>
       </a>
-      <a href="boarder-pov.html" class="post-card" data-pillar="product">
+      <a href="boarder-pov.html" class="post-card" data-pillar="family product">
         <span class="post-thumb"><img src="images/boarder-pov.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Family story</span></span>
           <h2>I&#x27;m a boarder, this is how I use Brickify</h2>
           <p>Phone in at 8:30. Back at prep&#x27;s end. Calls only after lights out.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -203,7 +224,7 @@
       <a href="dont-buy-new-choose-brickify.html" class="post-card" data-pillar="parenting">
         <span class="post-thumb"><img src="images/dont-buy-new-choose-brickify.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Parenting with tech</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Parenting &amp; phones</span></span>
           <h2>Brick phone or Brickify? A practical answer to phone-free schools</h2>
           <p>Schools have gone phone-free. Parents are buying Nokias. There's a third option, and it's probably in your kitchen drawer.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -212,7 +233,7 @@
       <a href="inside-brickify.html" class="post-card" data-pillar="product">
         <span class="post-thumb"><img src="images/inside-brickify.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">How it works</span></span>
           <h2>Inside Brickify: how the PIN + second factor actually works</h2>
           <p>Why it takes two keys to unbrick a phone, and what happens if you lose both.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -221,7 +242,7 @@
       <a href="why-i-built.html" class="post-card" data-pillar="story">
         <span class="post-thumb"><img src="images/why-i-built.webp" alt="" width="896" height="1194" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Personal story</span></span>
+          <span class="post-meta"><span class="post-date">13 October 2026</span><span class="post-pillar">Why Brickify</span></span>
           <h2>Why I built Brickify</h2>
           <p>I didn't set out to build a parental-control app. I set out to keep a promise to my sons and keep them safe.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -230,7 +251,7 @@
       <a href="6-signs-ready.html" class="post-card" data-pillar="parenting">
         <span class="post-thumb"><img src="images/6-signs-ready.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">6 October 2026</span><span class="post-pillar">Parenting with tech</span></span>
+          <span class="post-meta"><span class="post-date">6 October 2026</span><span class="post-pillar">Parenting &amp; phones</span></span>
           <h2>6 signs your child is ready for their first phone, and what kind</h2>
           <p>Not 'what age?' but 'what for?' Six readiness signs, and four kinds of first phone.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -239,7 +260,7 @@
       <a href="willpower-not-strategy.html" class="post-card" data-pillar="product">
         <span class="post-thumb"><img src="images/willpower-not-strategy.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">6 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">6 October 2026</span><span class="post-pillar">How it works</span></span>
           <h2>Screen Time vs Brickify: Why willpower isn't a strategy</h2>
           <p>Every phone rule works at 4pm on a Tuesday. It's 11pm on a Saturday, straight after a row, that tests it.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -248,7 +269,7 @@
       <a href="school-smart-phone-free.html" class="post-card" data-pillar="story">
         <span class="post-thumb"><img src="images/school-smart-phone-free.webp" alt="" width="1000" height="1415" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">6 October 2026</span><span class="post-pillar">Personal story</span></span>
+          <span class="post-meta"><span class="post-date">6 October 2026</span><span class="post-pillar">Why Brickify</span></span>
           <h2>What actually happens when a school goes smartphone-free</h2>
           <p>From 1 September, phone-free is the default in every school in England. Here's what that does and doesn't change.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -257,7 +278,7 @@
       <a href="enforce-screen-time.html" class="post-card" data-pillar="parenting">
         <span class="post-thumb"><img src="images/enforce-screen-time-poster.webp" alt="" width="768" height="1024" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">2 October 2026</span><span class="post-pillar">Parenting with tech</span></span>
+          <span class="post-meta"><span class="post-date">2 October 2026</span><span class="post-pillar">Parenting &amp; phones</span></span>
           <h2>How to actually enforce a screen-time schedule (not just set one)</h2>
           <p>Setting a schedule takes five minutes. Keeping it takes these seven things.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -266,7 +287,7 @@
       <a href="old-phone-first-phone.html" class="post-card" data-pillar="product">
         <span class="post-thumb"><img src="images/old-phone-first-phone.webp" alt="" width="1200" height="1200" loading="lazy"></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">2 October 2026</span><span class="post-pillar">Brickify</span></span>
+          <span class="post-meta"><span class="post-date">2 October 2026</span><span class="post-pillar">How it works</span></span>
           <h2>The old phone in your drawer is your kid's first phone (you just don't know it yet)</h2>
           <p>Too good to throw away, too distracting to hand over. How to make your old smart phone a safe first phone.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -275,7 +296,7 @@
       <a href="five-things-in-online-safety.html" class="post-card" data-pillar="parenting">
         <span class="post-thumb post-thumb-art" aria-hidden="true"><span>5</span></span>
         <div class="post-text">
-          <span class="post-meta"><span class="post-date">11 September 2026</span><span class="post-pillar">Parenting with tech</span></span>
+          <span class="post-meta"><span class="post-date">11 September 2026</span><span class="post-pillar">Parenting &amp; phones</span></span>
           <h2>5 things in online safety you shouldn't miss</h2>
           <p>A round up of the news that's actually moved the needle lately: a UK under-16 social media ban, an $18bn Meta settlement, a school phone-ban movement passing 190,000 signatures, and where Brickify fits into all of it.</p>
           <span class="post-arrow">Read the post &rarr;</span>
@@ -289,23 +310,35 @@
   </div>
 </main>
 
+<section class="band-section band-teal" id="which-rung">
+<div class="container">
+  <h2 class="section-h">Which rung is right for your child?</h2>
+  <p class="band-intro">Every child climbs the phone ladder at their own pace: wait, a watch, a brick phone, Brickify, then a smartphone. These help work out where yours is.</p>
+  <div class="rung-links">
+    <a href="6-signs-ready.html"><b>6 signs your child is ready for their first phone</b><small>And what kind of phone fits.</small></a>
+    <a href="brick-phone-smartphone-or-in-between.html"><b>Brick phone, smartphone, or something in between?</b><small>What each tool actually does.</small></a>
+    <a href="smartphone-free-but-reachable.html"><b>Smartphone-free, but reachable</b><small>Waiting is a good choice. Here's how to keep them in on the plans.</small></a>
+    <a href="../the-phone-ladder.html"><b>The phone ladder, close up</b><small>What each small step inside Brickify looks like as they grow.</small></a>
+  </div>
+</div>
+</section>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-cols">
       <div>
         <h4>Brickify</h4>
         <a href="../how-it-works.html">How it works</a>
+        <a href="../blog/index.html">Parenting &amp; phones</a>
         <a href="../why-brickify.html">Why Brickify</a>
+        <a href="../blog/why-i-built.html">Why I built it</a>
         <a href="../compatibility.html">Which phones work?</a>
-        <a href="../guides/index.html">Guides</a>
-        <a href="../blog/index.html">Blog</a>
       </div>
       <div>
         <h4>Support</h4>
         <a href="../help.html">Help</a>
-        <a href="../troubleshooting.html">Troubleshooting</a>
-        <a href="../information.html">Information</a>
         <a href="../faq.html">FAQ</a>
+        <a href="../troubleshooting.html">Troubleshooting</a>
       </div>
       <div>
         <h4>Legal</h4>

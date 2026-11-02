@@ -1,0 +1,37 @@
+/* Pink, cream and teal bands with slanted edges, as on the homepage.
+   Used by the three pillar pages: How it works, Parenting & phones and Why Brickify.
+   Give each <section> class="band-section band-pink|band-cream|band-teal" and put a .container inside. */
+:root { --pink-deep: #C23C6F; --teal-deep: #1C7B77; --band-cream: #F4E8D6; --cut: clamp(20px, 4vw, 56px); }
+
+.container.jump-wrap { padding-bottom: calc(40px + var(--cut)); }
+.band-section { position: relative; padding-block: calc(56px + var(--cut)) 56px; margin-top: calc(-1 * var(--cut)); clip-path: polygon(0 var(--cut), 100% 0, 100% 100%, 0 100%); }
+.band-section:nth-of-type(even) { clip-path: polygon(0 0, 100% var(--cut), 100% 100%, 0 100%); }
+.band-section:last-of-type { padding-bottom: 80px; }
+.band-section > .container { padding-top: 0; padding-bottom: 0; }
+.band-pink { background: var(--pink-deep); }
+.band-teal { background: var(--teal-deep); }
+.band-cream { background: var(--band-cream); }
+
+/* White text straight on pink and teal; cards keep their own colours. */
+.band-pink :is(.section-h, .band-intro, .layers-intro, .section-label, .to-top, .layers-key, .layers-nav .count, .band-text),
+.band-teal :is(.section-h, .band-intro, .layers-intro, .section-label, .to-top, .layers-key, .layers-nav .count, .band-text) { color: #fff; }
+.band-pink .band-text a, .band-teal .band-text a { color: #fff; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+/* Jump links at the top of a pillar page */
+.jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.jump a { background: #fff; border: 1px solid #e8e0db; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 700; color: #83412C; }
+.jump a:hover { border-color: #B65A3D; text-decoration: none; }
+.to-top { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; color: #9b8a7c; }
+
+/* Page header for How it works and Why Brickify, matching the Parenting & phones header:
+   deep pink, a bright teal corner and a brick slant along the bottom. */
+.header.header-bright { position: relative; overflow: hidden; background: var(--pink-deep); border-bottom: 0; text-align: left; padding: 48px 24px 120px; }
+.header.header-bright::before { content: ""; position: absolute; inset: 0; background: #7F3F2D; clip-path: polygon(0 calc(100% - 46px), 100% calc(100% - 110px), 100% 100%, 0 100%); }
+.header.header-bright::after { content: ""; position: absolute; inset: 0; background: #3AAEAA; clip-path: polygon(84% 0, 100% 0, 100% 46%); }
+.header.header-bright > * { position: relative; z-index: 1; max-width: 712px; margin-left: auto; margin-right: auto; }
+.header.header-bright h1 { color: #F4E8D6; font-size: clamp(40px, 7vw, 72px); font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.header.header-bright p { margin-top: 12px; color: #fff; font-size: clamp(19px, 2.4vw, 22px); font-weight: 700; line-height: 1.4; }
+@media (max-width: 600px) {
+  .header.header-bright { padding: 36px 24px 110px; }
+  .header.header-bright::after { clip-path: polygon(88% 0, 100% 0, 100% 24%); }
+}
