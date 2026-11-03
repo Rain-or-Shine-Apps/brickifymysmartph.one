@@ -123,7 +123,7 @@
 
 <div class="container">
   <a href="how-it-works.html#details" class="back">← Back to How it works</a>
-  <p class="updated">Last updated: October 2026</p>
+  <p class="updated">Last updated: November 2026</p>
 
   <div class="highlight">
     <p><strong>Short version:</strong> Brickify stores as little as possible. Your passcode is never stored in plain text — only a one-way hash. We do not track you, sell your data, or show adverts.</p>
@@ -150,13 +150,14 @@
     <li><strong>Recovery codes (plaintext)</strong> — your 3 backup codes are stored in our Supabase database, associated only with your device ID. This allows support to retrieve a code if you lose all three.</li>
     <li><strong>Trial start date</strong> — associated with your device ID, so a reinstall can't reset your free trial.</li>
     <li><strong>Heartbeat status</strong> — your device ID, platform, brick status, and last-active time, so we can alert your notification email if a bricked device goes silent or has its admin permissions revoked. Includes your notification email and push token if you provided them.</li>
+    <li><strong>Setup progress</strong> — while you set Brickify up, which setup steps have been reached and when, with your device ID, platform and app version. It tells us which steps people find hard, so we can make them easier. Nothing is recorded once setup is finished.</li>
     <li><strong>Account</strong> — if you choose email as your second factor, Supabase creates a login-style record for that email address so we can verify one-time codes. There is no password and no separate profile beyond this.</li>
   </ul>
   <p>We use <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a> as our database provider. Supabase's privacy policy applies to data held on their infrastructure.</p>
 
   <h3>Not collected</h3>
   <ul>
-    <li>No analytics or usage tracking</li>
+    <li>No third-party analytics, and no tracking of how the phone is used</li>
     <li>No advertising identifiers</li>
     <li>No crash reporting services</li>
     <li>No data about which apps you actually use</li>
@@ -170,7 +171,7 @@
 
   <h2 id="delete-account">Request account &amp; data deletion</h2>
   <div class="highlight">
-    <p><strong>In the app:</strong> Setup → "Delete my account &amp; data" — requires your passcode and second factor, and removes all server-side data (recovery codes, trial record, heartbeat history, and any email account) immediately.</p>
+    <p><strong>In the app:</strong> Setup → "Delete my account &amp; data" — requires your passcode and second factor, and removes all server-side data (recovery codes, trial record, heartbeat history, setup progress, and any email account) immediately.</p>
     <p><strong>Without the app installed:</strong> email <a href="mailto:brickify@rainorshineapps.com">brickify@rainorshineapps.com</a> with your device ID (shown on the recovery screen, or in any alert email you've received) and we'll remove your data manually.</p>
   </div>
 
