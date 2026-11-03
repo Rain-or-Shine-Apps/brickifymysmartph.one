@@ -196,7 +196,7 @@
   <h2 id="ios">iOS</h2>
   <div class="warn">
     <h3>Accepted risks</h3>
-    <p><strong>Restoring from iCloud backup</strong> — Restoring a pre-Brickify backup removes the app. See "Deleting the app" below for what this means in practice.</p>
+    <p><strong>Restoring from iCloud backup</strong> — Restoring a pre-Brickify backup removes the app, and its blocks with it. A restore means erasing the phone first, so it's covered by "Factory reset" below.</p>
   </div>
   <div class="warn amber">
     <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
@@ -208,7 +208,7 @@
   </div>
   <div class="warn good">
     <h3>Hardened against</h3>
-    <p><strong>Deleting the app</strong> — The setup guide walks you through enabling a Screen Time passcode with app deletion blocked. But even if it does happen: blocks <strong>remain in place</strong> either way — iOS enforces Family Controls restrictions at the OS level, independently of whether Brickify is still installed. Deleting Brickify also removes your ability to unbrick, though, which is worse for the child, not better. The only way out at that point is a factory reset.</p>
+    <p><strong>Deleting the app</strong> — On iPhone, deleting Brickify removes its blocks: iOS clears an app's Screen Time restrictions when the app is uninstalled. That's why setup has you turn on a Screen Time passcode and set Deleting Apps to Don't Allow. With that in place, the app can't be deleted without your passcode. If it is deleted, reinstall Brickify and set it up again. If Brickify had been running, you'll get an email within two days once the phone stops checking in.</p>
   </div>
   <div class="warn">
     <h3>If your child is under 13</h3>
