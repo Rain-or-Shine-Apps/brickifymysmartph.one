@@ -5,6 +5,7 @@ import { analytics } from 'https://esm.sh/@heycatch/sdk@0.8.3';
 
 analytics.init({
   projectKey: 'hck_pk_Zu5Ti7jgHecJdH2yQgg6FWb4_0wBK5fN',
+  site: 'landing',
   install: {
     framework: 'web',
     agent: 'claude-code',
