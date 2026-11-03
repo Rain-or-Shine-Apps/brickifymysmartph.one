@@ -145,6 +145,14 @@
   extra features on top — automatically switching between schedules, and warning you if actions you don't want
   are taken.</p>
 
+  <h2>Before you start: your child's Apple Account</h2>
+  <p>Brickify works best when the phone is signed in to your child's own Apple Account, in your Family Sharing group. Then only you can switch off Brickify's Screen Time access, which also means Brickify's lock on deleting apps can't be lifted without you. If your child is under 13, they can't leave the group either. On your own iPhone:</p>
+  <ol>
+    <li>Go to Settings → your name → Family → Add Member. Create an Apple Account for your child, or invite them if they already have one.</li>
+    <li>Go to Settings → Screen Time and tap your child's name to turn Screen Time on for them. If your child is 13 or older, this matters: without it they can leave your family group, which switches Brickify off.</li>
+  </ol>
+  <p>Then sign your child's phone in to <strong>their</strong> Apple Account, not yours. If your teen has their own account outside your family group, Brickify still works, with <a href="risks.html#ios-own">one extra risk</a>.</p>
+
   <h2>Setup</h2>
   <div class="steps">
     <div class="step">
@@ -157,35 +165,41 @@
     <div class="step">
       <div class="step-n">2</div>
       <div class="step-body">
+        <h3>Family account</h3>
+        <p>Brickify checks the phone is signed in to your child's account and asks you to approve it. Enter <strong>your own</strong> Apple Account password, not your child's. This is the <strong>Family Controls permission</strong> that lets Brickify block apps. No child account? Tap "My child doesn't have their own account" and carry on.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
         <h3>PIN</h3>
         <p>Brickify's own 4-digit passcode — one you'll remember but won't enter on impulse.</p>
       </div>
     </div>
     <div class="step">
-      <div class="step-n">3</div>
+      <div class="step-n">4</div>
       <div class="step-body">
         <h3>2nd factor</h3>
         <p>Parent PIN, authenticator app, or email code — backs up your passcode so losing one doesn't lock you out for good.</p>
       </div>
     </div>
     <div class="step">
-      <div class="step-n">4</div>
+      <div class="step-n">5</div>
       <div class="step-body">
         <h3>Recovery codes</h3>
         <p>Three one-time backup codes. Write them down — they won't be shown again.</p>
       </div>
     </div>
     <div class="step">
-      <div class="step-n">5</div>
+      <div class="step-n">6</div>
       <div class="step-body">
         <h3>Profile</h3>
-        <p>Name it and choose which apps it blocks. This is where iOS asks you to grant <strong>Family Controls
-        permission</strong> — it's what lets Brickify actually block apps at the system level, independently of the
-        app itself.</p>
+        <p>Name it and choose which apps it blocks. If you didn't approve Brickify on a child account in step 2, this is
+        where iOS asks for <strong>Family Controls permission</strong> on the phone's own account.</p>
       </div>
     </div>
     <div class="step">
-      <div class="step-n">6</div>
+      <div class="step-n">7</div>
       <div class="step-body">
         <h3>Notify email</h3>
         <p>Where Brickify emails you if something needs attention — the device goes silent, its protection gets
@@ -193,17 +207,18 @@
       </div>
     </div>
     <div class="step">
-      <div class="step-n">7</div>
+      <div class="step-n">8</div>
       <div class="step-body">
         <h3>Screen Time</h3>
         <p>The last onboarding step walks you to Settings → Screen Time. Turn on "Use Screen Time Passcode" (a
         4-digit code the child doesn't know — you can reuse the same digits as your Brickify passcode from step 2,
         one PIN to remember instead of two), then enable Content &amp; Privacy Restrictions and set "Deleting Apps"
-        to <strong>Don't Allow</strong>.</p>
+        to <strong>Don't Allow</strong>. On a child account you can also do this from your own iPhone, under Settings →
+        Screen Time → your child's name.</p>
       </div>
     </div>
     <div class="step">
-      <div class="step-n">8</div>
+      <div class="step-n">9</div>
       <div class="step-body">
         <h3>Unlock Brickify</h3>
         <p>Pay, or Restore Purchases if you already bought it on this Apple ID.</p>
@@ -212,7 +227,7 @@
   </div>
 
   <div class="highlight">
-    <p><strong>Why the Screen Time passcode matters:</strong> without it, a child can delete Brickify from the phone, and deleting it removes every block Brickify set. Setting Deleting Apps to Don't Allow behind a Screen Time passcode means the app can't be deleted without your passcode.</p>
+    <p><strong>Why the Screen Time passcode matters:</strong> deleting Brickify removes every block it set. While Brickify is running, iPhone won't let any app be deleted, but a Screen Time passcode with Deleting Apps set to Don't Allow is a second lock that doesn't depend on Brickify.</p>
   </div>
 
   <div class="warning">

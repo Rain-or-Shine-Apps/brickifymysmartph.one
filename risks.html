@@ -194,25 +194,50 @@
   </div>
 
   <h2 id="ios">iOS</h2>
+  <p>Brickify on iPhone can be set up in two ways. Both block apps in exactly the same way. The difference is who can switch Brickify's Screen Time access off:</p>
+  <ul>
+    <li><a href="#ios-family"><strong>Child account (recommended)</strong></a> — the phone is signed in to your child's own Apple Account, in your Family Sharing group, and you approve Brickify with your own Apple Account. Only you can switch it off.</li>
+    <li><a href="#ios-own"><strong>The phone's own account</strong></a> — for a teen with an Apple Account outside your family group. Anyone holding the phone can switch off Brickify's Screen Time access in Settings.</li>
+  </ul>
+  <p>The risks below apply to both, then each setup has its own.</p>
   <div class="warn">
     <h3>Accepted risks</h3>
     <p><strong>Restoring from iCloud backup</strong> — Restoring a pre-Brickify backup removes the app, and its blocks with it. A restore means erasing the phone first, so it's covered by "Factory reset" below.</p>
   </div>
   <div class="warn amber">
     <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
-    <p><strong>Child knows your Screen Time passcode, Brickify PIN, or has access to your two-factor codes</strong> — Brickify's device hardening depends on these staying private. Don't share them with your child, or the protections below can be bypassed directly.<br/><br/>
-    <strong>Child disables Brickify's Screen Time access</strong> — Settings → Screen Time → Apps with Screen Time Access can turn off Brickify's permission entirely. This is a low risk in practice since the toggle is buried several menus deep, but it's a known gap in Apple's own API (only partially fixed, opt-in, from iOS 26.4) — no passcode is required to use it. Brickify emails you within the hour if this happens while a block is supposed to be active.<br/><br/>
+    <p><strong>Child knows your Screen Time passcode, Brickify PIN, Apple Account password, or has access to your two-factor codes</strong> — Brickify's device hardening depends on these staying private. Don't share them with your child, or the protections below can be bypassed directly.<br/><br/>
     <strong>Factory reset</strong> — Removes all restrictions. A Screen Time passcode (set up during Brickify's setup flow) prevents a reset being initiated through Settings.<br/><br/>
     <strong>New app installs</strong> — iOS doesn't let any app detect newly installed apps. Block the App Store itself in Brickify (selected by default) to stop new installs at the source.<br/><br/>
     <strong>Web browsing isn't filtered</strong> — Brickify blocks the individual apps you choose, not websites or web content. Blocking Safari doesn't block Chrome, Firefox, or any other installed browser — each needs to be blocked separately, and in-app browsers inside other unblocked apps aren't affected at all.</p>
   </div>
   <div class="warn good">
     <h3>Hardened against</h3>
-    <p><strong>Deleting the app</strong> — On iPhone, deleting Brickify removes its blocks: iOS clears an app's Screen Time restrictions when the app is uninstalled. That's why setup has you turn on a Screen Time passcode and set Deleting Apps to Don't Allow. With that in place, the app can't be deleted without your passcode. If it is deleted, reinstall Brickify and set it up again. If Brickify had been running, you'll get an email within two days once the phone stops checking in.</p>
+    <p><strong>Deleting the app</strong> — While Brickify is running, iPhone won't let any app be deleted, Brickify included. To delete an app yourself, stop Brickify, delete it, then start Brickify again. Setup also has you turn on a Screen Time passcode and set Deleting Apps to Don't Allow, as a second lock. If Brickify is deleted anyway, its blocks go with it: iOS clears an app's Screen Time restrictions when the app is uninstalled. Reinstall Brickify and set it up again. If Brickify had been running, you'll get an email within two days once the phone stops checking in.</p>
   </div>
+
+  <h3 id="ios-family" style="font-size:20px; margin-top:40px;">Child account in your Family Sharing group (recommended)</h3>
+  <p>Add your child to your Family Sharing group on your own iPhone, sign their phone in to their own Apple Account, and turn on Screen Time for them from your iPhone. Brickify's first setup step then asks you to approve it with your own Apple Account password. See the <a href="ios-device-setup.html">iOS setup guide</a>.</p>
   <div class="warn">
-    <h3>If your child is under 13</h3>
-    <p>Apple's own free Family Sharing — a managed Child Account, with Screen Time controlled remotely from your own device — already closes the Screen Time access gap above: the toggle a child could otherwise flip lives on your phone, not theirs. Brickify exists mainly for the harder case: teens, who are far less likely to still be on a fully parent-managed account, and who need Brickify's dedicated brick/unbrick flow and cross-platform support most.</p>
+    <h3>Accepted risks</h3>
+    <p><strong>Turning 18</strong> — When Apple moves your child to an adult account, your approval ends and Brickify's blocks stop.</p>
+  </div>
+  <div class="warn amber">
+    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
+    <p><strong>A teen leaves your family group (13 and over)</strong> — Leaving the group ends your approval, which switches Brickify off. A teen can leave on their own unless you've turned on Screen Time for them from your own iPhone (Settings → Screen Time → their name). With it on, they need you to turn Screen Time off and approve the request first. In some countries they can't leave until 18 at all.</p>
+  </div>
+  <div class="warn good">
+    <h3>Hardened against</h3>
+    <p><strong>Switching off Brickify's Screen Time access</strong> — Needs your approval. Your child can't do it from Settings on their own.<br/><br/>
+    <strong>Deleting apps, Brickify included</strong> — This is what makes the lock on deleting apps hold. On the phone's own account, switching off Brickify's Screen Time access lifts that lock too. On a child account, that needs you, so the lock stays on while Brickify is running.<br/><br/>
+    <strong>Leaving the family group (under 13)</strong> — Apple doesn't let children under 13 leave a family group.</p>
+  </div>
+
+  <h3 id="ios-own" style="font-size:20px; margin-top:40px;">The phone's own account</h3>
+  <p>Used when the phone isn't signed in to a child's account in your Family Sharing group, typically a teen with their own Apple Account. Chosen in Brickify's first setup step by tapping <em>My child doesn't have their own account</em>.</p>
+  <div class="warn amber">
+    <h3>Amber risks <span style="font-weight:400;">(you have to help mitigate these)</span></h3>
+    <p><strong>Child disables Brickify's Screen Time access</strong> — Settings → Screen Time → Apps with Screen Time Access can turn off Brickify's permission entirely. That lifts every block, and the lock on deleting apps too, so Brickify could then be deleted. This is a low risk in practice since the toggle is buried several menus deep, but it's a known gap in Apple's own API (only partially fixed, opt-in, from iOS 26.4) — no passcode is required to use it. Brickify emails you within the hour if this happens while a block is supposed to be active. A child account in your Family Sharing group closes this gap.</p>
   </div>
 
   <div class="warn" style="margin-top:32px;">
