@@ -1,8 +1,18 @@
 /* Rain or Shine Apps — Google Analytics 4 with opt-in consent.
    Nothing is loaded and no cookies are set until the visitor clicks Accept.
    Each app has its own GA4 property, chosen by <body data-app="...">. Pages whose app has
-   no ID listed here show no banner and send nothing. Loaded with `defer`, so <body> exists. */
+   no ID listed here show no banner and send nothing. Loaded with `defer`, so <body> exists.
+   Also loads Umami for everyone: cookieless (nothing stored on the device), so it needs no
+   banner. Described in /website-privacy.html. */
 (function () {
+  var um = document.createElement('script');
+  um.defer = true;
+  um.src = 'https://cloud.umami.is/script.js';
+  um.setAttribute('data-website-id', 'e0d84b60-73f0-4238-8816-88b297d3b799');
+  um.setAttribute('data-domains', 'brickifymysmartph.one'); // local previews don't count
+  document.head.appendChild(um);
+  function umTrack(name, data) { if (window.umami) window.umami.track(name, data); }
+
   var GA_IDS = {
     brickify: 'G-4P3DCEHQSD'
   };
@@ -77,10 +87,22 @@
       var a = e.target.closest && e.target.closest('[data-store]');
       if (!a) return;
       var loc = a.closest('[data-location]');
-      track('store_click', {
+      var params = {
         store: a.getAttribute('data-store'),
         app: (a.closest('[data-app]') || document.body).getAttribute('data-app') || 'site',
         location: loc ? loc.getAttribute('data-location') : 'other'
+      };
+      track('store_click', params);
+      umTrack('store_click', params);
+    });
+
+    // Every other link click, for Umami's click count (store badges are counted above).
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || a.closest('[data-store]')) return;
+      umTrack('click', {
+        text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0, 60),
+        href: a.getAttribute('href').slice(0, 200)
       });
     });
 
