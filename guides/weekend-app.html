@@ -154,17 +154,17 @@
 <div class="container">
   <a href="../how-it-works.html#guides" class="back">← All guides</a>
 
-  <p>This uses the same two-profile idea as a school-hours setup, just inverted: your everyday (default) profile blocks the new app, and a "Weekend" profile — active only Saturday and Sunday — doesn't.</p>
+  <p>This uses the same two-profile idea as a school-hours setup, just inverted: your <code>Rest of the time</code> profile blocks the new app, and a "Weekend" profile — active only Saturday and Sunday — doesn't.</p>
 
   <p>Haven't installed the app yet, or want the fuller unbrick → install → re-brick loop first? See <a href="adding-a-new-app.html">Adding a new app to your child's phone</a>.</p>
 
-  <h2>If you've only got one profile so far</h2>
+  <h2>If you've only got Rest of the time so far</h2>
   <div class="steps">
     <div class="step">
       <div class="step-n">1</div>
       <div class="step-body">
-        <h3>Block the new app on your existing profile</h3>
-        <p>Go to Setup → Manage profiles → tap your profile → find the new app under "Apps to block" and turn it on. Save. It's now blocked every day, all the time.</p>
+        <h3>Block the new app in Rest of the time</h3>
+        <p>Go to Setup → Manage profiles → tap <strong>Rest of the time</strong> → find the new app under "Apps to block" and turn it on. Save. It's now blocked every day, all the time.</p>
       </div>
     </div>
     <div class="step">
@@ -178,20 +178,20 @@
       <div class="step-n">3</div>
       <div class="step-body">
         <h3>Set its schedule</h3>
-        <p>Leave "Set profile to default" off. Toggle on Saturday and Sunday only, turn on "All day." Save.</p>
+        <p>Toggle on Saturday and Sunday only, turn on "All day." Save.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">4</div>
       <div class="step-body">
         <h3>Done</h3>
-        <p>If the phone's already bricked, that's it — Weekend switches in automatically every Saturday morning and switches back to your everyday profile Monday morning. If it isn't bricked yet, tap <code>Start Brickify</code> on Home once to arm it.</p>
+        <p>If the phone's already bricked, that's it — Weekend switches in automatically every Saturday morning and switches back to Rest of the time on Monday morning. If it isn't bricked yet, tap <code>Start Brickify</code> on Home once to arm it.</p>
       </div>
     </div>
   </div>
 
   <h2>If you already have a scheduled profile (e.g. School Day)</h2>
-  <p>You don't need a third profile. Just add the new app to whichever profile represents "the rest of the time" — your default profile — and leave it off your School Day profile's block list if you're happy for it to be available outside school hours too. If you specifically want it weekends-only rather than "anytime outside school," follow the steps above to add a dedicated Weekend profile alongside School Day — Brickify supports more than one scheduled profile at once.</p>
+  <p>You don't need a third profile. Just add the new app to your Rest of the time profile and leave it off your School Day profile's block list if you're happy for it to be available outside school hours too. If you specifically want it weekends-only rather than "anytime outside school," follow the steps above to add a dedicated Weekend profile alongside School Day — Brickify supports more than one scheduled profile at once.</p>
 
   <div class="highlight">
     <p><strong>Why this works:</strong> a profile's schedule only decides <em>when</em> it's active — the app list is entirely separate. The new app being blocked or not is purely down to whether it's ticked on the profile that's active at that moment. Nothing else you've configured changes.</p>
@@ -205,8 +205,8 @@
   <table>
     <thead><tr><th>Profile</th><th>Default?</th><th>Blocks</th><th>Schedule</th></tr></thead>
     <tbody>
-      <tr><td>Your everyday profile</td><td>Yes</td><td>The new app, plus whatever you already had blocked</td><td>Always active — no schedule needed</td></tr>
-      <tr><td>Weekend</td><td>No</td><td>Same as your everyday profile, minus the new app you're freeing up</td><td>Saturday &amp; Sunday, all day</td></tr>
+      <tr><td>Rest of the time</td><td>Yes</td><td>The new app, plus whatever you already had blocked</td><td>Whenever nothing else is scheduled — no times needed</td></tr>
+      <tr><td>Weekend</td><td>No</td><td>Same as Rest of the time, minus the new app you're freeing up</td><td>Saturday &amp; Sunday, all day</td></tr>
     </tbody>
   </table>
 

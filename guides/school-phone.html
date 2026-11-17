@@ -165,22 +165,22 @@
     <div class="step">
       <div class="step-n">2</div>
       <div class="step-body">
-        <h3>Set up your default profile as the safe baseline</h3>
-        <p>Your first profile is automatically the default — it's what's active whenever nothing else is scheduled, so it's what the phone looks like evenings, weekends, and holidays. For a 10-year-old's first phone, we'd suggest this one isn't wide open either: block the Play Store/App Store (blocked by default when you create a profile), block the high-risk categories below, and only leave in apps you've actually vetted yourself — a few examples: Pokémon GO, ScratchJr, Times Tables Rock Stars. What counts as fine is your call, not a fixed list.</p>
+        <h3>Make "Rest of the time" the safe baseline</h3>
+        <p>Every phone starts with a profile called <code>Rest of the time</code>. It's what's active whenever nothing else is scheduled, so it's what the phone looks like evenings, weekends, and holidays. It blocks nothing until you choose apps for it. For a 10-year-old's first phone, we'd suggest it isn't wide open either: tap it, block the Play Store/App Store, block the high-risk categories below, and only leave in apps you've actually vetted yourself — a few examples: Pokémon GO, ScratchJr, Times Tables Rock Stars. What counts as fine is your call, not a fixed list.</p>
       </div>
     </div>
   </div>
 
   <div class="highlight">
-    <p><strong>Apps worth blocking on a 10-year-old's default profile:</strong> Discord, WhatsApp (unless it's family-monitored), Snapchat, other social media (TikTok, Instagram, Twitter/X), OnlyFans, Roblox, secure/disappearing picture-sharing apps, encrypted messaging (Telegram, Signal, and similar), web browsers, random/anonymous chat apps (Kik and similar), VPN apps (these can bypass blocking entirely), and any "vault" or app-locker apps (used to hide content from parents). Not an exhaustive list — use your own judgement for your own child.</p>
+    <p><strong>Apps worth blocking in a 10-year-old's Rest of the time profile:</strong> Discord, WhatsApp (unless it's family-monitored), Snapchat, other social media (TikTok, Instagram, Twitter/X), OnlyFans, Roblox, secure/disappearing picture-sharing apps, encrypted messaging (Telegram, Signal, and similar), web browsers, random/anonymous chat apps (Kik and similar), VPN apps (these can bypass blocking entirely), and any "vault" or app-locker apps (used to hide content from parents). Not an exhaustive list — use your own judgement for your own child.</p>
   </div>
 
   <div class="steps">
     <div class="step">
       <div class="step-n">3</div>
       <div class="step-body">
-        <h3>Go to Setup → Manage profiles → + Create a new profile</h3>
-        <p>Name it something like <code>School Day</code>.</p>
+        <h3>Add a profile with times</h3>
+        <p>During setup, tap <strong>+ Add a profile with times</strong> (later: Setup → Manage profiles → + Create a new profile). Name it something like <code>School Day</code>.</p>
       </div>
     </div>
     <div class="step">
@@ -194,7 +194,7 @@
       <div class="step-n">5</div>
       <div class="step-body">
         <h3>Set the schedule</h3>
-        <p>Leave "Set profile to default" off. Toggle on the school weekdays (Mon–Fri), turn off "All day," and set a start and end time — e.g. <code>08:30</code> to <code>15:30</code>. Save.</p>
+        <p>Toggle on the school weekdays (Mon–Fri), turn off "All day," and set a start and end time — e.g. <code>08:30</code> to <code>15:30</code>. Save.</p>
       </div>
     </div>
     <div class="step">
@@ -207,7 +207,7 @@
   </div>
 
   <div class="highlight">
-    <p><strong>How this actually works:</strong> Brickify doesn't need a schedule on your "normal" profile — it's just defined as "whatever's active when nothing else is scheduled." Only the School Day profile needs a time window. Outside school hours, Brickify automatically falls back to normal.</p>
+    <p><strong>How this actually works:</strong> Rest of the time doesn't need a schedule — it's just "whatever's active when nothing else is scheduled." Only the School Day profile needs a time window. Outside school hours, Brickify automatically falls back to Rest of the time.</p>
     <p>If you ever unbrick manually — say, an early pickup — that's treated as temporary. Brickify picks the schedule back up on its own at the next real boundary (the next 08:30 or 15:30), not the next time you remember to press the button.</p>
   </div>
 
@@ -222,8 +222,8 @@
   <table>
     <thead><tr><th>Profile</th><th>Default?</th><th>Blocks</th><th>Schedule</th></tr></thead>
     <tbody>
-      <tr><td>Safe Apps (your first profile)</td><td>Yes</td><td>Play Store/App Store, plus the high-risk categories above — only vetted apps left in</td><td>Always active — no schedule needed</td></tr>
-      <tr><td>School Day</td><td>No</td><td>Everything the default profile blocks, plus games and any other apps not needed for school</td><td>Weekdays, e.g. 08:30–15:30</td></tr>
+      <tr><td>Rest of the time (already there)</td><td>Yes</td><td>Play Store/App Store, plus the high-risk categories above — only vetted apps left in</td><td>Whenever nothing else is scheduled — no times needed</td></tr>
+      <tr><td>School Day</td><td>No</td><td>Everything Rest of the time blocks, plus games and any other apps not needed for school</td><td>Weekdays, e.g. 08:30–15:30</td></tr>
     </tbody>
   </table>
 
