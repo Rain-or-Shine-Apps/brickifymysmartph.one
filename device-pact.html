@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- DRAFT: not linked from anywhere and kept out of search until the wording is agreed. -->
+  <meta name="robots" content="noindex"/>
+  <title>Our family device pact</title>
+  <meta name="description" content="A printable one-page pact for a child and their parents to agree how a new phone or tablet is used, and when it's reviewed."/>
+  <link rel="canonical" href="https://brickifymysmartph.one/device-pact.html"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --brick: #B65A3D; --dark: #83412C; --text: #2C3635; --muted: #64584e; --cream: #F6E9D2; --card: #ffffff; --line: #d9cfc4; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--cream); color: var(--text); line-height: 1.5; }
+
+    .screen-only { max-width: 760px; margin: 0 auto; padding: 24px 16px 0; color: var(--muted); font-size: 15px; }
+    .screen-only a { color: var(--dark); font-weight: 700; }
+    .print-btn { display: inline-block; margin-top: 12px; background: var(--dark); color: #fff; border: 0; border-radius: 999px; padding: 10px 20px; font-size: 15px; font-weight: 800; cursor: pointer; }
+
+    .page { max-width: 760px; margin: 16px auto 48px; background: var(--card); border-radius: 18px; padding: 32px 28px; border: 1px solid #e8e0db; }
+    h1 { color: var(--dark); font-size: 28px; font-weight: 900; letter-spacing: -0.3px; }
+    .intro { color: var(--muted); margin: 6px 0 18px; font-size: 15px; }
+    .names { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-bottom: 18px; }
+    .field { font-size: 14px; color: var(--muted); }
+    .field span { display: block; border-bottom: 1px solid var(--line); height: 26px; }
+
+    h2 { color: var(--dark); font-size: 17px; font-weight: 800; margin: 18px 0 6px; }
+    ul { list-style: none; }
+    li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; padding: 4px 0; }
+    li::before { content: ""; flex: 0 0 16px; height: 16px; margin-top: 3px; border: 1.5px solid var(--brick); border-radius: 4px; }
+    .write { border-bottom: 1px solid var(--line); min-height: 26px; margin: 6px 0; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .sign { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 24px; }
+    .foot { margin-top: 18px; font-size: 12px; color: var(--muted); text-align: center; }
+
+    @media (max-width: 600px) {
+      .page { padding: 24px 16px; border-radius: 14px; }
+      .names, .two, .sign { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      body { background: #fff; }
+      .screen-only { display: none; }
+      .page { margin: 0; padding: 0; border: 0; border-radius: 0; max-width: none; }
+      h1 { font-size: 24px; }
+      li, .field, .intro { font-size: 13px; }
+      h2 { font-size: 15px; margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-only">
+    Print this page and fill it in together. Tick the lines you agree on, cross out any that don't fit, and add your own.
+    <br/><button class="print-btn" onclick="window.print()">Print the pact</button>
+  </div>
+
+  <main class="page">
+    <h1>Our family device pact</h1>
+    <p class="intro">What we've agreed about this phone or tablet, so nobody has to guess. We'll look at it again on the review date and change what isn't working.</p>
+
+    <div class="names">
+      <div class="field">Child's name<span></span></div>
+      <div class="field">Device<span></span></div>
+      <div class="field">Date<span></span></div>
+      <div class="field">Review on<span></span></div>
+    </div>
+
+    <div class="two">
+      <section>
+        <h2>I agree to</h2>
+        <ul>
+          <li>Keep my passcode private, except from my parents.</li>
+          <li>Leave the device outside my bedroom overnight.</li>
+          <li>Put it away at meals and when we're talking together.</li>
+          <li>Ask before downloading a new app or game.</li>
+          <li>Only chat with people I know in real life.</li>
+          <li>Tell a parent straight away if something online upsets or worries me, even if I broke a rule to see it.</li>
+          <li>Not try to get round Brickify or Screen Time. If a rule feels wrong, I'll talk about it instead.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>We agree to</h2>
+        <ul>
+          <li>Explain our rules, and listen when you think one is unfair.</li>
+          <li>Not read your messages without telling you, unless we're worried you're unsafe.</li>
+          <li>Stay calm if you tell us about something that went wrong online.</li>
+          <li>Loosen the rules as you show you can handle more.</li>
+          <li>Follow the device-free times ourselves too.</li>
+        </ul>
+      </section>
+    </div>
+
+    <h2>Device-free times</h2>
+    <div class="write"></div>
+    <div class="write"></div>
+
+    <h2>Our own extra rules</h2>
+    <div class="write"></div>
+    <div class="write"></div>
+
+    <h2>If the pact is broken</h2>
+    <div class="write"></div>
+
+    <div class="sign">
+      <div class="field">Child signs<span></span></div>
+      <div class="field">Parent signs<span></span></div>
+      <div class="field">Parent signs<span></span></div>
+    </div>
+
+    <p class="foot">From Brickify · brickifymysmartph.one</p>
+  </main>
+</body>
+</html>
